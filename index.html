@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Voltamarket - Platform Entry Point</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c90f0f",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "accent-yellow": "#fbbf24",
+                        "accent-green": "#22c55e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main antialiased min-h-screen font-display">
+    <div class="flex min-h-screen items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+        <div class="w-full max-w-4xl">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="flex items-center justify-center size-16 rounded-xl bg-primary text-white shadow-lg">
+                        <span class="material-symbols-outlined text-4xl icon-filled">storefront</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+                </div>
+                <p class="text-lg text-text-muted dark:text-slate-400">Platform Entry Point</p>
+                <p class="mt-2 text-sm text-text-muted dark:text-slate-500">Select your dashboard to continue</p>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="grid gap-6 md:grid-cols-3">
+                <!-- Admin Dashboard -->
+                <a href="Volta_Market_Dashboard/admin_dashboard_overview.html" class="group relative overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary hover:-translate-y-1">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors"></div>
+                    <div class="relative">
+                        <div class="flex items-center justify-center size-16 rounded-xl bg-red-50 dark:bg-red-900/20 text-primary mb-6 group-hover:bg-red-100 dark:group-hover:bg-red-900/30 transition-colors">
+                            <span class="material-symbols-outlined text-4xl icon-filled">admin_panel_settings</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-main dark:text-white mb-2">Admin Dashboard</h3>
+                        <p class="text-sm text-text-muted dark:text-slate-400 mb-4">Manage platform operations, users, orders, and analytics</p>
+                        <div class="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                            <span>Enter Dashboard</span>
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Main/Buyer Site -->
+                <a href="Volta_Market_main/voltamarket_home_page.html" class="group relative overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary hover:-translate-y-1">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors"></div>
+                    <div class="relative">
+                        <div class="flex items-center justify-center size-16 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                            <span class="material-symbols-outlined text-4xl icon-filled">shopping_bag</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-main dark:text-white mb-2">Buyer Portal</h3>
+                        <p class="text-sm text-text-muted dark:text-slate-400 mb-4">Browse products, services, and make purchases</p>
+                        <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                            <span>Enter Portal</span>
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Seller Dashboard -->
+                <a href="Volta_Seller/seller_dashboard_overview_page.html" class="group relative overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary hover:-translate-y-1">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors"></div>
+                    <div class="relative">
+                        <div class="flex items-center justify-center size-16 rounded-xl bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 mb-6 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors">
+                            <span class="material-symbols-outlined text-4xl icon-filled">store</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-main dark:text-white mb-2">Seller Dashboard</h3>
+                        <p class="text-sm text-text-muted dark:text-slate-400 mb-4">Manage listings, orders, and track your sales</p>
+                        <div class="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold text-sm group-hover:gap-3 transition-all">
+                            <span>Enter Dashboard</span>
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="mt-12 text-center">
+                <p class="text-sm text-text-muted dark:text-slate-500">
+                    © 2024 Voltamarket. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
