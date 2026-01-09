@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Product - Voltamarket</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom overrides to ensure no blue focus rings from browser defaults */
+        input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b0d0d] antialiased">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e5e7eb] bg-white px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">bolt</span>
+</div>
+<h2 class="text-[#1b0d0d] text-lg font-bold leading-tight tracking-[-0.015em]">Voltamarket</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-[#e5e7eb] bg-[#fcf8f8] focus-within:border-primary">
+<div class="text-[#9ca3af] flex items-center justify-center pl-3">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent text-[#1b0d0d] focus:outline-0 focus:ring-0 border-none h-full placeholder:text-[#9ca3af] px-3 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#1b0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="seller_dashboard_overview_page.html">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal transition-colors" href="my_listings_page.html">Products</a>
+<a class="text-[#1b0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="orders_from_buyers_page.html">Orders</a>
+<a class="text-[#1b0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="_payout_details_page.html">Wallet</a>
+</nav>
+<a href="seller_notifications_page.html" class="flex items-center justify-center rounded-full size-10 bg-[#f3e7e7] text-[#1b0d0d] hover:bg-[#eadddd] transition-colors relative min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full"></span>
+</a>
+<a href="seller_profile_page.html" class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-[#e5e7eb] min-w-[44px] min-h-[44px]" data-alt="Profile picture of a smiling user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCMQKyWgUZ-ALzWc5okyODeVSIFbdRSMqx1V2hLpzJGb3nHQCRQLCd4DGntivVGDw9bZGqwAe8EMfJhqYZJ3IUCsc-DZcTBVS00Ed1cVvL1ctpWkiLPr0GxBmETdm-Gl_B8xUDmk4RiathbBT9rle2Ib-WVWJSTUOWpHP7sWXtFh4yB6fJKzGBrCMruNycNiVtW1t6ZfFJM1CDdim9gQZKXYXo59ZDJCnmJXU3ppvkXuv5s8edLQp4mJCN7cp0AXicWE0HzcB90eY");'></a>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-8 pb-20">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-6 text-sm">
+<a class="text-[#6b7280] hover:text-primary transition-colors font-medium" href="seller_dashboard_overview_page.html">Home</a>
+<span class="text-[#9ca3af] font-medium">/</span>
+<a class="text-[#6b7280] hover:text-primary transition-colors font-medium" href="my_listings_page.html">Products</a>
+<span class="text-[#9ca3af] font-medium">/</span>
+<span class="text-primary font-bold">Edit Product</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-[#1b0d0d] text-2xl sm:text-3xl font-black leading-tight tracking-[-0.02em]">Edit Product: Kente Cloth Stole</h1>
+<p class="text-[#6b7280] text-sm sm:text-base font-normal">Update your product details, pricing, and inventory.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 border border-[#e5e7eb] bg-white text-[#1b0d0d] hover:bg-[#f9fafb] text-sm font-bold transition-colors">
+<span class="material-symbols-outlined mr-2" style="font-size: 18px;">visibility</span>
+                    View Live Page
+                </button>
+<button class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white hover:bg-red-700 text-sm font-bold shadow-md shadow-red-200 transition-colors">
+                    Save Changes
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Left Column: Main Content -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- General Info Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center gap-2 mb-6 pb-4 border-b border-[#f3f4f6]">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="text-lg font-bold text-[#1b0d0d]">General Information</h3>
+</div>
+<div class="flex flex-col gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Product Name</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-3 text-[#1b0d0d] placeholder:text-[#9ca3af] focus:border-primary focus:ring-1 focus:ring-primary transition-all text-base" value="Premium Authentic Kente Cloth Stole"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Description</span>
+<div class="rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden transition-all">
+<div class="flex items-center gap-1 border-b border-[#e5e7eb] px-2 py-2 bg-white">
+<button class="p-1.5 rounded hover:bg-gray-100 text-gray-500"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1.5 rounded hover:bg-gray-100 text-gray-500"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1.5 rounded hover:bg-gray-100 text-gray-500"><span class="material-symbols-outlined text-[20px]">format_underlined</span></button>
+<div class="w-px h-4 bg-gray-200 mx-1"></div>
+<button class="p-1.5 rounded hover:bg-gray-100 text-gray-500"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1.5 rounded hover:bg-gray-100 text-gray-500"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span></button>
+</div>
+<textarea class="w-full border-none bg-transparent p-4 min-h-[160px] resize-y focus:ring-0 text-[#1b0d0d] leading-relaxed">Handwoven in the Volta Region of Ghana, this authentic Kente cloth stole features vibrant geometric patterns symbolizing wealth and royalty. Made from 100% cotton, it is perfect for graduations, weddings, and cultural ceremonies.</textarea>
+</div>
+</label>
+</div>
+</div>
+<!-- Media Gallery Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center justify-between mb-6 pb-4 border-b border-[#f3f4f6]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">imagesmode</span>
+<h3 class="text-lg font-bold text-[#1b0d0d]">Product Media</h3>
+</div>
+<span class="text-xs font-medium text-[#6b7280]">Use high-quality JPEG or PNG images</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+<!-- Existing Image 1 -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Colorful Kente cloth fabric pattern closeup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM89nb-v5bRp7KmqN5J_m4tjVKwrFKAiIG1x7XdDOTv63L_rVTr8NRxwWuDIkdgxyJjZLGiehRpDMY8eLDA6XDedJ851rIzERtBPHMB5bXQ3ILotOfyyEDaq-hl30OswTlGraY6IyoNw3LEH0vqqzDFC8GCQ-M0eAoaArI_rowLPwhoAsirDISzSZs6_ptAIXcRYN0nL5_MA3KBbnQWKtgPI1GXFyUUaTbH5Q35Ts6K_JsOpTGUGPIbC9J3IYn2hNS6wTtodTIqmg");'></div>
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white text-primary p-1 rounded-full shadow-md hover:bg-red-50">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Existing Image 2 -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Man wearing Kente cloth stole" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZ_MusLxkFoQ6en0hxmE6yAdhn2b2k8JerMm92gBzItq6IlfOHmpJtytzvHDal-n4GnHtLCwgHJnrmCDByg5K5svH_S3yJse7xhmZAKwSzTu1FduilgR_iCba-pH0QgUXaqM6l_sLJQ5PkG6J6kt3pENt60kixJJlSceHn8ZHL98P6MMRuGP6YtW0VJQzhoAYxesJP6FsDqwQXxT5N9MkQdSgC-LarQzNCdwXo4XlHjAoxbd-MVyIOiwRnAfHJ2BQmbdTQs5IhFTs");'></div>
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white text-primary p-1 rounded-full shadow-md hover:bg-red-50">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Existing Image 3 -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-105" data-alt="Kente cloth folded on a table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD6p1Ol__a9kRG_oOxGE18ZLx4iWtWG3dgxlvpZQ3dlFyboIwRTmh6rcopx1F2eBDWCkPqDeEKnJHBF7JZcjLkdpg2_MFMC74XkXtWG2Oj7z0fZB5D8-obbDctB-CxFvLkSi7IJ_IyYB26TPFQSepNPeYAjBuxX1GYfPI7FU0_FGAYocYoiJ6IjQnCaCU-m0WbgZNXy-J4iN9jTnZBMiTvZ3BFOKdDgb4WLUE-Hhubm_xptsdcuv8USzANXIeoTbvOoOXDdY85k20");'></div>
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white text-primary p-1 rounded-full shadow-md hover:bg-red-50">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Upload Slot -->
+<label class="flex flex-col items-center justify-center aspect-square rounded-lg border-2 border-dashed border-[#d1d5db] bg-[#f9fafb] hover:bg-[#f3f4f6] hover:border-primary cursor-pointer transition-colors group">
+<div class="bg-white p-2 rounded-full shadow-sm mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">add_photo_alternate</span>
+</div>
+<span class="text-xs font-semibold text-[#6b7280] group-hover:text-primary">Add Photo</span>
+<input class="hidden" type="file"/>
+</label>
+</div>
+</div>
+<!-- Attributes Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center gap-2 mb-6 pb-4 border-b border-[#f3f4f6]">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h3 class="text-lg font-bold text-[#1b0d0d]">Attributes</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Brand</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-3 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-base" value="Volta Weavers"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Material</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-3 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-base" value="100% Cotton"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Weight (kg)</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-3 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-base" step="0.01" type="number" value="0.45"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Dimensions (cm)</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-3 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-base" value="180 x 12"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="flex flex-col gap-6">
+<!-- Status Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-base font-bold text-[#1b0d0d]">Status</h3>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                            Published
+                        </span>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-xs font-semibold text-[#6b7280] uppercase tracking-wider">Product Status</span>
+<select class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm cursor-pointer">
+<option selected="" value="published">Published</option>
+<option value="draft">Draft</option>
+<option value="archived">Archived</option>
+</select>
+</label>
+<div class="flex items-center justify-between pt-2">
+<span class="text-sm font-medium text-[#1b0d0d]">Online Store Visibility</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Pricing Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center gap-2 mb-4 pb-4 border-b border-[#f3f4f6]">
+<span class="material-symbols-outlined text-primary">payments</span>
+<h3 class="text-base font-bold text-[#1b0d0d]">Pricing</h3>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Regular Price (GHS)</span>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#6b7280] font-medium">₵</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] pl-10 pr-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm font-semibold" type="number" value="250.00"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Sale Price (GHS)</span>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#6b7280] font-medium">₵</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] pl-10 pr-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm font-semibold" placeholder="Optional" type="number" value=""/>
+</div>
+</label>
+</div>
+</div>
+<!-- Inventory Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center gap-2 mb-4 pb-4 border-b border-[#f3f4f6]">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<h3 class="text-base font-bold text-[#1b0d0d]">Inventory</h3>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">SKU</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm" value="KNT-001-YEL"/>
+</label>
+<div class="flex gap-4">
+<label class="flex flex-col gap-2 flex-1">
+<span class="text-[#1b0d0d] text-sm font-bold">Quantity</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm" type="number" value="15"/>
+</label>
+<label class="flex flex-col gap-2 flex-1">
+<span class="text-[#1b0d0d] text-sm font-bold">Low Stock Alert</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm" type="number" value="5"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Organization Card -->
+<div class="bg-white rounded-xl border border-[#e5e7eb] shadow-sm overflow-hidden p-6">
+<div class="flex items-center gap-2 mb-4 pb-4 border-b border-[#f3f4f6]">
+<span class="material-symbols-outlined text-primary">category</span>
+<h3 class="text-base font-bold text-[#1b0d0d]">Organization</h3>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Category</span>
+<select class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm cursor-pointer">
+<option value="clothing">Clothing &amp; Apparel</option>
+<option selected="" value="accessories">Accessories</option>
+<option value="home">Home Goods</option>
+</select>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-[#1b0d0d] text-sm font-bold">Tags</span>
+<input class="w-full rounded-lg border border-[#e5e7eb] bg-[#fcf8f8] px-4 py-2.5 text-[#1b0d0d] focus:border-primary focus:ring-1 focus:ring-primary text-sm placeholder:text-[#9ca3af]" placeholder="e.g. Handmade, Gift" value=""/>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="inline-flex items-center px-2 py-1 rounded bg-yellow-100 text-yellow-800 text-xs font-bold">
+                                    Kente
+                                    <button class="ml-1 hover:text-red-600"><span class="material-symbols-outlined text-[14px] align-middle">close</span></button>
+</span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-yellow-100 text-yellow-800 text-xs font-bold">
+                                    Traditional
+                                    <button class="ml-1 hover:text-red-600"><span class="material-symbols-outlined text-[14px] align-middle">close</span></button>
+</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-[#e5e7eb] flex items-center justify-between">
+<button class="text-sm font-bold text-[#6b7280] hover:text-primary flex items-center gap-2 px-2 py-2 rounded hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                Delete Product
+            </button>
+<div class="flex gap-4">
+<button class="text-sm font-bold text-[#1b0d0d] hover:bg-[#f3f4f6] px-4 py-2 rounded-lg transition-colors">
+                    Discard Changes
+                </button>
+<button class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white hover:bg-red-700 text-sm font-bold shadow-md shadow-red-200 transition-colors">
+                    Update Product
+                </button>
+</div>
+</div>
+</main>
+</body></html>

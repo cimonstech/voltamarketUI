@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller - Payout Settings</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c91010",
+                        "secondary-green": "#22c55e",
+                        "secondary-yellow": "#eab308",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1616",
+                        "border-light": "#f3e7e7",
+                        "border-dark": "#442a2a",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db; 
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #442a2a;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #5e3a3a;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased overflow-hidden selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full">
+<!-- Side Navigation -->
+<aside class="w-64 flex-shrink-0 flex flex-col border-r border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark transition-colors duration-200 hidden md:flex">
+<div class="p-6 pb-2">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0 border border-border-light dark:border-border-dark" data-alt="Voltamarket Logo abstract red shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJeeNDohwzgPYyBddcPpTnC-0BZHfK6Q3waKnIFj49NILvwY6HbSMdSNc5wvl3N7TeqDiwpAqNvMkylmz45DAdvRCnqXnADIixmKIWQFb17gERC4O5p87wi2VHLuvBvSfDl6stawHw4n1KCE8dzeYh76xJt7ueSoBCjfXZOMH07y-zT4Qp0qOK1T23D0dPcfX_T0fY1gfRkGVEdbwcLX7ScCTR4AUjeNTwOIwJYqv4XwvL9Ac6GDl-rpqhFtcgBUOG-biuBX0MKCw");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main dark:text-white text-base font-bold leading-normal">Voltamarket</h1>
+<p class="text-text-muted dark:text-red-300/70 text-sm font-normal leading-normal">Seller Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 p-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">inventory_2</span>
+<p class="text-sm font-medium">Products</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">shopping_cart</span>
+<p class="text-sm font-medium">Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">chat</span>
+<p class="text-sm font-medium">Messages</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">account_balance_wallet</span>
+<p class="text-sm font-medium">Earnings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">campaign</span>
+<p class="text-sm font-medium">Promotions</p>
+</a>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">bar_chart</span>
+<p class="text-sm font-medium">Product Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">room_service</span>
+<p class="text-sm font-medium">Service Analytics</p>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">diamond</span>
+<p class="text-sm font-medium">Premium Tools</p>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-red-50 dark:bg-primary/20 text-primary dark:text-red-400 min-h-[44px]" href="_payout_details_page.html">
+<span class="material-symbols-outlined fill-1">account_balance_wallet</span>
+<p class="text-sm font-bold">Payout Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary">help</span>
+<p class="text-sm font-medium">Help Center</p>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<p class="text-xs font-semibold text-text-muted mb-2 uppercase tracking-wider">Account Health</p>
+<div class="flex items-center gap-2 mb-1">
+<div class="h-2 flex-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-green w-[92%] rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-secondary-green">92%</span>
+</div>
+<p class="text-xs text-text-muted">Good standing</p>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-full relative overflow-hidden">
+<!-- Top Header -->
+<header class="h-16 flex items-center justify-between border-b border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark px-6 shrink-0 z-10">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 -ml-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-base sm:text-lg font-bold text-text-main dark:text-white">Payout Settings</h2>
+</div>
+<div class="flex items-center gap-4">
+<a href="seller_notifications_page.html" class="relative p-2 text-text-main dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-full transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border border-white dark:border-background-dark"></span>
+</a>
+<div class="h-8 w-[1px] bg-border-light dark:border-border-dark mx-1"></div>
+<a href="seller_profile_page.html" class="flex items-center gap-3 cursor-pointer group min-h-[44px]">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-border-light dark:border-border-dark group-hover:border-primary transition-colors" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1Oy610_rPErHQvZlAcvBparTfUt4IoCQzRuXaEIs-uQGDhfj_S5ATzbB-VD_dM8wwrrvv_lwVdPPpjEb024PEy4kErIwaQsHcDIycatvuOLlhHjjIIh9YH3Y2j4LC7AELW1heWojKFLzxLQuBA4srHjutjmiH32UiA-ECJ6gJ-9w1pLN7EjnhGm59FSfnG3OC6GyA6NQB9AgzzxOvD1aAPbBZKKa_7DVYakQjpzSvOM60fDEXCnPcWNSRrfoVXtVcHMKN0kLEPu4");'></div>
+<span class="text-sm font-semibold hidden sm:block group-hover:text-primary transition-colors">Kwame Enterprise</span>
+</a>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 lg:px-12 scroll-smooth">
+<div class="max-w-5xl mx-auto flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-text-main dark:text-white">Bank &amp; Payout Settings</h1>
+<p class="text-text-muted dark:text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl">Manage your bank accounts and mobile money wallets to receive your earnings securely.</p>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Forms (2/3 width on large screens) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Tabs -->
+<div class="border-b border-border-light dark:border-border-dark">
+<nav aria-label="Tabs" class="flex gap-8">
+<button class="group flex flex-col items-center pb-3 border-b-2 border-primary text-primary dark:text-primary">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[20px]">phone_iphone</span>
+<span class="font-bold text-sm tracking-wide">Mobile Money</span>
+</div>
+</button>
+<button class="group flex flex-col items-center pb-3 border-b-2 border-transparent text-text-muted dark:text-gray-500 hover:text-text-main dark:hover:text-gray-300 hover:border-gray-300 transition-all">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+<span class="font-bold text-sm tracking-wide">Bank Transfer</span>
+</div>
+</button>
+</nav>
+</div>
+<!-- Mobile Money Form Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<!-- Card Header with Image Background -->
+<div class="relative h-32 bg-gray-100 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract geometric red pattern background" style='background-image: linear-gradient(90deg, rgba(236,19,19,0.9) 0%, rgba(236,19,19,0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcKODQEUEfpwnU4epl8a9eroaaoiLf0HSO6Zbnu5GiKaQBzzvBObpgvHUm5RQFZzdFprylcqrHZRgd9YA456uOyIMym1tWGDGmKEahP-vDD97hymqwfQaPgGcKilXXmsZGLYKGmgzLB5kvQtQBD8ER-K2-Doq-8UytEvo1wscjKR7wJt_IbMr48SsZj01FE9yueHf0_eeQRwaPmNryHtp9D2Le9QlAaY0xocBnwU5l5V_hBujcsA5khjZlmSMfxxdCq5pyJJRlnYU");'></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end">
+<h3 class="text-white text-xl font-bold">Mobile Money Details</h3>
+<p class="text-white/90 text-sm">Recommended for fastest payouts in Ghana.</p>
+</div>
+</div>
+<form class="p-6 md:p-8 flex flex-col gap-6">
+<!-- Alert Box -->
+<div class="flex gap-3 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-secondary-yellow/30 rounded-lg">
+<span class="material-symbols-outlined text-secondary-yellow shrink-0">info</span>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-yellow-800 dark:text-yellow-500">Verification Required</p>
+<p class="text-sm text-yellow-700 dark:text-yellow-400/80">Ensure the registered name matches your Voltamarket seller profile name to avoid payout delays.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Provider Selection -->
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200" for="provider">Network Provider</label>
+<div class="relative">
+<select class="w-full rounded-lg border-gray-300 dark:border-border-dark bg-white dark:bg-[#361b1b] text-text-main dark:text-white py-2.5 pl-3 pr-10 focus:border-primary focus:ring-primary dark:focus:border-primary dark:focus:ring-primary shadow-sm sm:text-sm" id="provider" name="provider">
+<option>MTN Mobile Money</option>
+<option>Telecel Cash (Vodafone)</option>
+<option>AT Money (AirtelTigo)</option>
+</select>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200" for="phone">Mobile Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="text-gray-500 sm:text-sm">+233</span>
+</div>
+<input class="w-full rounded-lg border-gray-300 dark:border-border-dark bg-white dark:bg-[#361b1b] text-text-main dark:text-white py-2.5 pl-12 pr-3 focus:border-primary focus:ring-primary dark:focus:border-primary dark:focus:ring-primary shadow-sm sm:text-sm" id="phone" name="phone" placeholder="24 XXX XXXX" type="tel" value="24 456 7890"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<span class="material-symbols-outlined text-secondary-green text-[18px]">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Registered Name -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200" for="reg-name">Registered Name</label>
+<input class="w-full rounded-lg border-gray-300 dark:border-border-dark bg-white dark:bg-[#361b1b] text-text-main dark:text-white py-2.5 px-3 focus:border-primary focus:ring-primary dark:focus:border-primary dark:focus:ring-primary shadow-sm sm:text-sm" id="reg-name" name="reg-name" placeholder="e.g. Kwame Mensah" type="text" value="Kwame Mensah"/>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-4 flex items-center justify-between border-t border-border-light dark:border-border-dark mt-2">
+<button class="text-sm font-semibold text-text-muted hover:text-text-main dark:hover:text-white transition-colors" type="button">Cancel</button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-lg font-bold text-sm shadow-sm transition-all transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                                            Update Payout Method
+                                        </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Info & Status (1/3 width) -->
+<div class="flex flex-col gap-6">
+<!-- Current Status Card -->
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<h4 class="font-bold text-text-main dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                    Payout Status
+                                </h4>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center py-2 border-b border-border-light dark:border-border-dark border-dashed">
+<span class="text-sm text-text-muted dark:text-gray-400">Next Payout</span>
+<span class="text-sm font-bold text-text-main dark:text-white">Fri, 24 Nov</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-border-light dark:border-border-dark border-dashed">
+<span class="text-sm text-text-muted dark:text-gray-400">Balance</span>
+<span class="text-sm font-bold text-secondary-green">GHS 1,450.00</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-sm text-text-muted dark:text-gray-400">Method</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-green"></span>
+<span class="text-sm font-bold text-text-main dark:text-white">Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Information Card -->
+<div class="bg-red-50 dark:bg-[#2d1616] p-6 rounded-xl border border-red-100 dark:border-red-900/30">
+<h4 class="font-bold text-text-main dark:text-white mb-3 text-sm uppercase tracking-wide">Payout Rules</h4>
+<ul class="space-y-3">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">schedule</span>
+<p class="text-sm text-text-muted dark:text-gray-300 leading-snug">Payouts are processed automatically every <strong class="text-text-main dark:text-white">Friday</strong>.</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">payments</span>
+<p class="text-sm text-text-muted dark:text-gray-300 leading-snug">Minimum threshold for payout is <strong class="text-text-main dark:text-white">GHS 50.00</strong>.</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">lock</span>
+<p class="text-sm text-text-muted dark:text-gray-300 leading-snug">Your bank details are encrypted and stored securely.</p>
+</li>
+</ul>
+</div>
+<!-- Map / Location context (Visual Filler) -->
+<div class="rounded-xl overflow-hidden h-40 relative shadow-sm border border-border-light dark:border-border-dark group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Map of Accra Ghana with red location pin" data-location="Accra, Ghana" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvOS9ciDLntyHkoFyQE9MvmIZkC4ZUI6lnTMvBvdn8m1ewJyx7wovS5axlAriScXKyV7Wo74nEL1tYDnhUJiihAUxIQ_SNSuZsk9gGyZLI5x5KbuaZvNjCTC1ThKU3haz6TLAoIoprqy1Xa2VYrEffxPQ6KyIQ7_rmTaoI_Lawy1MEA5wVqch65WmHxAYJ-4awVpKcmeS1GTSwLldEQZx_g4oVsX_k7AHQshyYc5xvRb09lZyNZfbkFGnSID9cChm7Ap_aI9Gabf0");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+<p class="text-white text-xs font-medium opacity-80">Operating Region</p>
+<p class="text-white font-bold">Greater Accra</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacer -->
+<div class="h-20"></div>
+</main>
+</div>
+</div>
+</body></html>

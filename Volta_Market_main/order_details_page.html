@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Details - Voltamarket</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1c0d0d] antialiased">
+<div class="flex min-h-screen w-full flex-col">
+<!-- Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e5e7eb] bg-white px-4 py-3 md:px-10 sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-4 md:gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">bolt</span>
+</div>
+<h2 class="text-[#1c0d0d] text-xl font-bold leading-tight tracking-[-0.015em]">Voltamarket</h2>
+</div>
+<!-- Desktop Search -->
+<div class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#f4f4f5]">
+<div class="text-[#6b7280] flex border-none items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1c0d0d] focus:outline-0 focus:ring-0 border-none bg-transparent focus:border-none h-full placeholder:text-[#9ca3af] px-3 rounded-l-none border-l-0 text-sm font-normal leading-normal" placeholder="Search products..."/>
+</div>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-[#1c0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-[#1c0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Marketplace</a>
+<a class="text-[#1c0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Categories</a>
+<a class="text-[#1c0d0d] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Sellers</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-full size-10 hover:bg-gray-100 transition-colors relative">
+<span class="material-symbols-outlined text-[#1c0d0d]" style="font-size: 24px;">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-10 hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[#1c0d0d]" style="font-size: 24px;">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-10 bg-gray-100 hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[#1c0d0d]" style="font-size: 24px;">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-10">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 mb-6 text-sm">
+<a class="text-gray-500 hover:text-primary font-medium" href="#">Home</a>
+<span class="text-gray-400">/</span>
+<a class="text-gray-500 hover:text-primary font-medium" href="#">Account</a>
+<span class="text-gray-400">/</span>
+<a class="text-gray-500 hover:text-primary font-medium" href="#">Orders</a>
+<span class="text-gray-400">/</span>
+<span class="text-[#1c0d0d] font-semibold">Order #VM-8492</span>
+</div>
+<!-- Page Heading & Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-[#1c0d0d] text-3xl md:text-4xl font-extrabold tracking-tight">Order Details</h1>
+<div class="flex items-center gap-3 text-sm md:text-base text-gray-500">
+<span class="font-medium text-[#1c0d0d]">#VM-8492</span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+<span>Placed on Oct 24, 2023</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 h-10 px-4 bg-white border border-gray-200 rounded-lg text-[#1c0d0d] text-sm font-bold hover:bg-gray-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-gray-600" style="font-size: 20px;">receipt</span>
+<span>Invoice</span>
+</button>
+<button class="flex items-center gap-2 h-10 px-4 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors shadow-sm shadow-primary/30">
+<span class="material-symbols-outlined" style="font-size: 20px;">local_shipping</span>
+<span>Track Order</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Items & Details -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Timeline Card -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+<h3 class="font-bold text-lg text-[#1c0d0d]">Order Status</h3>
+</div>
+<div class="p-6">
+<!-- Responsive Timeline -->
+<div class="relative">
+<!-- Mobile Vertical Timeline (hidden on large) -->
+<div class="md:hidden space-y-8 pl-4 border-l-2 border-gray-100">
+<div class="relative pl-6">
+<div class="absolute -left-[21px] top-0 bg-primary rounded-full p-1 text-white">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<p class="font-bold text-sm">Order Placed</p>
+<p class="text-xs text-gray-500">Oct 24, 10:00 AM</p>
+</div>
+<div class="relative pl-6">
+<div class="absolute -left-[21px] top-0 bg-primary rounded-full p-1 text-white">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<p class="font-bold text-sm">Confirmed</p>
+<p class="text-xs text-gray-500">Oct 24, 02:30 PM</p>
+</div>
+<div class="relative pl-6">
+<div class="absolute -left-[21px] top-0 bg-primary rounded-full p-1 text-white">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</div>
+<p class="font-bold text-sm text-primary">Shipped</p>
+<p class="text-xs text-gray-500">Oct 25, 09:00 AM</p>
+</div>
+<div class="relative pl-6 opacity-50">
+<div class="absolute -left-[21px] top-0 bg-gray-200 rounded-full p-1 text-gray-500">
+<span class="material-symbols-outlined text-[14px]">package_2</span>
+</div>
+<p class="font-bold text-sm">Delivered</p>
+<p class="text-xs text-gray-500">Expected Oct 27</p>
+</div>
+</div>
+<!-- Desktop Horizontal Timeline -->
+<div class="hidden md:flex justify-between items-start w-full relative">
+<div class="absolute top-[14px] left-0 w-full h-0.5 bg-gray-100 -z-0">
+<div class="h-full bg-primary w-2/3"></div> <!-- Progress bar -->
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="text-center">
+<p class="font-bold text-sm">Order Placed</p>
+<p class="text-xs text-gray-500">Oct 24, 10:00 AM</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="text-center">
+<p class="font-bold text-sm">Confirmed</p>
+<p class="text-xs text-gray-500">Oct 24, 02:30 PM</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div class="text-center">
+<p class="font-bold text-sm text-primary">Shipped</p>
+<p class="text-xs text-gray-500">Oct 25, 09:00 AM</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-1/4">
+<div class="size-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center ring-4 ring-white border-2 border-white">
+<span class="material-symbols-outlined text-[18px]">package_2</span>
+</div>
+<div class="text-center opacity-60">
+<p class="font-bold text-sm">Delivered</p>
+<p class="text-xs text-gray-500">Expected Oct 27</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Items List -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
+<h3 class="font-bold text-lg text-[#1c0d0d]">Items in your order</h3>
+<span class="text-sm text-gray-500 font-medium">3 Items</span>
+</div>
+<div class="divide-y divide-gray-100">
+<!-- Item 1 -->
+<div class="p-6 flex flex-col sm:flex-row gap-4">
+<div class="w-full sm:w-24 h-24 bg-gray-100 rounded-lg shrink-0 overflow-hidden relative group">
+<div class="w-full h-full bg-gradient-to-tr from-orange-100 to-orange-50 bg-cover bg-center" data-alt="Patterned Kente cloth fabric folded nicely" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqQjOXqC3kx70dZpoQRUtAzfEIZ6rdwSROdDeFd1Wi8lb6eVgCmnM2AvfnupnXuzKZVUg-Pr1Q8VF_2hmN31bmAKUFmfZY4B9P1UlGsMonT5x4OwvEtbX5Lw7LSC4ZntTSH7ozUlOh9FW2EEsEtycn0sL5oYHiSlSttFvOUiQsGlCEKQ0kUbFS1IG7VAJI-RdoLs8WHwlrFBA8JpiZh06XFzakK1_bjjP2TR7iY4Q3_YwYk8btMqHPnOuiVZMz7AyuoNRfywIH4gs');"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-[#1c0d0d] text-lg">Kente Cloth Stole (Volta Weave)</h4>
+<p class="text-sm text-gray-500 mt-1">Variant: Gold/Green • Size: Standard</p>
+</div>
+<p class="font-bold text-lg whitespace-nowrap">GHS 150.00</p>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="text-sm font-medium bg-gray-100 px-3 py-1 rounded text-gray-600">Qty: 2</div>
+<a class="text-primary text-sm font-bold hover:underline" href="product_details_page.html">Write a Review</a>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-6 flex flex-col sm:flex-row gap-4">
+<div class="w-full sm:w-24 h-24 bg-gray-100 rounded-lg shrink-0 overflow-hidden relative">
+<div class="w-full h-full bg-gradient-to-tr from-amber-100 to-amber-50 bg-cover bg-center" data-alt="Sack of brown rice grain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQVvfku1BOBkFJkEZk6bnOTffixe78b474M8IOEqkuSuvHLcs2CaYAKlIoQT1FnQTuIw8nRykywsxTwNefqJF0rQBApvi6t_-Pxp7J9IkBMokgZgB08lwOPw35K4QvIa6_J9I1LKOO99Wdh3vavBY3TV52ZJ7AwSnUGUxoNCZY8_3WR13fz1c2kEgdmSpWNwwBmEuz9Hld4eLHfgFfC6YfzmbfdjuMLH_TA2FU5AFY-vVQzJHPmE2wBbmiHvUGIVTD9mXYWR8La0');"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-[#1c0d0d] text-lg">Local Brown Rice (5kg)</h4>
+<p class="text-sm text-gray-500 mt-1">Origin: Hohoe Farms</p>
+</div>
+<p class="font-bold text-lg whitespace-nowrap">GHS 85.00</p>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="text-sm font-medium bg-gray-100 px-3 py-1 rounded text-gray-600">Qty: 1</div>
+<a class="text-primary text-sm font-bold hover:underline" href="product_details_page.html">Write a Review</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery & Payment Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Shipping Address -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col h-full">
+<div class="flex items-center gap-2 mb-4 text-gray-800">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h4 class="font-bold text-lg">Shipping Address</h4>
+</div>
+<div class="flex-1 text-sm leading-relaxed text-gray-600">
+<p class="font-bold text-[#1c0d0d] text-base mb-1">Kwame Mensah</p>
+<p>House No 45, Hohoe Road</p>
+<p>Near Central Market</p>
+<p>Ho, Volta Region</p>
+<p>Ghana</p>
+<p class="mt-2 text-[#1c0d0d] font-medium">+233 24 456 7890</p>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col h-full">
+<div class="flex items-center gap-2 mb-4 text-gray-800">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<h4 class="font-bold text-lg">Payment Method</h4>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-12 h-8 bg-yellow-400 rounded flex items-center justify-center font-bold text-xs text-black tracking-tighter" data-alt="MTN Mobile Money Logo placeholder">MoMo</div>
+<span class="font-medium text-[#1c0d0d]">MTN Mobile Money</span>
+</div>
+<p class="text-sm text-gray-500">Transaction ID: #MOMO-8829302</p>
+<p class="text-sm text-gray-500">Phone: •••• •••• 889</p>
+<div class="mt-4 inline-flex items-center gap-1 px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    Paid Successfully
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Order Summary Box -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden sticky top-24">
+<div class="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+<h3 class="font-bold text-lg text-[#1c0d0d]">Order Summary</h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between text-gray-600 text-sm">
+<span>Subtotal (3 items)</span>
+<span class="font-medium text-[#1c0d0d]">GHS 385.00</span>
+</div>
+<div class="flex justify-between text-gray-600 text-sm">
+<span>Shipping Fee</span>
+<span class="font-medium text-[#1c0d0d]">GHS 20.00</span>
+</div>
+<div class="flex justify-between text-gray-600 text-sm">
+<span>Tax (VAT)</span>
+<span class="font-medium text-[#1c0d0d]">-</span>
+</div>
+<div class="h-px bg-gray-100 my-2"></div>
+<div class="flex justify-between items-center">
+<span class="font-bold text-lg text-[#1c0d0d]">Total</span>
+<span class="font-extrabold text-xl text-primary">GHS 405.00</span>
+</div>
+</div>
+<div class="p-4 bg-gray-50 border-t border-gray-100">
+<a href="all_products_page.html" class="w-full flex items-center justify-center gap-2 h-12 bg-white border border-gray-200 text-[#1c0d0d] font-bold rounded-lg hover:bg-gray-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                                Reorder Items
+                            </a>
+</div>
+</div>
+<!-- Help Card -->
+<div class="bg-primary/5 rounded-xl border border-primary/10 p-6 text-center">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm text-primary">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<h4 class="font-bold text-[#1c0d0d] mb-1">Need help with your order?</h4>
+<p class="text-sm text-gray-500 mb-4">Contact our customer support team for any issues regarding this order.</p>
+<a href="contact_us_page.html" class="text-primary text-sm font-bold hover:underline">Contact Support</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

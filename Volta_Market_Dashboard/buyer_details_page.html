@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Buyer Details - Voltamarket Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec1313",
+              "primary-hover": "#c91010",
+              "background-light": "#fcf8f8",
+              "background-dark": "#221010",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2d1b1b",
+              "text-main": "#1b0d0d",
+              "text-secondary": "#9a4c4c",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 overflow-hidden h-screen flex">
+<!-- Sidebar -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<aside class="flex w-64 flex-col bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 h-full hidden md:flex shrink-0 z-20">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined icon-filled">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-primary text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_dashboard_overview.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Listings (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="listings-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Listings</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="listings-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_products_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">All Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_services_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">All Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="pending_approval_listings_page_1.html">
+<span class="material-symbols-outlined text-base">pending</span>
+<span class="text-xs font-normal">Pending Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="approved_listings_page_1.html">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-normal">Approved Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="rejected_listings_page_1.html">
+<span class="material-symbols-outlined text-base">cancel</span>
+<span class="text-xs font-normal">Rejected Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Orders -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_orders_page.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+
+<!-- Deliveries (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="deliveries-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="deliveries-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_management_page.html">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span class="text-xs font-normal">Delivery Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_&_logistics_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Delivery Settings</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Users (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="users-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="users-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_buyers_page.html">
+<span class="material-symbols-outlined text-base">person</span>
+<span class="text-xs font-normal">Buyers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_sellers_page.html">
+<span class="material-symbols-outlined text-base">store</span>
+<span class="text-xs font-normal">Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="featured_sellers_page.html">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-normal">Featured Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_staff.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">Admin Staff</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Payments (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="payments-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="payments-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payments_overview_page.html">
+<span class="material-symbols-outlined text-base">overview</span>
+<span class="text-xs font-normal">Payment Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="transaction_history_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">All Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="refunds_management_page.html">
+<span class="material-symbols-outlined text-base">undo</span>
+<span class="text-xs font-normal">Refunds Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payment_gateway_settings_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Payment Gateway Settings</span>
+</a>
+</div>
+</div>
+
+<!-- Seller Payouts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="seller_payouts_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Seller Payouts</span>
+</a>
+
+<!-- Marketing (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="marketing-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Marketing</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="marketing-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="promotions_dashboard_page.html">
+<span class="material-symbols-outlined text-base">campaign</span>
+<span class="text-xs font-normal">Promotions Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="marketing_performance_reports_page.html">
+<span class="material-symbols-outlined text-base">analytics</span>
+<span class="text-xs font-normal">Marketing Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="premium_listings_management_page.html">
+<span class="material-symbols-outlined text-base">diamond</span>
+<span class="text-xs font-normal">Premium Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Categories (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="categories-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium">Categories</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="categories-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="product_categories_management_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">Product Categories</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="service_categories_management_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Service Categories</span>
+</a>
+</div>
+</div>
+
+<!-- Analytics (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="reports-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="reports-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="sales_analytics_page.html">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span class="text-xs font-normal">Sales Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="services_analytics_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Services Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="revenue_reports_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Revenue Reports</span>
+</a>
+</div>
+</div>
+
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_notifications_page.html">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+
+<!-- System (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="system-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">System</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="system-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="general_platform_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Platform Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="user_roles_&_permissions_page.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">User Roles & Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="homepage_slider_management_page.html">
+<span class="material-symbols-outlined text-base">slideshow</span>
+<span class="text-xs font-normal">Homepage Slider</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="maintenance_mode_page.html">
+<span class="material-symbols-outlined text-base">build</span>
+<span class="text-xs font-normal">Maintenance Mode</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="audit_logs_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">Audit Logs</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Admin Profile -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_details_page.html">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Admin Profile</span>
+</a>
+
+<!-- Static Pages -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="static_pages_management_page.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Static Pages</span>
+</a>
+</nav>
+
+<!-- User Profile Snippet (Bottom Sidebar) -->
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-9 rounded-full bg-cover bg-center border border-gray-200" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhPOYlVjwG0s3IRquwXxTv_-iwmgq87HCCXTDFl5U-y81ySIqxn2OxtVw1WfQHgUiu6tNIv6VVCanNHxm8VuystM4q645TMI_CTRNfLg5qr-L-d_RAcxOqGgeV5zon_yPXFsq9Z2H_t8QHVCQo6BhJsw0nVgOvjHF1qWbLPVncDDYJaccGy4ds8Cu-NBOBEwj1NTnKhAvr0pS763_73V7igx7whT4aDTtjEXEmgEf04IbZ3HPFE2TO6ZevG4wZcN-RGjbFxx41T88");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main dark:text-white">Kwame D.</p>
+<p class="text-xs text-text-muted">Super Admin</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors" onclick="window.location.href='admin_login_page.html'">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+Log Out
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f3e7e7] dark:border-[#4a2e2e] bg-surface-light dark:bg-surface-dark px-8 py-4 shrink-0 z-10">
+<div class="flex items-center gap-4">
+<!-- Breadcrumbs implemented directly here for better flow -->
+<nav class="flex items-center text-sm text-text-secondary dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-base mx-1">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Buyers</a>
+<span class="material-symbols-outlined text-base mx-1">chevron_right</span>
+<span class="text-text-main dark:text-white font-medium">Kwame Mensah</span>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<!-- Search Bar -->
+<div class="relative w-full max-w-md hidden md:block">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-secondary">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none rounded-lg bg-[#f3e7e7] dark:bg-[#3a2525] text-text-main dark:text-white placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/50 sm:text-sm transition-shadow" placeholder="Search orders, customers, products..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative p-2 rounded-full hover:bg-[#f3e7e7] dark:hover:bg-[#3a2525] text-text-main dark:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 block h-2 w-2 rounded-full bg-primary ring-2 ring-white dark:ring-[#2d1b1b]"></span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border-2 border-white dark:border-[#2d1b1b] shadow-sm" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDhUKCZU9BafWhTwzGi4SV27nrg_A45D9yyHo6yHvgXFOKlVae4uP1WY70J4f7Rr0RlQCk4SToXfBf29Fozw1IWCklo2GwQmkq-lSVqHiCQ2VD-zupfhwWoQJQcebybpFpLGmfSEMvMVxXi1evXtE21XdiIb2CGmHxtETrIkZL-6yGQ0GjpSF5vdI4PTHkIBsaU0TRhbHXRsTysxYksiJ5oiICK5B3G2CkCPSIrUZRDRlMMTx8_vKDVh4xWtRJkNPq_dM27SMoOWE");'></div>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h1 class="text-3xl lg:text-4xl font-extrabold text-text-main dark:text-white tracking-tight">Kwame Mensah</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold uppercase tracking-wider border border-green-200 dark:border-green-800">Active</span>
+</div>
+<p class="text-text-secondary dark:text-gray-400 font-medium flex items-center gap-2">
+<span>Buyer ID: #VM-89201</span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+<span>Joined Oct 12, 2023</span>
+</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#4a2e2e] bg-surface-light dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-[#3a1d1d] font-bold text-sm transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                            Edit Profile
+                        </button>
+<button class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all shadow-md shadow-red-200 dark:shadow-none">
+<span class="material-symbols-outlined text-[20px]">block</span>
+                            Suspend Account
+                        </button>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Profile Card & Notes -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Profile Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#4a2e2e] overflow-hidden">
+<div class="h-24 bg-gradient-to-r from-red-50 to-orange-50 dark:from-[#3a1d1d] dark:to-[#4a2e2e]"></div>
+<div class="px-6 pb-6 relative">
+<div class="absolute -top-12 left-6">
+<div class="size-24 rounded-xl border-4 border-white dark:border-surface-dark bg-cover bg-center shadow-md" data-alt="Buyer portrait Kwame Mensah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYbGj6RSDg1fzkcjmO9NZrhFJq2cZ9EDjhQTx_oZ1WDG4uURvdUxqSkrWMZZYcBvmNIn11YvHnDwMoFVewAE9F_EOnKqN1orp5hIsmglSqAfbVGJf7_9fbhdSOnvzzw_3A_NvL9OpiueqvnPNA5gXtXRMp6wNyq0Yie7alJS79xI01RdeCLIT343rEH_EvhoaNZFghZigUGcKWBn8DB8ueSg7yDHL1VoVwsvAdCEonj5MlbPXxYfUZmXhyf9isO2tt4a_HUOx120k");'></div>
+</div>
+<div class="mt-14 flex flex-col gap-4">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<div class="size-8 rounded-full bg-[#fef2f2] dark:bg-[#3a1d1d] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+</div>
+<span class="text-sm font-medium truncate">kwame.mensah@example.com</span>
+</div>
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<div class="size-8 rounded-full bg-[#fef2f2] dark:bg-[#3a1d1d] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">call</span>
+</div>
+<span class="text-sm font-medium">+233 24 123 4567</span>
+</div>
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<div class="size-8 rounded-full bg-[#fef2f2] dark:bg-[#3a1d1d] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+</div>
+<span class="text-sm font-medium">Accra, Greater Accra Region</span>
+</div>
+</div>
+<div class="h-px w-full bg-[#f3e7e7] dark:bg-[#4a2e2e]"></div>
+<div class="flex justify-between items-center py-1">
+<span class="text-sm text-text-secondary dark:text-gray-400">Language</span>
+<span class="text-sm font-bold text-text-main dark:text-white">English (UK)</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-sm text-text-secondary dark:text-gray-400">Notifications</span>
+<span class="text-sm font-bold text-primary">Enabled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Admin Notes -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#4a2e2e] p-6 flex flex-col h-full">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Admin Notes</h3>
+<button class="text-primary hover:text-primary-hover text-sm font-bold">Add Note</button>
+</div>
+<div class="flex-1 space-y-4">
+<div class="bg-[#fcf8f8] dark:bg-[#221010] p-3 rounded-lg border border-[#f3e7e7] dark:border-[#3a2525]">
+<p class="text-sm text-text-main dark:text-gray-300 leading-relaxed mb-2">Customer requested special packaging for fragile items on last 2 orders.</p>
+<div class="flex items-center gap-2 text-xs text-text-secondary dark:text-gray-500">
+<span class="font-bold">Admin A.</span>
+<span>•</span>
+<span>2 days ago</span>
+</div>
+</div>
+<div class="bg-[#fcf8f8] dark:bg-[#221010] p-3 rounded-lg border border-[#f3e7e7] dark:border-[#3a2525]">
+<p class="text-sm text-text-main dark:text-gray-300 leading-relaxed mb-2">Verified phone number manually after failed OTP attempt.</p>
+<div class="flex items-center gap-2 text-xs text-text-secondary dark:text-gray-500">
+<span class="font-bold">System</span>
+<span>•</span>
+<span>Oct 12, 2023</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Stats & Data Tables -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#f3e7e7] dark:border-[#4a2e2e] shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-400 mb-1">Total Spend</p>
+<h3 class="text-2xl font-extrabold text-text-main dark:text-white">GHS 4,520</h3>
+</div>
+<div class="p-2 bg-green-50 dark:bg-green-900/20 text-green-600 rounded-lg">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#f3e7e7] dark:border-[#4a2e2e] shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-400 mb-1">Total Orders</p>
+<h3 class="text-2xl font-extrabold text-text-main dark:text-white">12</h3>
+</div>
+<div class="p-2 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 rounded-lg">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-[#f3e7e7] dark:border-[#4a2e2e] shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-400 mb-1">Last Login</p>
+<h3 class="text-2xl font-extrabold text-text-main dark:text-white">2h ago</h3>
+</div>
+<div class="p-2 bg-red-50 dark:bg-red-900/20 text-primary rounded-lg">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+</div>
+</div>
+<!-- Orders Table Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#4a2e2e] flex flex-col overflow-hidden">
+<div class="p-5 border-b border-[#f3e7e7] dark:border-[#4a2e2e] flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Order History</h3>
+<div class="hidden sm:flex bg-[#f3e7e7] dark:bg-[#3a2525] rounded-lg p-1">
+<button class="px-3 py-1 bg-white dark:bg-surface-dark text-text-main dark:text-white text-xs font-bold rounded shadow-sm">All</button>
+<button class="px-3 py-1 text-text-secondary dark:text-gray-400 hover:text-text-main dark:hover:text-white text-xs font-medium rounded transition-colors">Pending</button>
+<button class="px-3 py-1 text-text-secondary dark:text-gray-400 hover:text-text-main dark:hover:text-white text-xs font-medium rounded transition-colors">Completed</button>
+</div>
+</div>
+<button class="text-primary hover:text-primary-hover text-sm font-bold flex items-center gap-1">
+                                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-[#fcf8f8] dark:bg-[#221010] text-text-secondary dark:text-gray-400 text-xs uppercase font-bold tracking-wider">
+<tr>
+<th class="px-6 py-4">Order ID</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f3e7e7] dark:divide-[#3a2525] text-sm text-text-main dark:text-gray-200">
+<tr class="hover:bg-red-50/30 dark:hover:bg-[#3a1d1d] transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">#ORD-2023-012</td>
+<td class="px-6 py-4">Oct 24, 2023</td>
+<td class="px-6 py-4 font-medium">GHS 350.00</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+<span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Processing
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-red-50/30 dark:hover:bg-[#3a1d1d] transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">#ORD-2023-009</td>
+<td class="px-6 py-4">Oct 15, 2023</td>
+<td class="px-6 py-4 font-medium">GHS 120.50</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Delivered
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-red-50/30 dark:hover:bg-[#3a1d1d] transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">#ORD-2023-005</td>
+<td class="px-6 py-4">Sep 28, 2023</td>
+<td class="px-6 py-4 font-medium">GHS 85.00</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Delivered
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+<tr class="hover:bg-red-50/30 dark:hover:bg-[#3a1d1d] transition-colors group">
+<td class="px-6 py-4 font-bold text-primary">#ORD-2023-001</td>
+<td class="px-6 py-4">Sep 01, 2023</td>
+<td class="px-6 py-4 font-medium">GHS 1,200.00</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Cancelled
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-gray-400 hover:text-primary transition-colors p-1"><span class="material-symbols-outlined">visibility</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Address & Payment Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Address Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#4a2e2e] p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary">home_pin</span>
+                                        Primary Address
+                                    </h3>
+<button class="text-text-secondary dark:text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="p-4 rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a2525]">
+<p class="font-bold text-text-main dark:text-white mb-1">Kwame Mensah</p>
+<p class="text-sm text-text-secondary dark:text-gray-400 leading-relaxed">
+                                        Hse No. 45, Independence Avenue<br/>
+                                        Near National Theatre<br/>
+                                        Accra, Ghana
+                                    </p>
+<div class="mt-3 pt-3 border-t border-[#f3e7e7] dark:border-[#3a2525] flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-wide">Shipping</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-gray-700 uppercase tracking-wide">Billing</span>
+</div>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#4a2e2e] p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary">credit_card</span>
+                                        Saved Cards
+                                    </h3>
+<button class="text-text-secondary dark:text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a2525]">
+<div class="flex items-center gap-3">
+<div class="bg-white dark:bg-white p-1 rounded border border-gray-200 w-10 h-6 flex items-center justify-center">
+<!-- Simple Visa visual representation -->
+<div class="text-[8px] font-black text-blue-800 italic">VISA</div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">•••• 4242</span>
+<span class="text-xs text-text-secondary dark:text-gray-500">Expires 12/25</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-green-500 text-base">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a2525]">
+<div class="flex items-center gap-3">
+<div class="bg-white dark:bg-white p-1 rounded border border-gray-200 w-10 h-6 flex items-center justify-center">
+<div class="flex -space-x-1">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500 opacity-80"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">•••• 8890</span>
+<span class="text-xs text-text-secondary dark:text-gray-500">Expires 09/24</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Collapsible Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggles = document.querySelectorAll('.sidebar-menu-toggle');
+    const currentPath = window.location.pathname.split('/').pop() || window.location.href.split('/').pop();
+    
+    // Function to toggle menu
+    function toggleMenu(button, menu, chevron) {
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other menus (optional: remove this if you want multiple menus open)
+        document.querySelectorAll('[id$="-menu"]').forEach(m => {
+            if (m.id !== menu.id) {
+                m.classList.add('hidden');
+                const otherButton = document.querySelector(`[data-target="${m.id}"]`);
+                const otherChevron = otherButton?.querySelector('.sidebar-chevron');
+                if (otherChevron) {
+                    otherChevron.style.transform = 'rotate(0deg)';
+                }
+                // Reset other button styles
+                if (otherButton && !otherButton.classList.contains('active-menu-item')) {
+                    otherButton.classList.remove('bg-primary/10', 'text-primary');
+                    otherButton.classList.add('text-text-muted');
+                }
+            }
+        });
+        
+        // Toggle current menu
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            menu.classList.add('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+    
+    // Add click handlers
+    menuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const targetId = this.getAttribute('data-target');
+            const menu = document.getElementById(targetId);
+            const chevron = this.querySelector('.sidebar-chevron');
+            
+            if (menu) {
+                toggleMenu(this, menu, chevron);
+            }
+        });
+    });
+    
+    // Auto-expand menu if current page is in a submenu
+    const allSubmenuLinks = document.querySelectorAll('[id$="-menu"] a');
+    let activeSubmenuFound = false;
+    
+    allSubmenuLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+            activeSubmenuFound = true;
+            const menu = link.closest('[id$="-menu"]');
+            const menuId = menu?.id;
+            if (menuId) {
+                // Expand the parent menu
+                menu.classList.remove('hidden');
+                const button = document.querySelector(`[data-target="${menuId}"]`);
+                const chevron = button?.querySelector('.sidebar-chevron');
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+                // Highlight parent button
+                if (button) {
+                    button.classList.add('bg-primary/10', 'text-primary');
+                    button.classList.remove('text-text-muted');
+                    button.classList.add('active-menu-item');
+                }
+                // Highlight active submenu item
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        }
+    });
+    
+    // Highlight active main menu item (if no submenu is active)
+    if (!activeSubmenuFound) {
+        const mainMenuLinks = document.querySelectorAll('nav > a[href]');
+        mainMenuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        });
+    }
+});
+</script>
+</body></html>

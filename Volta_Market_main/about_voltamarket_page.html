@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Voltamarket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#DC2626", // Strong Red
+              "primary-dark": "#B91C1C", // Darker Red for hover
+              "brand-yellow": "#CA8A04", // Readable Yellow/Gold
+              "brand-green": "#15803D", // Strong Green
+              "background-light": "#FAFAFA",
+              "background-dark": "#171717",
+              "surface-light": "#ffffff",
+              "surface-dark": "#262626",
+              "neutral-100": "#f5f5f5", // Pure neutral grey (no red/blue tint)
+              "neutral-200": "#e5e5e5",
+              "neutral-800": "#171717",
+              "neutral-600": "#525252", // Changed from reddish-grey to Dark Grey for readability
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-neutral-800 dark:text-neutral-100 font-display">
+<header class="sticky top-0 z-50 w-full border-b border-neutral-100 bg-background-light/95 backdrop-blur dark:bg-background-dark/95 dark:border-neutral-800">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3" href="voltamarket_home_page.html">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-neutral-800 dark:text-white">Voltamarket</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-neutral-800 hover:text-primary dark:text-neutral-200 dark:hover:text-primary" href="voltamarket_home_page.html">Home</a>
+<a class="text-sm font-medium text-neutral-800 hover:text-primary dark:text-neutral-200 dark:hover:text-primary" href="voltamarket_home_page.html">Marketplace</a>
+<a class="text-sm font-bold text-primary" href="about_voltamarket_page.html">About Us</a>
+<a class="text-sm font-medium text-neutral-800 hover:text-primary dark:text-neutral-200 dark:hover:text-primary" href="contact_us_page.html">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative w-64">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-neutral-600">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="w-full rounded-lg border-none bg-neutral-100 py-2 pl-10 pr-4 text-sm text-neutral-800 placeholder-neutral-600 focus:ring-2 focus:ring-primary dark:bg-surface-dark dark:text-white" placeholder="Search products..." type="text" onkeypress="if(event.key==='Enter') window.location.href='search_results_page.html';"/>
+</div>
+<a href="sign_up_page.html" class="flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
+                    Join Now
+                </a>
+</div>
+</div>
+</header>
+<section class="relative">
+<div class="absolute inset-0 bg-neutral-900/40"></div>
+<div class="relative h-[60vh] min-h-[500px] w-full bg-cover bg-center" data-alt="Ghanaian marketplace with vibrant colors and busy traders" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2nV7SygfcVU21-msZ4kSTvJ8JP5PNirYCagoUZpqbD7BbK2LDgqCAFTx9sgHfJv729roohNFV9M7MLGJIXXjscSBXVUuNae-OJ2_hjMQJrkkKXEqocAixIBvavSLQJSsuZmkgiWK2bDwK-7b0p23sqw0ILp3H7AOKT7zc3z5Ky2xACTzlRTtoqzS8qudxB5YbSaUcPuF7E4tJNlNQ_Kl-568q7LDFhJ0fr3xJTAe6CuXJUAZdhrSTygQLn1K-2LrS31GDqN4vu5k");'>
+<div class="mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
+<div class="max-w-2xl">
+<h1 class="mb-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+                        Connecting the Volta &amp; Oti Regions to the World
+                    </h1>
+<p class="mb-8 text-lg font-medium text-neutral-100 sm:text-xl">
+                        The premier digital marketplace bridging the gap between local producers and global buyers, celebrating the heart of Ghana.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a href="all_products_page.html" class="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white transition-transform hover:scale-105 shadow-lg shadow-red-900/20">
+                            Start Shopping
+                        </a>
+<a href="sign_up_page.html" class="rounded-lg border-2 border-primary bg-transparent backdrop-blur-sm px-6 py-3 text-base font-bold text-white transition-colors hover:bg-primary hover:text-white">
+                            Become a Seller
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="mb-12">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Who We Are</span>
+<h2 class="mt-2 max-w-3xl text-3xl font-bold text-neutral-800 dark:text-white sm:text-4xl">
+                    Dedicated to transforming commerce in the region through technology and community.
+                </h2>
+</div>
+<div class="grid gap-8 md:grid-cols-2">
+<div class="group relative overflow-hidden rounded-xl bg-white p-8 shadow-sm transition-all hover:shadow-md dark:bg-surface-dark border border-neutral-100 dark:border-neutral-800">
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h3 class="mb-3 text-2xl font-bold text-neutral-800 dark:text-white">Our Mission</h3>
+<p class="text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+                        To empower local merchants with digital tools and broader reach, enabling them to thrive in a competitive modern economy while preserving their unique cultural identity.
+                    </p>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-white p-8 shadow-sm transition-all hover:shadow-md dark:bg-surface-dark border border-neutral-100 dark:border-neutral-800">
+<div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
+<span class="material-symbols-outlined text-3xl">visibility</span>
+</div>
+<h3 class="mb-3 text-2xl font-bold text-neutral-800 dark:text-white">Our Vision</h3>
+<p class="text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+                        To become the heartbeat of commerce in Ghana, creating a seamless ecosystem where distance is no longer a barrier to trade and prosperity.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-neutral-100 dark:bg-surface-dark/50 border-y border-neutral-200 dark:border-neutral-800">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="mb-16 text-center">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Our Principles</span>
+<h2 class="mt-2 text-3xl font-bold text-neutral-800 dark:text-white sm:text-4xl">Our Core Values</h2>
+<p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">The guiding lights behind every decision we make at Voltamarket.</p>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-xl border border-neutral-200 dark:border-neutral-800">
+<div class="mb-4 text-brand-green">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-white">Integrity</h3>
+<p class="text-sm text-neutral-600 dark:text-neutral-400">Building lasting trust through transparent, honest, and secure transactions every time.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-xl border border-neutral-200 dark:border-neutral-800">
+<div class="mb-4 text-brand-yellow">
+<span class="material-symbols-outlined text-4xl">diversity_3</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-white">Empowerment</h3>
+<p class="text-sm text-neutral-600 dark:text-neutral-400">Prioritizing the growth of local businesses and giving a voice to regional artisans.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-xl border border-neutral-200 dark:border-neutral-800">
+<div class="mb-4 text-primary">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-white">Speed</h3>
+<p class="text-sm text-neutral-600 dark:text-neutral-400">Ensuring fast, reliable delivery across the Volta and Oti regions and beyond.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-background-light dark:bg-background-dark rounded-xl border border-neutral-200 dark:border-neutral-800">
+<div class="mb-4 text-brand-green">
+<span class="material-symbols-outlined text-4xl">volunteer_activism</span>
+</div>
+<h3 class="mb-2 text-lg font-bold text-neutral-800 dark:text-white">Customer Focus</h3>
+<p class="text-sm text-neutral-600 dark:text-neutral-400">Putting the unique needs of our buyers and sellers at the forefront of innovation.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+<div>
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Our Journey</span>
+<h2 class="mt-2 mb-6 text-3xl font-bold text-neutral-800 dark:text-white sm:text-4xl">Growing with the Region</h2>
+<p class="mb-8 text-lg text-neutral-600 dark:text-neutral-400">
+                        From a simple idea to connect a few market stalls to a comprehensive digital platform, our journey mirrors the resilience and ambition of our people.
+                    </p>
+<div class="relative pl-8 border-l-2 border-neutral-200 dark:border-neutral-800 space-y-10">
+<div class="relative">
+<span class="absolute -left-[39px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary ring-4 ring-white dark:ring-background-dark"></span>
+<h3 class="text-lg font-bold text-neutral-800 dark:text-white">2020: Inception</h3>
+<p class="mt-1 text-neutral-600 dark:text-neutral-400">Voltamarket was founded with a vision to digitize trade during challenging times.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[39px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-600 ring-4 ring-white dark:ring-background-dark"></span>
+<h3 class="text-lg font-bold text-neutral-800 dark:text-white">2021: First 100 Sellers</h3>
+<p class="mt-1 text-neutral-600 dark:text-neutral-400">We onboarded our first major cohort of trusted local vendors.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[39px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-600 ring-4 ring-white dark:ring-background-dark"></span>
+<h3 class="text-lg font-bold text-neutral-800 dark:text-white">2022: Expansion into Oti</h3>
+<p class="mt-1 text-neutral-600 dark:text-neutral-400">Broadened our logistics network to cover the entire Oti region effectively.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[39px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-green ring-4 ring-white dark:ring-background-dark"></span>
+<h3 class="text-lg font-bold text-neutral-800 dark:text-white">2024: Present Day</h3>
+<p class="mt-1 text-neutral-600 dark:text-neutral-400">Serving thousands of customers daily with a diverse range of products.</p>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] overflow-hidden rounded-xl bg-neutral-100 shadow-xl">
+<img alt="Aerial view of a busy market street in Ghana" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Mhwk99kHpFNrbn8b03A6-ZPHyoZ-EEaJUipL9dvO2BnGr-1CRaAdvSk48rQN19nkq3rkOkcSJkfkQkQ4vGaxLJDPBGSU9n7Ka8a_f1ddleEDtZBBUVFjMdOEwldLpjAM_gAJrQtOg-FD5eTuEsegWbTyI9tIgcv_S9OTQKBg9CaJdYfs6TB4dgELmgEs1fBC4w_OjQSfFEYMUlK0CoTGWJNkHKNdPBlu7OnigyGokzMwj__80M39KXw4sCsSQVp7k5pcwiqcMfY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-white">
+<div class="flex items-center gap-2 text-sm font-medium opacity-90">
+<span class="material-symbols-outlined">location_on</span>
+<span data-location="Ho, Ghana">Ho, Volta Region</span>
+</div>
+<p class="mt-2 text-xl font-bold">The vibrant spirit of our local markets inspires everything we do.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white dark:bg-surface-dark">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="mb-12 text-center">
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Community First</span>
+<h2 class="mt-2 text-3xl font-bold text-neutral-800 dark:text-white sm:text-4xl">More Than Just A Marketplace</h2>
+<p class="mt-4 max-w-2xl mx-auto text-lg text-neutral-600 dark:text-neutral-400">
+                    We are deeply committed to the prosperity of our people. By shopping on Voltamarket, you support local farmers, artisans, and entrepreneurs.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px]">
+<div class="relative overflow-hidden rounded-lg md:col-span-2 md:row-span-2 group">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Ghanaian fabric seller smiling with colorful textiles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHUMKPO9cjvBHH-varcAHt_KhhSELbJQJmMGj5I2-Nx5wSbfzJhEIjAvTYoCXqABpIMS5MDqbxAbKMk9fhzrwiiTyHJayUaq-gWdEBLa9oqr0n2FVKBQiB-9QexeNBRz1H2IlI9FkZpxm38D2KelSjPsn4seMdjTmkJ6QqQD01UMrNxygp3mZOZnZE-hmLXcmvVYlLgWsBIOVf-ButhTl1K_UBzeIqsJEAfoKf6iR-Oxi-u-an1Pj3Q56dAu6qqNVeLq11khgoeyA"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<h4 class="text-lg font-bold">Empowering Artisans</h4>
+<p class="text-sm opacity-90">Direct access to customers for textile weavers.</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg group">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Basket of fresh tropical fruits" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClmUPTr5D5bgy91PDrScRO4QPzi-yxq6jzCl1ssMJlFJ2gJxLnU4FpkFT0iMjCfalOXJ-ddwWPUVQ90tGk_mtdfVZIc_tpxWY6-ONLELFjKSoEDdYU05cy5bmeoaFIftbVcWyWJ7LewCGU3xjcV8gJ3R86RzUfiIcxrPUX2ObJRbFXo8UVBROFGNK31YkFHxTgZV4kW_DpCPrs_reY0T00ZJBc3P-gG2r7MsSinox-Xi0QhsF_bS2P06jeGcRWXlEjzzENFWmR_iI"/>
+</div>
+<div class="relative overflow-hidden rounded-lg group">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Craftsman working on wood sculpture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASz_beaTOLVwMNDSFkcUrY4u5XNFslvyWTWd2PS031VwbhIjm3PMzFDz4FqXbmFuAvBHJ_muBW9J5ZbDZ409y1HeNAGS-8NeAaV0ephOFJxDpbadO5ehWAGwS8QFtZ4fYMwScs-YZgPRmFJ3Q92xSkCwgn-5nyfgRNJrUwlXovPgXru9YIbrWDCNfTZqObiFCMbgyD0_JQnCNRtnvX9ihR9ItETDTtaWjEUK7vwH1Gv1Qtx_Q-ny4S4h-k-kIEjFZqAuCmKLG4Mkg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary py-16">
+<div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+<h2 class="text-3xl font-extrabold text-white sm:text-4xl">Ready to experience Voltamarket?</h2>
+<p class="mt-4 text-xl text-white">
+                Join thousands of buyers and sellers transforming the way we trade.
+            </p>
+<div class="mt-8 flex justify-center gap-4">
+<a href="all_products_page.html" class="rounded-lg bg-white px-8 py-3 text-base font-bold text-primary shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl">
+                    Start Shopping
+                </a>
+<a href="sign_up_page.html" class="rounded-lg border-2 border-white px-8 py-3 text-base font-bold text-white transition-colors hover:bg-white hover:text-primary">
+                    Sell with Us
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Brands</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="sign_up_page.html">Sell on Volta</a></li>
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

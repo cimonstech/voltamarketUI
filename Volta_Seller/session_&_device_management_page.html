@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Session &amp; Device Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c91010",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "accent-green": "#1ca345",
+                        "accent-yellow": "#eab308",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar to match theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e5e5; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4d4d4; 
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #3a2020;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-white font-display overflow-hidden selection:bg-primary/20 selection:text-primary">
+<div class="flex h-screen w-full">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-[#f3e7e7] dark:border-[#3a2020] bg-white dark:bg-[#2a1515] flex flex-col h-full hidden lg:flex">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 aspect-square rounded-full size-10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">bolt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#1b0d0d] dark:text-white text-base font-bold leading-normal">Voltamarket</h1>
+<p class="text-[#9a4c4c] dark:text-[#cc8888] text-xs font-normal leading-normal">Seller Dashboard</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-primary fill-1">settings</span>
+<span class="text-sm font-bold">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#1b0d0d] dark:text-[#e0e0e0] hover:bg-[#f3e7e7] dark:hover:bg-[#3a2020] transition-colors group min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-[#e0e0e0] group-hover:text-primary transition-colors">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#f3e7e7] dark:border-[#3a2020]">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#fcf8f8] dark:bg-[#3a2020]">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 border border-[#f3e7e7] dark:border-[#4a2525]" data-alt="User profile picture of seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUkwiB-HM4BZYEl3TRJQfE78ykKBeud-GU8InswVjZU1MV9OewfXgH_7Rt6GHMnreh9uqvr-ZFQ46Y0FnLhygkWaBTnrWpCGkvfD2hvxQlo-LH-gm0OElFztDtrsI6ZzwABk4E66sZnBZT2Y8UmVPyRL2Omo8IkDRnVqhr0NtN6f1q-JnoDsSfeTSAovYI1JeF7OpaJzAsNZG1H1wY5ys5zm7mL9oqmCI29zBTiA_QILTcZK5CIE51L_Wpd0H9pg2LCjwLBVMN6v0");'></div>
+<div class="flex flex-col min-w-0">
+<p class="text-sm font-bold text-[#1b0d0d] dark:text-white truncate">Kwame Mensah</p>
+<p class="text-xs text-[#9a4c4c] dark:text-[#cc8888] truncate">kwame@voltamarket.gh</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-full relative overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex-shrink-0 flex items-center justify-between whitespace-nowrap border-b border-[#f3e7e7] dark:border-[#3a2020] bg-white dark:bg-[#2a1515] px-6 py-3 z-10">
+<div class="flex items-center gap-4 text-[#1b0d0d] dark:text-white lg:hidden">
+<button class="text-[#1b0d0d] dark:text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-[#9a4c4c] dark:text-[#cc8888] text-sm font-medium">
+<span class="material-symbols-outlined text-lg">shield</span>
+<span>Secured by Voltamarket Guard</span>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex gap-3">
+<a href="seller_notifications_page.html" class="flex items-center justify-center rounded-lg size-10 bg-[#f3e7e7] dark:bg-[#3a2020] text-[#1b0d0d] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors relative min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-primary rounded-full border border-white dark:border-[#2a1515]"></span>
+</a>
+<a href="seller_notifications_page.html" class="flex items-center justify-center rounded-lg size-10 bg-[#f3e7e7] dark:bg-[#3a2020] text-[#1b0d0d] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 sm:p-6 lg:p-10">
+<div class="max-w-5xl mx-auto flex flex-col gap-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center text-sm">
+<a class="text-[#9a4c4c] dark:text-[#cc8888] font-medium hover:text-primary transition-colors" href="seller_dashboard_overview_page.html">Home</a>
+<span class="text-[#9a4c4c] dark:text-[#cc8888] font-medium">/</span>
+<a class="text-[#9a4c4c] dark:text-[#cc8888] font-medium hover:text-primary transition-colors" href="seller_account_settings_page.html">Settings</a>
+<span class="text-[#9a4c4c] dark:text-[#cc8888] font-medium">/</span>
+<span class="text-[#1b0d0d] dark:text-white font-bold bg-primary/10 px-2 py-0.5 rounded text-primary">Security</span>
+</div>
+<!-- PageHeading -->
+<div class="flex flex-col md:flex-row justify-between gap-6 items-start md:items-end">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h2 class="text-[#1b0d0d] dark:text-white text-2xl sm:text-3xl font-black leading-tight tracking-tight">Session &amp; Device Management</h2>
+<p class="text-[#5c3a3a] dark:text-[#cc8888] text-sm sm:text-base font-normal leading-relaxed">
+                                Monitor active sessions and review devices currently logged into your Voltamarket seller account. 
+                                Secure your shop by removing unrecognized devices immediately.
+                            </p>
+</div>
+<button class="flex-shrink-0 flex items-center justify-center gap-2 rounded-lg h-11 px-6 bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Log Out All Devices</span>
+</button>
+</div>
+<!-- Current Session Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#1b0d0d] dark:text-white text-xl font-bold px-1">Current Session</h3>
+<div class="bg-white dark:bg-[#2a1515] rounded-xl border border-accent-green/30 dark:border-accent-green/20 p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden shadow-sm">
+<div class="absolute top-0 left-0 w-1 h-full bg-accent-green"></div>
+<!-- Icon -->
+<div class="flex-shrink-0">
+<div class="size-16 rounded-full bg-accent-green/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-accent-green">laptop_mac</span>
+</div>
+</div>
+<!-- Details -->
+<div class="flex-1 flex flex-col justify-center gap-1">
+<div class="flex items-center gap-3 mb-1">
+<h4 class="text-lg font-bold text-[#1b0d0d] dark:text-white">Chrome on macOS</h4>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-green/10 text-accent-green text-xs font-bold border border-accent-green/20">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></span>
+                                        Active Now
+                                    </span>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#5c3a3a] dark:text-[#cc8888]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Accra, Ghana (IP: 197.255.x.x)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Last active: Just now</span>
+</div>
+</div>
+</div>
+<!-- Map Visual (Abstract) -->
+<div class="hidden md:block w-48 h-24 rounded-lg bg-cover bg-center opacity-80" data-alt="Map showing location of current login in Accra" data-location="Accra" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtwdr-NyJAzsQoZqBTassGzDuMdI8LFkME1m93asELMelGQfkhhqFB_9pK6-8VjvZ3dV93r20Jyy2RmiClESiHhgykh7wd7PTM5vjhw7sm2HjSGbMSrPQjE4c4Jw5dWH75jrB-y1JPXKjybXYXVaWzMiVVnRw3YcDoOZBt5JYjbkHwquesKkWCEbPfyu0AuKtlubhOt4bW92JwOgcDSXJvDN_hqK4trmdjVst86KFcLM5e87Vk6-ZQD1v1ORX7CuzC6cBd7weVfVM");'></div>
+</div>
+</div>
+<!-- Other Sessions List -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1 pt-2">
+<h3 class="text-[#1b0d0d] dark:text-white text-xl font-bold">Other Active Devices</h3>
+<button class="text-primary text-sm font-bold hover:underline">Don't recognize a device?</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Device Item 1 -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl border border-[#f3e7e7] dark:border-[#3a2020] p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-[#f3e7e7] dark:bg-[#3a2020] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl text-[#5c3a3a] dark:text-[#cc8888]">smartphone</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-base font-bold text-[#1b0d0d] dark:text-white">iPhone 14 Pro</h4>
+<p class="text-sm text-[#5c3a3a] dark:text-[#cc8888] flex items-center gap-2 mt-0.5">
+<span>Safari iOS</span>
+<span class="w-1 h-1 rounded-full bg-[#9a4c4c]"></span>
+<span>Kumasi, Ghana</span>
+<span class="w-1 h-1 rounded-full bg-[#9a4c4c]"></span>
+<span>Active 2 hrs ago</span>
+</p>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 rounded-lg border border-[#f3e7e7] dark:border-[#3a2020] text-[#1b0d0d] dark:text-white font-bold text-sm hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                                    Log Out
+                                </button>
+</div>
+<!-- Device Item 2 -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl border border-[#f3e7e7] dark:border-[#3a2020] p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-[#f3e7e7] dark:bg-[#3a2020] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl text-[#5c3a3a] dark:text-[#cc8888]">desktop_windows</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-base font-bold text-[#1b0d0d] dark:text-white">Windows PC</h4>
+<p class="text-sm text-[#5c3a3a] dark:text-[#cc8888] flex items-center gap-2 mt-0.5">
+<span>Firefox</span>
+<span class="w-1 h-1 rounded-full bg-[#9a4c4c]"></span>
+<span>Tamale, Ghana</span>
+<span class="w-1 h-1 rounded-full bg-[#9a4c4c]"></span>
+<span>Active 1 day ago</span>
+</p>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 rounded-lg border border-[#f3e7e7] dark:border-[#3a2020] text-[#1b0d0d] dark:text-white font-bold text-sm hover:bg-primary hover:text-white hover:border-primary transition-colors">
+                                    Log Out
+                                </button>
+</div>
+</div>
+</div>
+<!-- Recent Activity Log (Security Context) -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#1b0d0d] dark:text-white text-xl font-bold px-1 pt-4">Recent Security Activity</h3>
+<div class="bg-white dark:bg-[#2a1515] rounded-xl border border-[#f3e7e7] dark:border-[#3a2020] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#fcf8f8] dark:bg-[#321a1a] border-b border-[#f3e7e7] dark:border-[#3a2020]">
+<th class="px-6 py-4 text-xs font-bold text-[#9a4c4c] dark:text-[#cc8888] uppercase tracking-wider">Event</th>
+<th class="px-6 py-4 text-xs font-bold text-[#9a4c4c] dark:text-[#cc8888] uppercase tracking-wider">Location</th>
+<th class="px-6 py-4 text-xs font-bold text-[#9a4c4c] dark:text-[#cc8888] uppercase tracking-wider">Date &amp; Time</th>
+<th class="px-6 py-4 text-xs font-bold text-[#9a4c4c] dark:text-[#cc8888] uppercase tracking-wider">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f3e7e7] dark:divide-[#3a2020]">
+<tr class="group hover:bg-[#fcf8f8] dark:hover:bg-[#321a1a] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-green text-sm">login</span>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Successful Login</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Accra, GH</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Oct 24, 2023 at 10:45 AM</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-accent-green/10 text-accent-green">Completed</span>
+</td>
+</tr>
+<tr class="group hover:bg-[#fcf8f8] dark:hover:bg-[#321a1a] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">lock_person</span>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Password Changed</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Accra, GH</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Oct 20, 2023 at 04:12 PM</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-accent-green/10 text-accent-green">Verified</span>
+</td>
+</tr>
+<tr class="group hover:bg-[#fcf8f8] dark:hover:bg-[#321a1a] transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-yellow text-sm">warning</span>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Failed Login Attempt</span>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Lagos, NG</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#5c3a3a] dark:text-[#cc8888]">Oct 18, 2023 at 02:30 AM</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">Blocked</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Security Alert Box -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6 flex items-start gap-4">
+<div class="shrink-0 text-primary mt-1">
+<span class="material-symbols-outlined text-2xl">security</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#1b0d0d] dark:text-white mb-1">Enhanced Security Recommendation</h4>
+<p class="text-sm text-[#5c3a3a] dark:text-[#cc8888] mb-4 max-w-2xl">
+                                We noticed you haven't enabled Two-Factor Authentication (2FA) yet. Adding an extra layer of security helps protect your sales and earnings.
+                            </p>
+<button class="text-primary font-bold text-sm hover:underline">Enable 2FA Now →</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

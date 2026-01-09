@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller Notifications</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c90d0d",
+                        "secondary-green": "#10b981",
+                        "secondary-yellow": "#f59e0b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "border-light": "#f3e7e7",
+                        "border-dark": "#4a2b2b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden fixed top-4 left-4 z-50 p-2 bg-surface-light dark:bg-surface-dark rounded-lg border border-[#f3e7e7] dark:border-red-900/20 shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-text-main dark:text-white">menu</span>
+</button>
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 border-r border-[#f3e7e7] dark:border-red-900/20 bg-surface-light dark:bg-surface-dark h-full" id="sidebar">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">bolt</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">Voltamarket</h1>
+<p class="text-xs text-primary font-medium mt-0.5">Seller Central</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-bold">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-9 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Portrait of the seller" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaMB2vTLyttMGzhvexSZ3H8FXtZItsRphKjUc8slbuDFgNTSJrQDoiP1HpztOF9d98P7UOqU-2fA20ryS_CpNrHLLCKcxBKaCqAvIeJ9e_TLlXgbfLMekngIuCSVa0_1gjffnyFhrL05V2TuBfYUKkVQCHNP-XXeF_tbcLhHqVfm9qf-tU-KiSK9e1c_PSPq4Qp7c9JPQeJaILsbOuCFnaRvRqqRQ8w75WEJebJsfxutoU0ujPz2bdUMDSoYoIyqLRPuJUEliasls');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Kofi Mensah</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">kofi@voltamarket.gh</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 h-9 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</aside>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden">
+<div class="bg-surface-light dark:bg-surface-dark w-80 h-full shadow-xl overflow-y-auto">
+<div class="p-6 border-b border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">Menu</h3>
+<button class="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 dark:text-gray-400" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-bold">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- TopNavBar -->
+<div class="w-full bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark sticky top-0 z-30">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-10">
+<header class="flex items-center justify-between h-16 sm:h-20 gap-4">
+<div class="flex items-center gap-4 sm:gap-8">
+<!-- Search Bar -->
+<div class="hidden md:flex items-center bg-background-light dark:bg-[#3a2424] rounded-lg h-10 w-64 border border-transparent focus-within:border-primary transition-colors">
+<div class="pl-3 text-text-muted dark:text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm text-text-main dark:text-white placeholder:text-text-muted dark:placeholder:text-gray-500 h-full" placeholder="Search products, orders..."/>
+</div>
+</div>
+<div class="flex items-center gap-4 sm:gap-6">
+<!-- Add Product Button -->
+<a href="add_new_product_page.html" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white rounded-lg h-10 px-4 text-sm font-bold transition-colors shadow-sm shadow-red-200 dark:shadow-none min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="hidden sm:inline">Add Product</span>
+</a>
+<!-- Profile Avatar -->
+<a href="seller_profile_page.html" class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-border-light dark:border-border-dark cursor-pointer min-w-[44px] min-h-[44px]" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaMB2vTLyttMGzhvexSZ3H8FXtZItsRphKjUc8slbuDFgNTSJrQDoiP1HpztOF9d98P7UOqU-2fA20ryS_CpNrHLLCKcxBKaCqAvIeJ9e_TLlXgbfLMekngIuCSVa0_1gjffnyFhrL05V2TuBfYUKkVQCHNP-XXeF_tbcLhHqVfm9qf-tU-KiSK9e1c_PSPq4Qp7c9JPQeJaILsbOuCFnaRvRqqRQ8w75WEJebJsfxutoU0ujPz2bdUMDSoYoIyqLRPuJUEliasls");'>
+</a>
+</div>
+</header>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<div class="max-w-[960px] mx-auto px-4 sm:px-6 py-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-6 sm:mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main dark:text-white text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Notifications</h1>
+<p class="text-text-muted dark:text-gray-400 text-sm sm:text-base font-normal">You have <span class="font-bold text-primary">4 unread</span> messages requiring your attention.</p>
+</div>
+<!-- Quick Actions (Mobile/Desktop adaptive) -->
+<div class="flex gap-3">
+<button class="flex items-center gap-2 text-text-main dark:text-gray-300 hover:text-primary text-sm font-medium bg-white dark:bg-surface-dark px-3 py-2 rounded-lg border border-border-light dark:border-border-dark shadow-sm">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+                    Mark all as read
+                </button>
+<button class="flex items-center gap-2 text-text-muted dark:text-gray-400 hover:text-primary text-sm font-medium bg-white dark:bg-surface-dark px-3 py-2 rounded-lg border border-border-light dark:border-border-dark shadow-sm">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                    Clear all
+                </button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-2 mb-6">
+<button class="whitespace-nowrap flex h-9 items-center justify-center px-5 rounded-full bg-primary text-white text-sm font-bold shadow-sm shadow-red-200 dark:shadow-none transition-transform active:scale-95">
+                All
+            </button>
+<button class="whitespace-nowrap flex h-9 items-center justify-center px-5 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                Orders
+                <span class="ml-2 bg-secondary-green text-white text-[10px] px-1.5 py-0.5 rounded-full">2</span>
+</button>
+<button class="whitespace-nowrap flex h-9 items-center justify-center px-5 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                Admin Messages
+                <span class="ml-2 bg-secondary-yellow text-white text-[10px] px-1.5 py-0.5 rounded-full">1</span>
+</button>
+<button class="whitespace-nowrap flex h-9 items-center justify-center px-5 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                Approvals
+                <span class="ml-2 bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full">1</span>
+</button>
+</div>
+<!-- Notifications List -->
+<div class="flex flex-col gap-3">
+<!-- Item 1: New Order (Green, Unread) -->
+<div class="group relative flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border-l-4 border-l-secondary-green shadow-sm hover:shadow-md transition-all border-y border-r border-gray-100 dark:border-border-dark">
+<div class="flex-shrink-0">
+<div class="flex items-center justify-center size-12 rounded-full bg-green-50 dark:bg-green-900/20 text-secondary-green">
+<span class="material-symbols-outlined icon-filled">shopping_bag</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1.5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-secondary-green bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Order</span>
+<span class="size-2 rounded-full bg-primary"></span>
+</div>
+<span class="text-text-muted dark:text-gray-500 text-xs sm:text-sm font-medium">2 hours ago</span>
+</div>
+<h3 class="text-text-main dark:text-white text-base sm:text-lg font-bold leading-tight">New Order #1234 Received</h3>
+<p class="text-text-main dark:text-gray-300 text-sm font-medium leading-relaxed max-w-2xl">
+                        You received a new order for <span class="font-bold">GHS 500.00</span>. The buyer has selected express delivery.
+                    </p>
+<div class="mt-2 flex gap-3">
+<a href="order_details_page_(seller_view).html" class="text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg transition-colors inline-block min-h-[44px] flex items-center justify-center">View Order Details</a>
+</div>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-text-muted">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Alert (Red, Unread) -->
+<div class="group relative flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border-l-4 border-l-primary shadow-sm hover:shadow-md transition-all border-y border-r border-gray-100 dark:border-border-dark">
+<div class="flex-shrink-0">
+<div class="flex items-center justify-center size-12 rounded-full bg-red-50 dark:bg-red-900/20 text-primary">
+<span class="material-symbols-outlined icon-filled">error</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1.5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-primary bg-red-50 dark:bg-red-900/30 px-2 py-0.5 rounded">Action Required</span>
+<span class="size-2 rounded-full bg-primary"></span>
+</div>
+<span class="text-text-muted dark:text-gray-500 text-xs sm:text-sm font-medium">5 hours ago</span>
+</div>
+<h3 class="text-text-main dark:text-white text-base sm:text-lg font-bold leading-tight">Listing Rejected: "iPhone 13 Pro Max"</h3>
+<p class="text-text-main dark:text-gray-300 text-sm font-medium leading-relaxed max-w-2xl">
+                        Your listing was rejected due to low-quality images. Please upload images with a white background to proceed.
+                    </p>
+<div class="mt-2 flex gap-3">
+<a href="edit_product_page.html" class="text-xs sm:text-sm font-bold text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg transition-colors inline-block min-h-[44px] flex items-center justify-center">Edit Listing</a>
+<button class="text-xs sm:text-sm font-bold text-text-main dark:text-gray-200 hover:text-primary bg-transparent px-2 py-2 transition-colors">Dismiss</button>
+</div>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-text-muted">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Admin Message (Yellow, Unread) -->
+<div class="group relative flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border-l-4 border-l-secondary-yellow shadow-sm hover:shadow-md transition-all border-y border-r border-gray-100 dark:border-border-dark">
+<div class="flex-shrink-0">
+<div class="flex items-center justify-center size-12 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-secondary-yellow">
+<span class="material-symbols-outlined icon-filled">campaign</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1.5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-secondary-yellow bg-yellow-50 dark:bg-yellow-900/30 px-2 py-0.5 rounded">Admin Message</span>
+<span class="size-2 rounded-full bg-primary"></span>
+</div>
+<span class="text-text-muted dark:text-gray-500 text-xs sm:text-sm font-medium">1 day ago</span>
+</div>
+<h3 class="text-text-main dark:text-white text-base sm:text-lg font-bold leading-tight">Policy Update: Commission Rates</h3>
+<p class="text-text-main dark:text-gray-300 text-sm font-medium leading-relaxed max-w-2xl">
+                        Starting next month, commission rates for electronics will be adjusted. Read the full policy update to see how this affects your earnings.
+                    </p>
+<div class="mt-2">
+<a class="text-xs sm:text-sm font-bold text-primary hover:text-primary-hover underline decoration-primary/30 underline-offset-4" href="#">Read Policy Update</a>
+</div>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-text-muted">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Success (Green, Read) -->
+<div class="group relative flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-[#fafafa] dark:bg-[#2a1d1d] border border-border-light dark:border-border-dark opacity-90 hover:opacity-100 transition-all">
+<div class="flex-shrink-0">
+<div class="flex items-center justify-center size-12 rounded-full bg-gray-100 dark:bg-white/5 text-secondary-green">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1.5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded">Listing</span>
+</div>
+<span class="text-text-muted dark:text-gray-500 text-xs sm:text-sm font-normal">2 days ago</span>
+</div>
+<h3 class="text-text-main dark:text-white text-base sm:text-lg font-medium leading-tight">Listing Approved: "Men's Sneakers"</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-relaxed max-w-2xl">
+                        Your product has been approved and is now live on the marketplace. Good luck with your sales!
+                    </p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 text-text-muted">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 5: System (Grey, Read) -->
+<div class="group relative flex flex-col sm:flex-row gap-4 p-5 rounded-xl bg-[#fafafa] dark:bg-[#2a1d1d] border border-border-light dark:border-border-dark opacity-90 hover:opacity-100 transition-all">
+<div class="flex-shrink-0">
+<div class="flex items-center justify-center size-12 rounded-full bg-gray-100 dark:bg-white/5 text-gray-500">
+<span class="material-symbols-outlined">dns</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1.5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded">System</span>
+</div>
+<span class="text-text-muted dark:text-gray-500 text-xs sm:text-sm font-normal">5 days ago</span>
+</div>
+<h3 class="text-text-main dark:text-white text-base sm:text-lg font-medium leading-tight">Scheduled Maintenance Completed</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-relaxed max-w-2xl">
+                        The platform maintenance scheduled for last night was completed successfully. All systems are operational.
+                    </p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 text-text-muted">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex justify-center">
+<button class="flex items-center gap-2 text-primary font-bold text-sm bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-red-50 dark:hover:bg-red-900/10 px-6 py-3 rounded-lg transition-colors">
+                Load More Notifications
+                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<!-- End of Content Illustration -->
+<div class="mt-12 flex flex-col items-center justify-center text-center py-8 opacity-60">
+<div class="size-16 rounded-full bg-border-light dark:bg-surface-dark flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl text-gray-400">check</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">End of notifications</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu-overlay');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    menu.classList.toggle('hidden');
+}
+document.getElementById('mobile-menu-toggle')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-close')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-overlay')?.addEventListener('click', function(e) {
+    if (e.target === this) toggleMobileMenu();
+});
+</script>
+</body></html>

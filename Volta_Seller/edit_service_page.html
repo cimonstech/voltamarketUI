@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Edit Service</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1a1a",
+                        "border-color": "#f3e7e7",
+                        "border-dark": "#3f2222",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                font-size: 24px;
+            }
+            .form-input-base {
+                @apply w-full rounded-lg border-border-color bg-background-light px-4 py-3 text-text-main placeholder-text-muted focus:border-primary focus:ring-1 focus:ring-primary dark:bg-surface-dark dark:border-border-dark dark:text-white dark:placeholder-gray-500;
+            }
+            .form-label {
+                @apply mb-2 block text-sm font-medium text-text-main dark:text-gray-200;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden w-64 flex-col border-r border-border-color bg-surface-light dark:bg-surface-dark dark:border-border-dark md:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-none text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-xs text-text-muted dark:text-gray-400">Seller Dashboard</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-text-muted">dashboard</span>
+                            Dashboard
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-text-muted">inventory_2</span>
+                            Products
+                        </a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-medium text-primary dark:bg-primary/20 min-h-[44px]" href="edit_service_page.html">
+<span class="material-symbols-outlined fill-current">room_service</span>
+                            Services
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-text-muted">shopping_cart</span>
+                            Orders
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-text-muted">chat</span>
+                            Messages
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-text-muted">account_balance_wallet</span>
+                            Earnings
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-text-muted">campaign</span>
+                            Promotions
+                        </a>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-text-muted">bar_chart</span>
+                            Product Analytics
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-text-muted">room_service</span>
+                            Service Analytics
+                        </a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-text-muted">diamond</span>
+                            Premium Tools
+                        </a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-text-muted">settings</span>
+                            Settings
+                        </a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-text-main transition-colors hover:bg-background-light dark:text-gray-200 dark:hover:bg-background-dark min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-text-muted">help</span>
+                            Help Center
+                        </a>
+</div>
+</nav>
+</div>
+<!-- User Profile -->
+<div class="flex items-center gap-3 border-t border-border-color pt-4 dark:border-border-dark">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA78zmqLpd3u2ELp70jGUOC-zZlpovKaDIZ6JYFKJAqkg-3j2juPOA59gjNhnC_q5DzJGti2eGM5D9E5kzEKoQY36j-Uooabxi3h4f6pp9wCrIszjzoBnkNRNt8s1YIOR2Do-JdiY1loGkUbGdGOg55dZ1kqfpQn63Xq_ie8IeRQ3xEMK8A_mxZ7UwUo9fE8mxNpTgyUnKLMYLBi3aik65NSE_hMS_ymlDue9nfmCKqtoA5pYZmclpHppHI3Yz6a_2LoZ551PMM4aY');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-text-main dark:text-white">Kofi Mensah</p>
+<p class="text-xs text-text-muted dark:text-gray-400">Verified Seller</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col overflow-y-auto overflow-x-hidden relative">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-20 flex h-16 w-full items-center justify-between border-b border-border-color bg-surface-light px-6 py-3 dark:bg-surface-dark dark:border-border-dark">
+<!-- Mobile Menu Trigger & Title -->
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center text-text-main md:hidden dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Search Bar -->
+<div class="hidden max-w-md md:flex">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="h-10 w-full rounded-lg border-none bg-background-light pl-10 text-sm text-text-main focus:ring-1 focus:ring-primary dark:bg-background-dark dark:text-white dark:placeholder-gray-500" placeholder="Search..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="relative flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-text-main transition hover:bg-border-color dark:bg-background-dark dark:text-white dark:hover:bg-border-dark">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-primary"></span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-text-main transition hover:bg-border-color dark:bg-background-dark dark:text-white dark:hover:bg-border-dark">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="mx-auto w-full max-w-6xl p-6 md:p-10">
+<!-- Breadcrumbs & Heading -->
+<div class="mb-8 flex flex-col gap-4">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-text-muted">
+<a class="hover:text-primary" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Services</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-medium text-text-main dark:text-white">Edit Service</span>
+</nav>
+<!-- Page Heading + Status -->
+<div class="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-extrabold tracking-tight text-text-main dark:text-white md:text-4xl">Edit Service: Home Cleaning</h1>
+<p class="text-base text-text-muted dark:text-gray-400">Update your service details, media, pricing, and availability.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 rounded-full bg-green-100 px-3 py-1 dark:bg-green-900/30">
+<span class="h-2 w-2 rounded-full bg-green-600"></span>
+<span class="text-sm font-medium text-green-800 dark:text-green-300">Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+<!-- Left Column: Main Info -->
+<div class="flex flex-col gap-6 lg:col-span-2">
+<!-- Basic Details Card -->
+<section class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+<div class="mb-6 border-b border-border-color pb-4 dark:border-border-dark">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Basic Information</h2>
+</div>
+<div class="grid gap-6">
+<div>
+<label class="form-label">Service Title</label>
+<input class="form-input-base" type="text" value="Home Cleaning Service - Premium"/>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+<div>
+<label class="form-label">Category</label>
+<div class="relative">
+<select class="form-input-base appearance-none">
+<option>Home &amp; Maintenance</option>
+<option>Beauty &amp; Wellness</option>
+<option>Tutoring</option>
+<option>Events</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+</div>
+</div>
+<div>
+<label class="form-label">Sub-Category</label>
+<div class="relative">
+<select class="form-input-base appearance-none">
+<option>Cleaning</option>
+<option>Plumbing</option>
+<option>Electrical</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+</div>
+</div>
+</div>
+<div>
+<label class="form-label">Description</label>
+<textarea class="form-input-base" placeholder="Describe your service in detail..." rows="6">Professional deep cleaning service for 2-bedroom apartments and larger homes. We use eco-friendly products and provide all necessary equipment. Includes dusting, vacuuming, mopping, and bathroom sanitation. Satisfaction guaranteed.</textarea>
+<p class="mt-2 text-xs text-text-muted">Describe what is included in the service to help customers understand the value.</p>
+</div>
+</div>
+</section>
+<!-- Media Gallery Card -->
+<section class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+<div class="mb-6 border-b border-border-color pb-4 dark:border-border-dark">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Service Media</h2>
+</div>
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+<!-- Existing Image 1 -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+<img alt="Cleaning supplies arranged neatly" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxBGB0GyJPR7RzqMCE3JsB5FuVFSVovcqjOaWD2MZHTeXiH1ntXuxVMo5-HxG8skBZkPEXFwgrmKdxPGvYzb1-a0tLM5kfGtQ1Yv0NEnxhpaxrYWlrF0hisEzXsuR0O5VlFCPMI9mOyUUuCOUiLURJ28VIaFTc-SIGxIWMiIU7K7KC9lR6SsjcWtWjLgg4La6wtQAFATnyYj_1yIzm4QRUe2cDppdldr4kMUuKThP5P58ZUgqDPXVD0tYCp8vT2tK0uqztUlCAfC8"/>
+<button class="absolute right-2 top-2 hidden h-8 w-8 items-center justify-center rounded-full bg-white text-primary shadow-sm hover:bg-gray-100 group-hover:flex">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Existing Image 2 -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+<img alt="Person vacuuming a carpet" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-KnIW8swY-Ylma7EZcYIXmViL7pH-uQfrBTUC7GrElwOUB2tU8OPk0a_azB1po0perQ22JAWAwurAUkgFvxei34GifwLJcv2fnQEJ5dlWHq8dMSuDYNCOoEdW7rdGhTkd7NXGExaaZ86pYGBhtOIXDajQBn81f2dCA9pQRu0PQpaG-2MMUk5iEcUY5jMfakJk85PupclooYCztNahy4HzZZTzR3fre02jvTd5r8ezdftODtb9t-cp50dFjm6QXhwkQOIzcZ_bpB0"/>
+<button class="absolute right-2 top-2 hidden h-8 w-8 items-center justify-center rounded-full bg-white text-primary shadow-sm hover:bg-gray-100 group-hover:flex">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Existing Image 3 -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+<img alt="Clean living room interior" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgYOCSgPYLib8k0PE_XQmLvWHi5EuXSyqkIDlQXMjrlhYOorKmxiuBucWvJjR88TLVMD1pKNwcKluZOldQv4x4oRPRJagW9rFt5hkwK_w_psRQgbdqYchk-bC4aUcJ_F0Z8hpZ3f_QUPWx1R_W6mpgB8rkM_eqUvasRMQ12vJ9WBj56cgO8_V0NlGzfwPMTcK9eyFPdIv22HKVh7yQFF6lPnwsZv9YYyDjBVgaJo3kctRGLLbzpKgyrMP3dyj7lWeVROtTafbg--8"/>
+<button class="absolute right-2 top-2 hidden h-8 w-8 items-center justify-center rounded-full bg-white text-primary shadow-sm hover:bg-gray-100 group-hover:flex">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Upload Placeholder -->
+<div class="flex aspect-square cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-primary/30 bg-background-light transition hover:border-primary hover:bg-primary/5 dark:bg-background-dark">
+<span class="material-symbols-outlined mb-2 text-primary">add_photo_alternate</span>
+<span class="text-xs font-semibold text-text-main dark:text-gray-300">Add Photo</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Settings & Pricing -->
+<div class="flex flex-col gap-6">
+<!-- Pricing Card -->
+<section class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+<div class="mb-6 flex items-center gap-2 border-b border-border-color pb-4 dark:border-border-dark">
+<span class="material-symbols-outlined text-text-muted">payments</span>
+<h2 class="text-lg font-bold text-text-main dark:text-white">Pricing</h2>
+</div>
+<div class="flex flex-col gap-5">
+<div>
+<label class="form-label">Base Price (GHS)</label>
+<input class="form-input-base text-lg font-bold text-text-main" type="number" value="150.00"/>
+</div>
+<div>
+<label class="form-label">Price Unit</label>
+<div class="relative">
+<select class="form-input-base appearance-none">
+<option>Per Session</option>
+<option>Per Hour</option>
+<option>Per Square Meter</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" id="negotiable" type="checkbox"/>
+<label class="text-sm text-text-main dark:text-gray-300" for="negotiable">Price is negotiable</label>
+</div>
+</div>
+</section>
+<!-- Logistics Card -->
+<section class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+<div class="mb-6 flex items-center gap-2 border-b border-border-color pb-4 dark:border-border-dark">
+<span class="material-symbols-outlined text-text-muted">location_on</span>
+<h2 class="text-lg font-bold text-text-main dark:text-white">Location &amp; Availability</h2>
+</div>
+<div class="flex flex-col gap-5">
+<div>
+<label class="form-label">Service Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">map</span>
+<input class="form-input-base pl-10" type="text" value="Accra, Greater Accra"/>
+</div>
+</div>
+<div>
+<label class="form-label">Service Radius (km)</label>
+<input class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-primary dark:bg-gray-700" max="50" min="1" type="range" value="15"/>
+<div class="mt-2 flex justify-between text-xs text-text-muted">
+<span>1km</span>
+<span class="font-bold text-primary">15km</span>
+<span>50km</span>
+</div>
+</div>
+<div class="rounded-lg bg-background-light p-3 dark:bg-background-dark">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-text-main dark:text-white">Available Now</span>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-300 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 dark:bg-gray-600"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="rounded-xl border border-red-100 bg-red-50/50 p-6 dark:border-red-900/30 dark:bg-red-900/10">
+<h3 class="mb-2 text-sm font-bold text-primary">Delete Service</h3>
+<p class="mb-4 text-xs text-text-muted">Once deleted, this service cannot be recovered.</p>
+<button class="w-full rounded-lg border border-primary/20 bg-white px-4 py-2 text-sm font-bold text-primary transition hover:bg-primary hover:text-white dark:bg-transparent">
+                                Delete Service
+                            </button>
+</section>
+</div>
+</div>
+<!-- Sticky Footer Actions -->
+<div class="fixed bottom-0 left-0 right-0 z-10 border-t border-border-color bg-surface-light px-6 py-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:left-64 dark:border-border-dark dark:bg-surface-dark dark:shadow-none">
+<div class="mx-auto flex max-w-6xl items-center justify-between">
+<button class="rounded-lg border border-transparent px-6 py-2.5 text-sm font-bold text-text-muted hover:text-text-main hover:bg-background-light dark:hover:bg-background-dark">
+                            Cancel
+                        </button>
+<div class="flex items-center gap-4">
+<span class="hidden text-sm text-text-muted sm:block">Last saved 2 mins ago</span>
+<button class="flex items-center gap-2 rounded-lg bg-primary px-8 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/30 transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-surface-dark">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                                Save Changes
+                            </button>
+</div>
+</div>
+</div>
+<!-- Spacer for fixed footer -->
+<div class="h-24"></div>
+</div>
+</main>
+</div>
+</body></html>

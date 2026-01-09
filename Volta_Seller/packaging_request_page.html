@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Packaging Request - Voltamarket Seller</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c91010",
+                        "secondary-yellow": "#fbbf24",
+                        "secondary-green": "#16a34a",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1616",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "border-color": "#f3e7e7",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 min-h-screen flex flex-col overflow-x-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden fixed top-4 left-4 z-50 p-2 bg-surface-light dark:bg-surface-dark rounded-lg border border-border-color dark:border-red-900/20 shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-text-main dark:text-white">menu</span>
+</button>
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 border-r border-[#f3e7e7] dark:border-red-900/20 bg-surface-light dark:bg-surface-dark h-full" id="sidebar">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">bolt</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">Voltamarket</h1>
+<p class="text-xs text-primary font-medium mt-0.5">Seller Central</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-9 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Portrait of the seller" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJEWDNkFS1q3gX1bh7pzSN6COLumb906M1Wl4wtdS_QOkPXIpLJo3VcHU6ppTS4WH1qXrJDTEnoSskhMr0FYopF_PdDicKwQoRUHrFMMUANiop-99n_e7XC8y-U2VsOlXcHpq-YkiK2XLzDFZVX1KsNzE6RbV9LTQ71Reacl8lzscBTFS0iP4VzCMt5MmydUQ0baUBfkZdtxjKYBmdPEK3_22fD1AOAGGRfzUdAVff7vCVeEblx93b7O_4A9HnD_eDtlDmn1kpvKs');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Kofi Mensah</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">kofi@voltamarket.gh</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 h-9 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</aside>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden">
+<div class="bg-surface-light dark:bg-surface-dark w-80 h-full shadow-xl overflow-y-auto">
+<div class="p-6 border-b border-border-color dark:border-red-900/20">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Menu</h3>
+<button class="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 dark:text-gray-400" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-30 w-full bg-surface-light dark:bg-surface-dark border-b border-border-color dark:border-red-900/20 px-4 sm:px-6 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-end gap-4">
+<div class="flex items-center gap-4">
+<a href="seller_notifications_page.html" class="relative p-2 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-text-main dark:text-gray-200 min-w-[44px] min-h-[44px] flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-white dark:border-background-dark"></span>
+</a>
+<a href="seller_profile_page.html" class="size-10 rounded-full bg-cover bg-center border-2 border-border-color dark:border-red-900/30 min-w-[44px] min-h-[44px]" data-alt="Portrait of a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJEWDNkFS1q3gX1bh7pzSN6COLumb906M1Wl4wtdS_QOkPXIpLJo3VcHU6ppTS4WH1qXrJDTEnoSskhMr0FYopF_PdDicKwQoRUHrFMMUANiop-99n_e7XC8y-U2VsOlXcHpq-YkiK2XLzDFZVX1KsNzE6RbV9LTQ71Reacl8lzscBTFS0iP4VzCMt5MmydUQ0baUBfkZdtxjKYBmdPEK3_22fD1AOAGGRfzUdAVff7vCVeEblx93b7O_4A9HnD_eDtlDmn1kpvKs');">
+</a>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-6 py-4 sm:py-6 md:py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="seller_dashboard_overview_page.html">Dashboard</a>
+<span class="text-text-muted">/</span>
+<a class="text-text-muted hover:text-primary transition-colors" href="orders_from_buyers_page.html">Orders</a>
+<span class="text-text-muted">/</span>
+<span class="text-text-main dark:text-white font-medium">Order #3892</span>
+</nav>
+<!-- Page Heading & Status -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-2">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-main dark:text-white tracking-tight">Packaging Request</h2>
+<span class="px-3 py-1 bg-secondary-yellow/20 text-yellow-700 dark:text-yellow-400 text-xs font-bold uppercase tracking-wider rounded-full border border-secondary-yellow/30">Action Required</span>
+</div>
+<p class="text-text-muted dark:text-gray-400 text-lg">
+                    Order #3892 contains an item requiring preparation. Please verify the item and mark it ready for Voltamarket admin collection.
+                </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg text-text-main dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">print</span>
+                    Print Packing Slip
+                </button>
+<button class="px-4 py-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg text-text-main dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">support_agent</span>
+                    Contact Admin
+                </button>
+</div>
+</div>
+<!-- Timeline / Progress Stepper -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 md:p-8 shadow-sm border border-border-color dark:border-red-900/20 mb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Step 1: Completed -->
+<div class="flex flex-col items-center md:items-start relative z-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="size-8 rounded-full bg-secondary-green text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<span class="font-bold text-secondary-green">Order Placed</span>
+</div>
+<span class="text-xs text-text-muted pl-11 md:pl-0 md:ml-11">Oct 24, 2:30 PM</span>
+</div>
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-4 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700 -z-0">
+<div class="w-1/3 h-full bg-secondary-green"></div> <!-- Progress to step 2 start -->
+</div>
+<!-- Step 2: Active -->
+<div class="flex flex-col items-center md:items-center relative z-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center shadow-[0_0_0_4px_rgba(236,19,19,0.2)]">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+</div>
+<span class="font-bold text-primary">Packaging Request</span>
+</div>
+<span class="text-xs text-text-muted">Awaiting Action</span>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex flex-col items-center md:items-center relative z-10 opacity-50">
+<div class="flex items-center gap-3 mb-2">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+<span class="font-medium text-text-main dark:text-gray-300">Ready for Pickup</span>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex flex-col items-center md:items-end relative z-10 opacity-50">
+<div class="flex items-center gap-3 mb-2">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<span class="font-medium text-text-main dark:text-gray-300">Shipped</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Layout -->
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- Left Column: Item Details (2/3 width) -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Item Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-color dark:border-red-900/20 overflow-hidden">
+<div class="p-4 border-b border-border-color dark:border-red-900/20 bg-gray-50 dark:bg-white/5 flex justify-between items-center">
+<h3 class="font-bold text-lg text-text-main dark:text-white">Item Details</h3>
+<span class="text-sm text-text-muted">Item 1 of 1</span>
+</div>
+<div class="p-6">
+<div class="flex flex-col sm:flex-row gap-6">
+<!-- Product Image -->
+<div class="w-full sm:w-48 aspect-square rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center shrink-0 border border-border-color dark:border-gray-700" data-alt="Red Nike running shoe side profile on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1nf3G0CoNb2dwUEbB6ZYEDXMUXxYM8108j-Bpuh6eLj-OJiBGwWmmZ6upqI6PiZrST2MqGmTZUMpJYahCeupNEI0m4qMPVy_uS0zoFcZB0SdtToC_R6AgQ0Wu_kbcFkTjoRd4tfF-dNJhDAntT0d0IC7rVo_90-_8TvT12zJNDqz_qvoUaMA3UhOsm-6gCJEyyQQvWbGHSvlkye6mjsHw7WDNV8VZZkdTMiag2q7HuQ80TiZVOz_cxied6BXPzI-6q-UbZC6C2qM');">
+</div>
+<!-- Product Details -->
+<div class="flex-1 space-y-4">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-bold text-text-main dark:text-white leading-tight mb-1">Nike Air Zoom Pegasus 38</h4>
+<p class="text-text-muted text-sm">Men's Running Shoe • Size 42</p>
+</div>
+<p class="text-xl font-bold text-primary">GH₵ 850.00</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 py-4 border-t border-b border-border-color dark:border-gray-700 border-dashed">
+<div>
+<p class="text-xs text-text-muted uppercase font-bold tracking-wider">SKU</p>
+<p class="text-text-main dark:text-gray-200 font-mono font-medium">NK-ZM-38-RED</p>
+</div>
+<div>
+<p class="text-xs text-text-muted uppercase font-bold tracking-wider">Quantity</p>
+<p class="text-text-main dark:text-gray-200 font-mono font-medium">1 Pair</p>
+</div>
+</div>
+<div class="bg-secondary-yellow/10 border border-secondary-yellow/30 rounded-lg p-3 flex gap-3">
+<span class="material-symbols-outlined text-yellow-700 dark:text-yellow-500 shrink-0">info</span>
+<p class="text-sm text-yellow-900 dark:text-yellow-200">
+<strong>Special Instruction:</strong> Please include the original red shoebox and ensure extra padding inside the box to prevent movement.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Preparation Checklist -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-color dark:border-red-900/20 p-6">
+<h3 class="font-bold text-lg text-text-main dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">playlist_add_check</span>
+                        Preparation Checklist
+                    </h3>
+<p class="text-text-muted mb-6">Confirm the following before requesting pickup:</p>
+<div class="space-y-3">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-900 dark:border-gray-600" type="checkbox"/>
+<span class="text-text-main dark:text-gray-200 group-hover:text-primary transition-colors">Item is clean and free of visible defects</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-900 dark:border-gray-600" type="checkbox"/>
+<span class="text-text-main dark:text-gray-200 group-hover:text-primary transition-colors">Original tags and labels are attached</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-900 dark:border-gray-600" type="checkbox"/>
+<span class="text-text-main dark:text-gray-200 group-hover:text-primary transition-colors">Correct item variant (Color/Size) verified</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-border-color dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-gray-900 dark:border-gray-600" type="checkbox"/>
+<span class="text-text-main dark:text-gray-200 group-hover:text-primary transition-colors">Packaging instructions followed</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary & Actions (1/3 width) -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Order Summary Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-color dark:border-red-900/20 overflow-hidden">
+<div class="p-4 bg-gray-50 dark:bg-white/5 border-b border-border-color dark:border-red-900/20">
+<h3 class="font-bold text-text-main dark:text-white">Customer Details</h3>
+</div>
+<div class="p-5 space-y-4">
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 shrink-0">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-bold text-text-main dark:text-white">Abena Osei</p>
+<p class="text-sm text-text-muted">Customer since 2021</p>
+</div>
+</div>
+<hr class="border-border-color dark:border-gray-700"/>
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-bold text-text-main dark:text-white">Delivery Address</p>
+<p class="text-sm text-text-muted">14 Mango Street<br/>East Legon, Accra<br/>Greater Accra Region</p>
+</div>
+</div>
+<hr class="border-border-color dark:border-gray-700"/>
+<div class="flex items-start gap-3">
+<div class="size-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-bold text-text-main dark:text-white">Order Date</p>
+<p class="text-sm text-text-muted">Oct 24, 2023 at 2:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action Card -->
+<div class="bg-white dark:bg-surface-dark rounded-xl shadow-md border border-red-100 dark:border-red-900/30 p-6 text-center sticky top-24">
+<div class="mb-4">
+<div class="w-16 h-16 bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto text-primary mb-3">
+<span class="material-symbols-outlined text-3xl">package_2</span>
+</div>
+<h3 class="font-bold text-lg text-text-main dark:text-white mb-1">Ready for Collection?</h3>
+<p class="text-sm text-text-muted">
+                            By clicking below, you confirm the item is packed according to guidelines and ready for the admin team.
+                        </p>
+</div>
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-red-500/30 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                        Mark as Ready for Pickup
+                    </button>
+<div class="mt-4 flex justify-center gap-4 text-xs text-text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">security</span>
+                            Secure Process
+                        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">history</span>
+                            Tracked
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="border-t border-border-color dark:border-red-900/20 mt-12 py-8 bg-surface-light dark:bg-surface-dark">
+<div class="max-w-7xl mx-auto px-6 text-center text-text-muted text-sm">
+<p>© 2023 Voltamarket Ghana. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

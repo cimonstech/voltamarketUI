@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Product - Voltamarket Admin</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c90f0f",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a1515",
+                        "border-light": "#f3e7e7",
+                        "border-dark": "#3d2222",
+                        "text-main": "#1b0d0d",
+                        "text-subtle": "#8a7a7a",
+                        "success": "#10b981", // Green for status
+                        "warning": "#f59e0b", // Yellow for draft/low stock
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 min-h-screen flex flex-col">
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<aside class="flex w-64 flex-col bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 h-full hidden md:flex shrink-0 z-20">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined icon-filled">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-primary text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_dashboard_overview.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Listings (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="listings-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Listings</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="listings-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_products_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">All Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_services_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">All Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="pending_approval_listings_page_1.html">
+<span class="material-symbols-outlined text-base">pending</span>
+<span class="text-xs font-normal">Pending Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="approved_listings_page_1.html">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-normal">Approved Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="rejected_listings_page_1.html">
+<span class="material-symbols-outlined text-base">cancel</span>
+<span class="text-xs font-normal">Rejected Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Orders -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_orders_page.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+
+<!-- Deliveries (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="deliveries-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="deliveries-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_management_page.html">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span class="text-xs font-normal">Delivery Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_&_logistics_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Delivery Settings</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Users (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="users-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="users-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_buyers_page.html">
+<span class="material-symbols-outlined text-base">person</span>
+<span class="text-xs font-normal">Buyers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_sellers_page.html">
+<span class="material-symbols-outlined text-base">store</span>
+<span class="text-xs font-normal">Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="featured_sellers_page.html">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-normal">Featured Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_staff.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">Admin Staff</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Payments (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="payments-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="payments-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payments_overview_page.html">
+<span class="material-symbols-outlined text-base">overview</span>
+<span class="text-xs font-normal">Payment Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="transaction_history_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">All Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="refunds_management_page.html">
+<span class="material-symbols-outlined text-base">undo</span>
+<span class="text-xs font-normal">Refunds Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payment_gateway_settings_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Payment Gateway Settings</span>
+</a>
+</div>
+</div>
+
+<!-- Seller Payouts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="seller_payouts_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Seller Payouts</span>
+</a>
+
+<!-- Marketing (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="marketing-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Marketing</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="marketing-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="promotions_dashboard_page.html">
+<span class="material-symbols-outlined text-base">campaign</span>
+<span class="text-xs font-normal">Promotions Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="marketing_performance_reports_page.html">
+<span class="material-symbols-outlined text-base">analytics</span>
+<span class="text-xs font-normal">Marketing Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="premium_listings_management_page.html">
+<span class="material-symbols-outlined text-base">diamond</span>
+<span class="text-xs font-normal">Premium Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Categories (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="categories-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium">Categories</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="categories-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="product_categories_management_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">Product Categories</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="service_categories_management_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Service Categories</span>
+</a>
+</div>
+</div>
+
+<!-- Analytics (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="reports-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="reports-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="sales_analytics_page.html">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span class="text-xs font-normal">Sales Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="services_analytics_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Services Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="revenue_reports_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Revenue Reports</span>
+</a>
+</div>
+</div>
+
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_notifications_page.html">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+
+<!-- System (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="system-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">System</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="system-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="general_platform_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Platform Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="user_roles_&_permissions_page.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">User Roles & Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="homepage_slider_management_page.html">
+<span class="material-symbols-outlined text-base">slideshow</span>
+<span class="text-xs font-normal">Homepage Slider</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="maintenance_mode_page.html">
+<span class="material-symbols-outlined text-base">build</span>
+<span class="text-xs font-normal">Maintenance Mode</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="audit_logs_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">Audit Logs</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Admin Profile -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_details_page.html">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Admin Profile</span>
+</a>
+
+<!-- Static Pages -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="static_pages_management_page.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Static Pages</span>
+</a>
+</nav>
+
+<!-- User Profile Snippet (Bottom Sidebar) -->
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-9 rounded-full bg-cover bg-center border border-gray-200" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhPOYlVjwG0s3IRquwXxTv_-iwmgq87HCCXTDFl5U-y81ySIqxn2OxtVw1WfQHgUiu6tNIv6VVCanNHxm8VuystM4q645TMI_CTRNfLg5qr-L-d_RAcxOqGgeV5zon_yPXFsq9Z2H_t8QHVCQo6BhJsw0nVgOvjHF1qWbLPVncDDYJaccGy4ds8Cu-NBOBEwj1NTnKhAvr0pS763_73V7igx7whT4aDTtjEXEmgEf04IbZ3HPFE2TO6ZevG4wZcN-RGjbFxx41T88");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main dark:text-white">Kwame D.</p>
+<p class="text-xs text-text-muted">Super Admin</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors" onclick="window.location.href='admin_login_page.html'">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+Log Out
+</button>
+</div>
+</aside>
+
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-4 lg:px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Voltamarket Admin</h2>
+</div>
+<div class="hidden lg:flex w-full max-w-sm items-center rounded-lg bg-background-light dark:bg-background-dark border border-transparent focus-within:border-primary/50 transition-colors">
+<div class="text-text-subtle flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-sm text-text-main dark:text-white placeholder:text-text-subtle focus:ring-0 h-9" placeholder="Search products, orders..." value=""/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary py-1" href="#">Products</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Customers</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-9 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-main dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border-2 border-border-light dark:border-border-dark" data-alt="User profile avatar of administrator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUEB9Gma2_HMHAsO09O9luOVuipqMP5EUKXC7ICu9UD7U-y3E3ZaeZoLAX9gqTcX3me_K2LLZAZH6QhZjQI7JVRmU4WiIPpWimrEt2qGWd2hVoZFZX2yi_7kyjWLrhGJf-11n9lDuvuzqWzhaSRsdcU9e7nX7rs_XaXtNJ1buqL8efmjPTHx1qu3tzWRKBvzuEN0hsW9_hqpDFp-0FYgUesA9EA-4HnD4vzBdf2gV2ZGB3dBBuE5uEKX-d_R_Okl8-sUoe8D4npX8");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 lg:px-10 py-6 lg:py-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap items-center gap-2 mb-6 text-sm">
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-text-subtle text-[16px]">chevron_right</span>
+<a class="text-text-subtle hover:text-primary transition-colors font-medium" href="#">Products</a>
+<span class="material-symbols-outlined text-text-subtle text-[16px]">chevron_right</span>
+<span class="text-text-main dark:text-white font-semibold">Edit: Ashanti Kente Cloth</span>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight">Edit Product</h1>
+<p class="text-text-subtle text-sm">Last updated on Oct 24, 2023 by Admin</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 h-10 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-white text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                    View Live Page
+                </button>
+<button class="hidden md:flex items-center gap-2 px-6 h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-sm shadow-red-200 dark:shadow-none">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                    Update Product
+                </button>
+</div>
+</div>
+<!-- Form Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+<!-- Left Column (Main Info) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Basic Info Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Basic Information</h3>
+<div class="space-y-5">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Product Name</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="Ashanti Kente Cloth - Premium Woven Fabric"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Description</label>
+<div class="rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark overflow-hidden">
+<!-- Fake Rich Text Toolbar -->
+<div class="flex items-center gap-1 p-2 border-b border-border-light dark:border-border-dark bg-white dark:bg-surface-dark">
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-text-subtle"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-text-subtle"><span class="material-symbols-outlined text-[18px]">format_italic</span></button>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-text-subtle"><span class="material-symbols-outlined text-[18px]">format_underlined</span></button>
+<div class="w-px h-4 bg-gray-300 mx-1"></div>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-text-subtle"><span class="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded text-text-subtle"><span class="material-symbols-outlined text-[18px]">link</span></button>
+</div>
+<textarea class="w-full border-none bg-transparent p-3 text-sm text-text-main dark:text-white focus:ring-0 min-h-[140px]" placeholder="Product description...">Authentic hand-woven Kente cloth from the Ashanti region of Ghana. Features intricate geometric patterns in vibrant red, gold, and green colors. Perfect for ceremonial wear, special occasions, or as a luxurious home decor textile. 
+
+Material: 100% Cotton
+Dimensions: 6 yards per piece.</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Media</h3>
+<button class="text-primary text-sm font-bold hover:underline">Download All</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+<!-- Image 1 (Cover) -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<div class="absolute top-2 left-2 z-10 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">Cover</div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Folded colorful kente cloth fabric with geometric patterns" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBH1V-AeuTqdVxP_WoWxpAjLFA3obX-NBkjXBp9xklFDOESDChtytEmOZwhvKtGls5RQUQTw_1ypycg3DtsFaqGThNSgF9uRQObqw1E4PWjHwsZoYuNMnOIByaVV-GjvAtMjXL1OcGLdZVR2jeHJQQMl0o6FZuoje6sH5z2JDbCW5IltmWYtNhE12v4BSJne_fAeZmrLAUAGYmCdebmCaFEPfM0cqcaOtAIWk1iVDWinTst6dtjE6guBCevPe3Su9htXwLEkoPzs3I");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-white rounded-full text-text-main hover:text-primary"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 bg-white rounded-full text-primary hover:bg-red-50"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up texture of woven african fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa2ZcZWxcR4XTW8YclZDAdUhXd4pFjM2pXy_jkeNon6IxM6YHrPTQcZ8DkdHJAsShIzW_GnF6wuISNOhbyJ9hbJNdHJp43HGhTXMs3ksfyF3ol0MM5hVmMOxS6UzPBAbAih4durFgo62JGYDS5CoeyTarbuRZNV9iU3emBKA6bWzf47-f-ZM30BahMo7BxiWxBvlPQL0w7V7mfXE3usrY39W3IIdvzO5Pzz_drTuZd5ikPDuzMoRPlvR4lJDR2q-AjgEwW2fWhMyY");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-white rounded-full text-text-main hover:text-primary"><span class="material-symbols-outlined text-[20px]">star</span></button>
+<button class="p-2 bg-white rounded-full text-primary hover:bg-red-50"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="group relative aspect-square rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<div class="w-full h-full bg-cover bg-center" data-alt="Kente cloth worn by a man in traditional fashion" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvOs8pfgpK6--aXC-MS8nR6oauRXgucC8G-m36PastKbs05n3fSD3G31NZlZfAg1TPrcjKAUstZYY1_SGG9Qo7xafp5-z1INkXUFzIVNjg9ffm0bX86zgrvHw9hNuuNxczjpmPWcVFg0OnG2PD5dL4XEa98n1FUKT0KXi0uL5W6DqfoUCfG7UN8Dfnw5aVBnqe3uEsQY9724amhdyPgJTfzcTjxjtUzPz2NBTIJSm4sVTqsNCJo_gtxgxvyiz0dD_MA7zj5d-vugQ");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-white rounded-full text-text-main hover:text-primary"><span class="material-symbols-outlined text-[20px]">star</span></button>
+<button class="p-2 bg-white rounded-full text-primary hover:bg-red-50"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</div>
+<!-- Upload Placeholder -->
+<div class="relative aspect-square rounded-lg border-2 border-dashed border-border-light dark:border-border-dark flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-50 dark:hover:bg-surface-dark/50 hover:border-primary/40 transition-colors group">
+<div class="p-3 rounded-full bg-background-light dark:bg-background-dark text-text-subtle group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</div>
+<span class="text-xs font-semibold text-text-subtle group-hover:text-primary">Add Image</span>
+</div>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-text-main dark:text-white border border-border-light dark:border-border-dark hover:border-primary/30 transition-colors text-sm font-bold gap-2">
+<span class="material-symbols-outlined text-[20px]">upload</span>
+<span>Upload New Images</span>
+</button>
+</div>
+<!-- Inventory & Shipping Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Inventory -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Inventory</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">SKU</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="KNT-ASH-001"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Barcode (ISBN/UPC)</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="8934500023"/>
+</div>
+<div class="flex gap-4">
+<div class="space-y-1.5 flex-1">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Quantity</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="number" value="45"/>
+</div>
+<div class="space-y-1.5 flex-1">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Low Stock Limit</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="number" value="5"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Shipping -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Shipping</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="flex items-center h-5">
+<input checked="" class="w-4 h-4 text-primary bg-background-light border-border-light rounded focus:ring-primary focus:ring-2" id="physical" type="checkbox"/>
+</div>
+<label class="text-sm font-medium text-text-main dark:text-gray-200" for="physical">This is a physical product</label>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Weight (kg)</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="number" value="0.5"/>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-subtle">Length</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="10"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-subtle">Width</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="15"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-subtle">Height</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="2"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sidebar) -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Status Card (Sticky on desktop?) -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Publish</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Status</label>
+<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary">
+<option selected="" value="active">Active</option>
+<option value="draft">Draft</option>
+<option value="archived">Archived</option>
+</select>
+<div class="flex items-center gap-2 mt-2">
+<span class="size-2 rounded-full bg-success"></span>
+<span class="text-xs text-success font-medium">Product is currently live</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2 border-t border-b border-border-light dark:border-border-dark">
+<span class="text-sm font-medium text-text-main dark:text-white">Store Visibility</span>
+<label class="inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/40 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="pt-2">
+<button class="flex md:hidden w-full items-center justify-center gap-2 h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-sm shadow-red-200">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                                Update Product
+                            </button>
+</div>
+</div>
+</div>
+<!-- Pricing Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Pricing</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Base Price (GHS)</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary font-mono" type="text" value="120.00"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200 flex justify-between">
+                                Sale Price
+                                <span class="text-xs font-normal text-primary cursor-pointer hover:underline">Schedule sale</span>
+</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary font-mono" placeholder="0.00" type="text"/>
+<p class="text-xs text-text-subtle">Leave empty to use base price.</p>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<input checked="" class="w-4 h-4 text-primary bg-background-light border-border-light rounded focus:ring-primary focus:ring-2" id="tax" type="checkbox"/>
+<label class="text-sm text-text-subtle" for="tax">Charge taxes on this item</label>
+</div>
+</div>
+</div>
+<!-- Organization Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm p-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Organization</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Category</label>
+<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary">
+<option selected="" value="fabric">Fashion &amp; Fabrics</option>
+<option value="art">Art &amp; Crafts</option>
+<option value="home">Home Decor</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Vendor / Brand</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white text-sm focus:border-primary focus:ring-primary" type="text" value="Kumasi Weavers Co."/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold text-text-main dark:text-gray-200">Tags</label>
+<div class="flex flex-wrap gap-2 p-2 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark min-h-[42px]">
+<span class="bg-white dark:bg-surface-dark text-xs font-bold px-2 py-1 rounded border border-gray-200 dark:border-gray-700 flex items-center gap-1">
+                                    Kente <button class="hover:text-primary">×</button>
+</span>
+<span class="bg-white dark:bg-surface-dark text-xs font-bold px-2 py-1 rounded border border-gray-200 dark:border-gray-700 flex items-center gap-1">
+                                    Ashanti <button class="hover:text-primary">×</button>
+</span>
+<span class="bg-white dark:bg-surface-dark text-xs font-bold px-2 py-1 rounded border border-gray-200 dark:border-gray-700 flex items-center gap-1">
+                                    Woven <button class="hover:text-primary">×</button>
+</span>
+<input class="bg-transparent border-none p-0 text-sm focus:ring-0 w-20 placeholder:text-text-subtle" placeholder="Add..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Help -->
+<div class="w-full max-w-[1440px] mx-auto px-4 lg:px-10 pb-8 mt-4 flex justify-center">
+<p class="text-text-subtle text-sm">Need help editing products? <a class="text-primary font-bold hover:underline" href="#">Read the documentation</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Collapsible Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggles = document.querySelectorAll('.sidebar-menu-toggle');
+    const currentPath = window.location.pathname.split('/').pop() || window.location.href.split('/').pop();
+    
+    // Function to toggle menu
+    function toggleMenu(button, menu, chevron) {
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other menus (optional: remove this if you want multiple menus open)
+        document.querySelectorAll('[id$="-menu"]').forEach(m => {
+            if (m.id !== menu.id) {
+                m.classList.add('hidden');
+                const otherButton = document.querySelector(`[data-target="${m.id}"]`);
+                const otherChevron = otherButton?.querySelector('.sidebar-chevron');
+                if (otherChevron) {
+                    otherChevron.style.transform = 'rotate(0deg)';
+                }
+                // Reset other button styles
+                if (otherButton && !otherButton.classList.contains('active-menu-item')) {
+                    otherButton.classList.remove('bg-primary/10', 'text-primary');
+                    otherButton.classList.add('text-text-muted');
+                }
+            }
+        });
+        
+        // Toggle current menu
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            menu.classList.add('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+    
+    // Add click handlers
+    menuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const targetId = this.getAttribute('data-target');
+            const menu = document.getElementById(targetId);
+            const chevron = this.querySelector('.sidebar-chevron');
+            
+            if (menu) {
+                toggleMenu(this, menu, chevron);
+            }
+        });
+    });
+    
+    // Auto-expand menu if current page is in a submenu
+    const allSubmenuLinks = document.querySelectorAll('[id$="-menu"] a');
+    let activeSubmenuFound = false;
+    
+    allSubmenuLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+            activeSubmenuFound = true;
+            const menu = link.closest('[id$="-menu"]');
+            const menuId = menu?.id;
+            if (menuId) {
+                // Expand the parent menu
+                menu.classList.remove('hidden');
+                const button = document.querySelector(`[data-target="${menuId}"]`);
+                const chevron = button?.querySelector('.sidebar-chevron');
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+                // Highlight parent button
+                if (button) {
+                    button.classList.add('bg-primary/10', 'text-primary');
+                    button.classList.remove('text-text-muted');
+                    button.classList.add('active-menu-item');
+                }
+                // Highlight active submenu item
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        }
+    });
+    
+    // Highlight active main menu item (if no submenu is active)
+    if (!activeSubmenuFound) {
+        const mainMenuLinks = document.querySelectorAll('nav > a[href]');
+        mainMenuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        });
+    }
+});
+</script>
+</body></html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Completed Orders</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-content": "#ffffff",
+                        "secondary": "#f4b400", 
+                        "success": "#0f9d58",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "border-light": "#f3e7e7",
+                        "border-dark": "#4a2b2b",
+                        "text-main": "#1b0d0d",
+                        "text-sub": "#9a4c4c",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom scrollbar for better look in table */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e7cfcf; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4b5b5; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<aside class="flex w-64 flex-col bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 h-full hidden md:flex shrink-0 z-20">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined icon-filled">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-primary text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_dashboard_overview.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Listings (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="listings-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Listings</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="listings-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_products_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">All Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_services_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">All Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="pending_approval_listings_page_1.html">
+<span class="material-symbols-outlined text-base">pending</span>
+<span class="text-xs font-normal">Pending Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="approved_listings_page_1.html">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-normal">Approved Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="rejected_listings_page_1.html">
+<span class="material-symbols-outlined text-base">cancel</span>
+<span class="text-xs font-normal">Rejected Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Orders -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_orders_page.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+
+<!-- Deliveries (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="deliveries-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="deliveries-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_management_page.html">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span class="text-xs font-normal">Delivery Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_&_logistics_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Delivery Settings</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Users (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="users-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="users-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_buyers_page.html">
+<span class="material-symbols-outlined text-base">person</span>
+<span class="text-xs font-normal">Buyers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_sellers_page.html">
+<span class="material-symbols-outlined text-base">store</span>
+<span class="text-xs font-normal">Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="featured_sellers_page.html">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-normal">Featured Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_staff.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">Admin Staff</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Payments (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="payments-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="payments-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payments_overview_page.html">
+<span class="material-symbols-outlined text-base">overview</span>
+<span class="text-xs font-normal">Payment Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="transaction_history_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">All Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="refunds_management_page.html">
+<span class="material-symbols-outlined text-base">undo</span>
+<span class="text-xs font-normal">Refunds Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payment_gateway_settings_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Payment Gateway Settings</span>
+</a>
+</div>
+</div>
+
+<!-- Seller Payouts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="seller_payouts_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Seller Payouts</span>
+</a>
+
+<!-- Marketing (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="marketing-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Marketing</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="marketing-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="promotions_dashboard_page.html">
+<span class="material-symbols-outlined text-base">campaign</span>
+<span class="text-xs font-normal">Promotions Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="marketing_performance_reports_page.html">
+<span class="material-symbols-outlined text-base">analytics</span>
+<span class="text-xs font-normal">Marketing Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="premium_listings_management_page.html">
+<span class="material-symbols-outlined text-base">diamond</span>
+<span class="text-xs font-normal">Premium Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Categories (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="categories-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium">Categories</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="categories-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="product_categories_management_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">Product Categories</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="service_categories_management_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Service Categories</span>
+</a>
+</div>
+</div>
+
+<!-- Analytics (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="reports-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="reports-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="sales_analytics_page.html">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span class="text-xs font-normal">Sales Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="services_analytics_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Services Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="revenue_reports_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Revenue Reports</span>
+</a>
+</div>
+</div>
+
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_notifications_page.html">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+
+<!-- System (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="system-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">System</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="system-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="general_platform_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Platform Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="user_roles_&_permissions_page.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">User Roles & Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="homepage_slider_management_page.html">
+<span class="material-symbols-outlined text-base">slideshow</span>
+<span class="text-xs font-normal">Homepage Slider</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="maintenance_mode_page.html">
+<span class="material-symbols-outlined text-base">build</span>
+<span class="text-xs font-normal">Maintenance Mode</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="audit_logs_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">Audit Logs</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Admin Profile -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_details_page.html">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Admin Profile</span>
+</a>
+
+<!-- Static Pages -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="static_pages_management_page.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Static Pages</span>
+</a>
+</nav>
+
+<!-- User Profile Snippet (Bottom Sidebar) -->
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-9 rounded-full bg-cover bg-center border border-gray-200" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhPOYlVjwG0s3IRquwXxTv_-iwmgq87HCCXTDFl5U-y81ySIqxn2OxtVw1WfQHgUiu6tNIv6VVCanNHxm8VuystM4q645TMI_CTRNfLg5qr-L-d_RAcxOqGgeV5zon_yPXFsq9Z2H_t8QHVCQo6BhJsw0nVgOvjHF1qWbLPVncDDYJaccGy4ds8Cu-NBOBEwj1NTnKhAvr0pS763_73V7igx7whT4aDTtjEXEmgEf04IbZ3HPFE2TO6ZevG4wZcN-RGjbFxx41T88");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main dark:text-white">Kwame D.</p>
+<p class="text-xs text-text-muted">Super Admin</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors" onclick="window.location.href='admin_login_page.html'">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+Log Out
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full relative overflow-hidden bg-[#fcf8f8] dark:bg-background-dark">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-8 py-5 shrink-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-text-main dark:text-white text-2xl font-bold tracking-tight">Completed Orders</h2>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden md:flex relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-text-sub">search</span>
+</div>
+<input class="block w-64 rounded-lg border-none bg-border-light dark:bg-border-dark py-2.5 pl-10 pr-4 text-sm text-text-main dark:text-white placeholder-text-sub focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search order ID or customer..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="relative p-2 text-text-main hover:bg-border-light dark:hover:bg-border-dark rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</button>
+<div class="h-8 w-px bg-border-light dark:bg-border-dark mx-1"></div>
+<button class="flex items-center gap-3 pl-2 pr-1 rounded-full hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-text-main dark:text-white leading-none">Admin User</p>
+<p class="text-xs text-text-sub mt-1 leading-none">Super Admin</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Profile picture of a man in suit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBc9HqZgs8dsSqZPkb3frtri1C8QVdlwn7_KPSMjisvBc5Lk3b3RsMOFdEqnQPHzgvZEDwZtZ0CNhID73dwJdOKIOeeHhhOQA_xqfI6LRFKo01mn9yOX7-aKYFLnVc5P49YkoelvY29gmauKSZkpothF2br3GnovPI0kpJbUkD9j2c1e8C6Kb7lIcCQvDiAfRHFlnPFVfIDB9JN9jzWI21TbUazmwn3OPpt9aNo2it_TnPX-CCpfnRFvNGWlSPOjYPEgxsf4VmkThI");'></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="flex flex-col gap-8 max-w-[1400px] mx-auto pb-10">
+<!-- Stats Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+<span class="material-symbols-outlined text-green-700 dark:text-green-400">check_box</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">+12%</span>
+</div>
+<p class="text-text-sub text-sm font-medium mb-1">Total Completed Today</p>
+<h3 class="text-text-main dark:text-white text-3xl font-bold">156</h3>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+<span class="material-symbols-outlined text-yellow-700 dark:text-yellow-400">payments</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">+5%</span>
+</div>
+<p class="text-text-sub text-sm font-medium mb-1">Revenue Generated</p>
+<h3 class="text-text-main dark:text-white text-3xl font-bold">₵ 45,230</h3>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<span class="text-xs font-bold text-primary bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-full">-2%</span>
+</div>
+<p class="text-text-sub text-sm font-medium mb-1">Avg Delivery Time</p>
+<h3 class="text-text-main dark:text-white text-3xl font-bold">24h 15m</h3>
+</div>
+</div>
+<!-- Toolbar & Filters -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:border-primary/50 transition-colors">
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Date: Last 30 Days</span>
+<span class="material-symbols-outlined text-text-sub text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:border-primary/50 transition-colors">
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Payment: All</span>
+<span class="material-symbols-outlined text-text-sub text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:border-primary/50 transition-colors">
+<span class="text-sm font-medium text-text-main dark:text-gray-200">Vendor: All</span>
+<span class="material-symbols-outlined text-text-sub text-sm">expand_more</span>
+</button>
+</div>
+<div class="flex gap-2 w-full sm:w-auto">
+<button class="flex flex-1 sm:flex-none items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-colors shadow-sm shadow-red-200 dark:shadow-none">
+<span class="material-symbols-outlined text-xl">download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-[#3a2222] border-b border-border-light dark:border-border-dark">
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Order ID</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Customer</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Date Delivered</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Items</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Amount</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub">Payment</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub text-center">Status</th>
+<th class="p-5 text-xs uppercase tracking-wider font-bold text-text-sub text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Row 1 -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1024</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of Kwame Mensah" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmz0pLi82-2QKjUd9NPvR_QA23vcCR-WGDHDWXRwypd9YvG15B-RBLy2sHt1V-B4p-9mghhyckdPqsug-G_jauSlj5FjGN5Zki0L8TP_n60YkrZzxbxEJxwKjgPsUesABIOwK422RsBXBpbnjiW8NZdqqApehn1deZclxOOEPgp9WOGzH5S8ZabLhi6I6FwDjWeQS2jcJdGWLM00WSoQ071niU-p2rFUTofqLjVm9S8BS7dX7dxrESPgMIoIng4DcR5drAZxzz5QY');"></div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Kwame Mensah</p>
+<p class="text-xs text-text-sub">Accra, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 24, 2023 <span class="text-text-sub text-xs ml-1">10:30 AM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">3 items</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 450.00</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-yellow-600 text-sm">phone_iphone</span> Mobile Money
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1023</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of Abena Osei" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmOo2wlZvzYyYolcljCGVoGYlAr1TOFYoLufVHlO8_8ZmIUi4AvfyI0ANxA-8xQJ_VKrUKYibIyfF2vgkmfBKH07Z0MzRA3e3hns6XVSh76ngeDK2AcV8NMT_IGC8pfVhs1usC4n9CbWFlsQ2xh9m_hsBdrUPVF7D9lIPWlTTZ-lV2AshkYguMNTHlPaM3v4U1vfbzIOdmhfJq0lOKMnxX9mTSX_uaqVXsccNND85AqPIFQJhFp3rO0wKXTH1zjsuQOFUwyAZhTzw');"></div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Abena Osei</p>
+<p class="text-xs text-text-sub">Kumasi, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 24, 2023 <span class="text-text-sub text-xs ml-1">09:15 AM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">1 item</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 1,200.00</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-sm">credit_card</span> Card
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1022</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of Kojo Antwi" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIJ5MMK8Ok9xPoMw7VSV4pMWD2c4KxjJMy-eKCZ2UTpWsya_-NgltqyXOUjRxNXhVgWlQvmZnQTz0JlBTVEyWV3incAJ0dYuYpaSC02jFik891Zq8-TAY1cDv0kcw_7T0LFWkfiBD2Wib4kapgnFdPGVZHh5jpqrPd54k-XTFiodxWXv29fFSfy-VErfy3sSe-Xj6DrlpyI02r8hCQpirvAww-FZP_-F6KdygFnA69qnxDcdHX0Iwyc3M4h1Xl9Y6ijeL64pGksGY');"></div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Kojo Antwi</p>
+<p class="text-xs text-text-sub">Tamale, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 23, 2023 <span class="text-text-sub text-xs ml-1">04:45 PM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">5 items</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 85.50</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-yellow-600 text-sm">attach_money</span> Cash on Delivery
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1021</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">YA</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Yaa Asantewaa</p>
+<p class="text-xs text-text-sub">Cape Coast, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 23, 2023 <span class="text-text-sub text-xs ml-1">02:10 PM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">2 items</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 320.00</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-yellow-600 text-sm">phone_iphone</span> Mobile Money
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1020</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Portrait of Esi Mansa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLRqbFarj1fDagXXOj00nIP4c-flz8hSPodLWNFGCEFWG4n-nxxEIkVsbyKQhZTjchpb6rAUyKK6yPl5qbfK5MSFHuCr4N5K4g-RCR8ty4LOJ6-9yWPQp7x0Z0jffqZ0CkIy09qmc7Vh0FFIvBLMXfZXaaZef30cRGE2ER79mDBwAneeUVeiYzsFyG2q7arbquyhW82di3_CTkNqo5fIlg7y6RDVYHo4lE9BEo0fWwCRBzjRp1-1TRSSJQCD23pv1iDNluhiYe4kY');"></div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Esi Mansa</p>
+<p class="text-xs text-text-sub">Tema, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 22, 2023 <span class="text-text-sub text-xs ml-1">11:55 AM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">8 items</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 1,850.00</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-sm">credit_card</span> Card
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 (Returned/Refunded Example if needed, sticking to Delivered as per request, but showing consistency) -->
+<tr class="hover:bg-[#fcf2f2] dark:hover:bg-[#3a2222] transition-colors group">
+<td class="p-5 text-sm font-bold text-primary">#VM-1019</td>
+<td class="p-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">FB</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white">Fiifi Boahen</p>
+<p class="text-xs text-text-sub">Accra, GH</p>
+</div>
+</div>
+</td>
+<td class="p-5 text-sm font-medium text-text-main dark:text-gray-200">Oct 22, 2023 <span class="text-text-sub text-xs ml-1">09:00 AM</span></td>
+<td class="p-5 text-sm text-text-main dark:text-gray-200">1 item</td>
+<td class="p-5 text-sm font-bold text-text-main dark:text-white">₵ 65.00</td>
+<td class="p-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-xs font-medium text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-yellow-600 text-sm">phone_iphone</span> Mobile Money
+                                            </span>
+</td>
+<td class="p-5 text-center">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-xs font-bold text-green-700 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Delivered
+                                            </span>
+</td>
+<td class="p-5 text-right">
+<button class="p-2 text-text-sub hover:text-primary hover:bg-primary/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark">
+<p class="text-sm text-text-sub">Showing <span class="font-bold text-text-main dark:text-white">1-6</span> of <span class="font-bold text-text-main dark:text-white">156</span> orders</p>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg border border-border-light dark:border-border-dark text-text-sub disabled:opacity-50 hover:bg-white dark:hover:bg-border-dark transition-colors" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-medium">1</button>
+<button class="px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:bg-white dark:hover:bg-border-dark transition-colors">2</button>
+<button class="px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:bg-white dark:hover:bg-border-dark transition-colors">3</button>
+<span class="text-text-sub">...</span>
+<button class="px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 text-sm font-medium hover:bg-white dark:hover:bg-border-dark transition-colors">12</button>
+<button class="p-2 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-gray-200 hover:bg-white dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Collapsible Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggles = document.querySelectorAll('.sidebar-menu-toggle');
+    const currentPath = window.location.pathname.split('/').pop() || window.location.href.split('/').pop();
+    
+    // Function to toggle menu
+    function toggleMenu(button, menu, chevron) {
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other menus (optional: remove this if you want multiple menus open)
+        document.querySelectorAll('[id$="-menu"]').forEach(m => {
+            if (m.id !== menu.id) {
+                m.classList.add('hidden');
+                const otherButton = document.querySelector(`[data-target="${m.id}"]`);
+                const otherChevron = otherButton?.querySelector('.sidebar-chevron');
+                if (otherChevron) {
+                    otherChevron.style.transform = 'rotate(0deg)';
+                }
+                // Reset other button styles
+                if (otherButton && !otherButton.classList.contains('active-menu-item')) {
+                    otherButton.classList.remove('bg-primary/10', 'text-primary');
+                    otherButton.classList.add('text-text-muted');
+                }
+            }
+        });
+        
+        // Toggle current menu
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            menu.classList.add('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+    
+    // Add click handlers
+    menuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const targetId = this.getAttribute('data-target');
+            const menu = document.getElementById(targetId);
+            const chevron = this.querySelector('.sidebar-chevron');
+            
+            if (menu) {
+                toggleMenu(this, menu, chevron);
+            }
+        });
+    });
+    
+    // Auto-expand menu if current page is in a submenu
+    const allSubmenuLinks = document.querySelectorAll('[id$="-menu"] a');
+    let activeSubmenuFound = false;
+    
+    allSubmenuLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+            activeSubmenuFound = true;
+            const menu = link.closest('[id$="-menu"]');
+            const menuId = menu?.id;
+            if (menuId) {
+                // Expand the parent menu
+                menu.classList.remove('hidden');
+                const button = document.querySelector(`[data-target="${menuId}"]`);
+                const chevron = button?.querySelector('.sidebar-chevron');
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+                // Highlight parent button
+                if (button) {
+                    button.classList.add('bg-primary/10', 'text-primary');
+                    button.classList.remove('text-text-muted');
+                    button.classList.add('active-menu-item');
+                }
+                // Highlight active submenu item
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        }
+    });
+    
+    // Highlight active main menu item (if no submenu is active)
+    if (!activeSubmenuFound) {
+        const mainMenuLinks = document.querySelectorAll('nav > a[href]');
+        mainMenuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        });
+    }
+});
+</script>
+</body></html>

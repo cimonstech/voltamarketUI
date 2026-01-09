@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller Dashboard - Pending Listings</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .icon-filled {
+             font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-gray-100 overflow-hidden">
+<div class="flex h-screen w-full flex-row overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-72 flex-shrink-0 border-r border-[#e7cfcf] dark:border-[#3a2020] bg-surface-light dark:bg-surface-dark flex flex-col justify-between p-4 hidden lg:flex">
+<div class="flex flex-col gap-6">
+<!-- User Profile / Brand Area -->
+<div class="flex gap-3 items-center px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-2 border-primary" data-alt="User profile picture showing a smiling seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEjxAbHTGVXO0iWUMxRRNbIq1lhkWd4GxwY7uzyHOxn3dsi2w-TvFD6zmr1S1lc4j_qFR5bmQLr7iXu8Wz8V5ZI_h60ev3oKhWYSmQaQJ-i03H5d_8JMwpqo5uMkXmGcYNRDOAgIB1KVVPbvVB7b6VLYIn3t9IBVj9mYD3ROqkcHoUWG_00bsutEI6VQm7Pm4uFYIqJ50g9dIstUchSk__T__Sbk6x24urMd0YLXmolZ96ApBqxu0FoDLSsPz31Vza7jzptlOlAbY");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#1b0d0d] dark:text-white text-base font-bold leading-normal">Voltamarket Seller</h1>
+<p class="text-[#9a4c4c] dark:text-red-300 text-sm font-normal leading-normal">Kofi's Store</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined icon-filled">inventory_2</span>
+<span class="text-sm font-bold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a2020]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-[#1b0d0d] dark:text-gray-200 group transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primary">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<div class="w-full max-w-[1200px] mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-6">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex items-center gap-3">
+<h1 class="text-[#1b0d0d] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Pending Approval</h1>
+<span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 text-xs font-bold px-2 py-1 rounded-full border border-yellow-200 dark:border-yellow-800">5 Items</span>
+</div>
+<p class="text-[#9a4c4c] dark:text-gray-400 text-base font-normal leading-relaxed">
+                            These listings are currently under review by the Voltamarket team. We check for quality and compliance to ensure a safe marketplace. Reviews typically take 24-48 hours.
+                        </p>
+</div>
+<a href="add_new_product_page.html" class="flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-sm hover:bg-red-700 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-primary min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">Add New Listing</span>
+</a>
+</div>
+<!-- Filters & Search -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e7cfcf] dark:border-[#3a2020] p-4 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+<!-- Search Bar -->
+<div class="w-full md:w-96">
+<div class="relative flex items-center h-10 w-full rounded-lg bg-[#f3e7e7] dark:bg-[#3a2020] overflow-hidden group focus-within:ring-2 focus-within:ring-primary transition-shadow">
+<div class="flex items-center justify-center pl-3 text-[#9a4c4c] dark:text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 border-none bg-transparent h-full px-3 text-base text-[#1b0d0d] dark:text-white placeholder-[#9a4c4c] dark:placeholder-gray-500 focus:outline-none focus:ring-0" placeholder="Search by product name, SKU..."/>
+</div>
+</div>
+<!-- Chips/Filters -->
+<div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white pl-4 pr-3 text-sm font-bold shadow-sm">
+<span>All</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f3e7e7] dark:bg-[#3a2020] hover:bg-[#e7cfcf] dark:hover:bg-[#4a2a2a] pl-4 pr-3 text-[#1b0d0d] dark:text-gray-200 border border-transparent dark:border-[#4a2a2a] transition-colors">
+<span class="text-sm font-medium">Products</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f3e7e7] dark:bg-[#3a2020] hover:bg-[#e7cfcf] dark:hover:bg-[#4a2a2a] pl-4 pr-3 text-[#1b0d0d] dark:text-gray-200 border border-transparent dark:border-[#4a2a2a] transition-colors">
+<span class="text-sm font-medium">Services</span>
+</button>
+<div class="h-9 w-px bg-[#e7cfcf] dark:bg-[#4a2a2a] mx-1"></div>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#2d1b1b] border border-[#e7cfcf] dark:border-[#4a2a2a] pl-4 pr-3 text-[#1b0d0d] dark:text-gray-200 hover:border-primary dark:hover:border-primary transition-colors">
+<span class="text-sm font-medium">Sort: Newest</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Table Section -->
+<div class="rounded-xl border border-[#e7cfcf] dark:border-[#3a2020] bg-surface-light dark:bg-surface-dark shadow-sm overflow-hidden">
+<div class="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-[#fcf8f8] dark:bg-[#2d1b1b] border-b border-[#e7cfcf] dark:border-[#3a2020]">
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider w-20">Image</th>
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Listing Details</th>
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Category</th>
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Submitted</th>
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Status</th>
+<th class="px-3 md:px-6 py-3 md:py-4 text-[#9a4c4c] dark:text-gray-400 text-xs font-bold uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7cfcf] dark:divide-[#3a2020]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#2a1515] transition-colors group">
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg aspect-square w-12 bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="Colorful woven Kente cloth high-top sneakers side view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmLRUVQJPuzEH8V7sOxSplKAFQ4CMkL34x3B8rd9uzYRZXeMLBJ16WMW8PW8WxmyqMKJJkShbZroOAYwbS1vI0ckFyLggcq_8MT3vgxMoO5ro7cEFIqdy-fZGuNFKZn_jTFFxOB0aE9m6ynxWrC6YPDkg4g43c5tHR_4GfvZwBX9eRgr-ytLAnrewD9rtqGMdu748qFkhx5gFfPNxPbyv5H69lhGSSmuLu0-jxIUJY1Z3j2lj_VA0aFSmLjXQFUHDldwP8096AAjM");'>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex flex-col">
+<span class="text-[#1b0d0d] dark:text-white font-bold text-sm">Kente Cloth High-Top Sneakers</span>
+<span class="text-[#9a4c4c] dark:text-gray-500 text-xs">SKU: KNT-001-GH</span>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">
+                                            Fashion
+                                        </span>
+</td>
+<td class="px-6 py-4 align-middle text-sm text-[#5c3030] dark:text-gray-300">
+                                        Oct 24, 2023
+                                    </td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9C4] dark:bg-yellow-900/40 w-fit">
+<div class="w-1.5 h-1.5 rounded-full bg-[#FBC02D]"></div>
+<span class="text-[#F57F17] dark:text-[#FFF59D] text-xs font-bold">Pending Review</span>
+</div>
+</td>
+<td class="px-6 py-4 align-middle text-right">
+<a href="edit_product_page.html" class="text-primary hover:text-[#c40e0e] hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-1 min-h-[44px]">
+                                            View Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#2a1515] transition-colors group">
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg aspect-square w-12 bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="Solar panels installed on a modern residential roof" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDi7bsjd6gvg2DfD1U_QP1AtYMIc69Ib8mMeGGIUEfbqNPw4o0g_imVfgXwbRpUrsbaQSbt_f07YHVaf9GpBU--H0jqQAo6zkQSQCD4_Hb4qBY9gNkRuRLtuoy8MXjYrRZgrXUU45TscL1IYMniV_Prj39hx8-i_f3TjuMF1Yc1pBtufxgfDuJOJ9NpqMT2eALKim0zQuTwLdlvU83a2MvC068P287m2BYYaDZPOXPuc1QSLkGAP2d5zOEm6o1YCoiWFlR2Ahy1h6o");'>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex flex-col">
+<span class="text-[#1b0d0d] dark:text-white font-bold text-sm">Solar Panel Installation Service</span>
+<span class="text-[#9a4c4c] dark:text-gray-500 text-xs">ID: SRV-SOL-05</span>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">
+                                            Services
+                                        </span>
+</td>
+<td class="px-6 py-4 align-middle text-sm text-[#5c3030] dark:text-gray-300">
+                                        Oct 23, 2023
+                                    </td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFE0B2] dark:bg-orange-900/40 w-fit">
+<div class="w-1.5 h-1.5 rounded-full bg-[#F57C00]"></div>
+<span class="text-[#E65100] dark:text-[#FFCC80] text-xs font-bold">Awaiting Docs</span>
+</div>
+</td>
+<td class="px-6 py-4 align-middle text-right">
+<a href="edit_product_page.html" class="text-primary hover:text-[#c40e0e] hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-1 min-h-[44px]">
+                                            View Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#2a1515] transition-colors group">
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg aspect-square w-12 bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="Handcrafted glass beads bracelet in varied colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuNGexC16B6083FS-N8PCuNIeWghkVfxM4aXxic3Q52H0UGosfo_O4xXmrn2OV_zUWajDRgDyUy5vAH2ftIQAw4yCP_bk7ncOSIc1jT4DBE94vSzLFm-KWmMfXYVMYHCs1c5RBx1owq6ES8YRiX4Mnk8qjH_N-0vr67jII8meRS_M_Swv73ZfQRxxefR_bimxFlF1Je02VEtCYoMiLDiWy_ef2_BQGFcQhG_tcNoyVyalGc5c3VRcv8QxC02QMo7iQYV8UDvN2KMk");'>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex flex-col">
+<span class="text-[#1b0d0d] dark:text-white font-bold text-sm">Handmade Glass Beads</span>
+<span class="text-[#9a4c4c] dark:text-gray-500 text-xs">SKU: BEA-045-GH</span>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">
+                                            Jewelry
+                                        </span>
+</td>
+<td class="px-6 py-4 align-middle text-sm text-[#5c3030] dark:text-gray-300">
+                                        Oct 22, 2023
+                                    </td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9C4] dark:bg-yellow-900/40 w-fit">
+<div class="w-1.5 h-1.5 rounded-full bg-[#FBC02D]"></div>
+<span class="text-[#F57F17] dark:text-[#FFF59D] text-xs font-bold">Pending Review</span>
+</div>
+</td>
+<td class="px-6 py-4 align-middle text-right">
+<a href="edit_product_page.html" class="text-primary hover:text-[#c40e0e] hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-1 min-h-[44px]">
+                                            View Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#2a1515] transition-colors group">
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg aspect-square w-12 bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="Raw organic shea butter chunk close up texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpDY6hKXQDLyY6c-Vfy9TkCwRAj9k-2jiNSVzw_qft36t5sQTpD4iEdI8GVGyWd8kLCD3A_Aw0jKxWJUGv2SrWpCiNR4WoI7IOoOcP6uwAzcQv_pCm7J3sD6nUCajAbqmnwN3mOfKZbxrAOZcwwmNB1Jzs0vxhAErvuFn6OQOFd-zKlz5e62-zymuhDIcFj2cQaO9GIc1vwk8BP8Gz1QLSH2H2D5tY1bmpTOgyFyVLxYxsjeNluVcAygYYR49jPto89m834CAEqdc");'>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex flex-col">
+<span class="text-[#1b0d0d] dark:text-white font-bold text-sm">Organic Shea Butter (20kg)</span>
+<span class="text-[#9a4c4c] dark:text-gray-500 text-xs">SKU: SHE-BLK-20</span>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">
+                                            Health &amp; Beauty
+                                        </span>
+</td>
+<td class="px-6 py-4 align-middle text-sm text-[#5c3030] dark:text-gray-300">
+                                        Oct 21, 2023
+                                    </td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9C4] dark:bg-yellow-900/40 w-fit">
+<div class="w-1.5 h-1.5 rounded-full bg-[#FBC02D]"></div>
+<span class="text-[#F57F17] dark:text-[#FFF59D] text-xs font-bold">Pending Review</span>
+</div>
+</td>
+<td class="px-6 py-4 align-middle text-right">
+<a href="edit_product_page.html" class="text-primary hover:text-[#c40e0e] hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-1 min-h-[44px]">
+                                            View Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#2a1515] transition-colors group">
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-lg aspect-square w-12 bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="Woven straw basket from Bolgatanga with leather handle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCq1Ccz0TkTj30mx3-4tkv6IqQkq14Yyslj16JU-etEmJdWX5PHJLE7HbFl6hozUKo8ill8JKRNxzmSPcIc1K2aM70B1pyh42CmxkaC5WiQran4VoCypgRtMzNDUWfs_h1ehkgOCE6YrP7xffLnWNmBbUaobqLY39yWeBWYg5DPZjhUN-pelgZO4vmohoSJ3A1gZfFFbwcNKFntwv-1sr1mv6Ry9RzQ6ZQN-5p7olx8zcm8RDqbUuY39pkUFzUIZzGopSBGUMzBBs");'>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex flex-col">
+<span class="text-[#1b0d0d] dark:text-white font-bold text-sm">Bolga Woven Basket Large</span>
+<span class="text-[#9a4c4c] dark:text-gray-500 text-xs">SKU: BSK-LRG-02</span>
+</div>
+</td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">
+                                            Home Decor
+                                        </span>
+</td>
+<td class="px-6 py-4 align-middle text-sm text-[#5c3030] dark:text-gray-300">
+                                        Oct 20, 2023
+                                    </td>
+<td class="px-3 md:px-6 py-3 md:py-4 align-middle">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF9C4] dark:bg-yellow-900/40 w-fit">
+<div class="w-1.5 h-1.5 rounded-full bg-[#FBC02D]"></div>
+<span class="text-[#F57F17] dark:text-[#FFF59D] text-xs font-bold">Pending Review</span>
+</div>
+</td>
+<td class="px-6 py-4 align-middle text-right">
+<a href="edit_product_page.html" class="text-primary hover:text-[#c40e0e] hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1.5 rounded-lg text-sm font-bold transition-colors inline-flex items-center gap-1 min-h-[44px]">
+                                            View Details
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 bg-surface-light dark:bg-surface-dark border-t border-[#e7cfcf] dark:border-[#3a2020]">
+<p class="text-sm text-[#9a4c4c] dark:text-gray-400">Showing <span class="font-bold text-[#1b0d0d] dark:text-white">1-5</span> of <span class="font-bold text-[#1b0d0d] dark:text-white">5</span> items</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-[#f3e7e7] dark:bg-[#3a2020] text-[#1b0d0d] dark:text-gray-200 disabled:opacity-50 hover:bg-[#e7cfcf] dark:hover:bg-[#4a2a2a] transition-colors" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg bg-[#f3e7e7] dark:bg-[#3a2020] text-[#1b0d0d] dark:text-gray-200 hover:bg-[#e7cfcf] dark:hover:bg-[#4a2a2a] transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State Illustration (Hidden by default, shown if no items) -->
+<!-- 
+                <div class="flex flex-col items-center justify-center py-20 gap-4">
+                    <div class="size-20 bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl text-primary">inventory_2</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">No pending items</h3>
+                    <p class="text-[#9a4c4c] dark:text-gray-400 text-center max-w-sm">You're all caught up! There are no listings waiting for approval at this time.</p>
+                </div> 
+                -->
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller Dashboard - Terms &amp; Conditions</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec1313",
+              "background-light": "#fcf8f8", // Slightly warm white
+              "background-dark": "#221010", // Dark warm brown/black
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+        .text-primary-hover:hover {
+            color: #ec1313;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b0d0d] dark:text-gray-100 flex flex-col min-h-screen overflow-x-hidden group/design-root">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-[#fcf8f8] dark:bg-[#221010] border-b border-solid border-b-[#f3e7e7] dark:border-b-[#3a1d1d] px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center justify-between whitespace-nowrap max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4 text-[#1b0d0d] dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">local_mall</span>
+</div>
+<h2 class="text-[#1b0d0d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Voltamarket Seller Dashboard</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<a href="seller_support_page.html" class="hidden md:flex text-sm font-bold text-[#1b0d0d] dark:text-white hover:text-primary transition-colors min-h-[44px] items-center">Help Center</a>
+<a href="seller_profile_page.html" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[#f3e7e7] dark:border-[#3a1d1d] min-w-[44px] min-h-[44px]" data-alt="User profile picture showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgWkjm3qZ3cDcRhFLboPFuhifa5yKrJJHVXrnhg-Rqz5WOWBjvcnFF91k8HNaHp2xRHCM7hVQfxGwR_IcC7z7_JsssRTGNtssGVs4OJZG40CPW3-OdNgaTYE2Q6EbBSIlATx-ffBZW0FYoucgyhFk0p4Xc7z5QYXD4M39pfe8KLw4G1JEwMNRlZkLKZ2sFIFbMWqkYi84-WlfsAYKYqvkCN6VGaudXAP84wc-TUP7ro7BJKE7BSmxQNIJmL3Nxy22qCV2o0O_HDg4");'></a>
+</div>
+</div>
+</header>
+<div class="layout-container flex flex-col grow items-center w-full">
+<div class="layout-content-container flex max-w-[1200px] w-full gap-10 px-4 md:px-10 py-8 md:py-12">
+<!-- Sidebar Navigation (Sticky) -->
+<aside class="hidden lg:flex flex-col w-72 shrink-0 sticky top-24 h-fit gap-6">
+<nav class="flex flex-col gap-1">
+<p class="text-xs font-bold text-gray-400 uppercase tracking-wider px-3 mb-2">Table of Contents</p>
+<a class="group flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary font-bold border-l-4 border-primary transition-all" href="#intro">
+<span class="text-sm">1. Introduction</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#registration">
+<span class="text-sm font-medium">2. Account Registration</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#policies">
+<span class="text-sm font-medium">3. Selling &amp; Listing Policies</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#fees">
+<span class="text-sm font-medium">4. Fees &amp; Payouts</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#shipping">
+<span class="text-sm font-medium">5. Shipping &amp; Fulfillment</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#prohibited">
+<span class="text-sm font-medium">6. Prohibited Items</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-[#6b5a5a] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#2f1a1a] hover:text-[#1b0d0d] dark:hover:text-white transition-all border-l-4 border-transparent hover:border-gray-200" href="#termination">
+<span class="text-sm font-medium">7. Termination</span>
+</a>
+</nav>
+<!-- Support Box -->
+<div class="bg-white dark:bg-[#2a1d1d] p-4 rounded-xl border border-[#e7cfcf] dark:border-[#3a1d1d] shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+<p class="font-bold text-sm">Need Help?</p>
+</div>
+<p class="text-xs text-[#6b5a5a] dark:text-gray-400 mb-3">Contact our seller support team for clarifications.</p>
+<a href="seller_support_page.html" class="w-full text-xs font-bold text-primary border border-primary/20 rounded-lg py-2 hover:bg-primary hover:text-white transition-colors flex items-center justify-center min-h-[44px]">Contact Support</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0 flex flex-col gap-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#f3e7e7] dark:border-[#3a1d1d] pb-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#1b0d0d] dark:text-white text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Seller Terms &amp; Conditions</h1>
+<p class="text-[#9a4c4c] dark:text-[#d67b7b] text-xs sm:text-sm md:text-base font-medium">Effective Date: October 24, 2023</p>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors min-w-[140px]">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="text-sm font-bold">Download PDF</span>
+</button>
+</div>
+<!-- Introduction Section -->
+<section class="flex flex-col gap-3" id="intro">
+<h3 class="text-xl font-bold text-[#1b0d0d] dark:text-white">1. Introduction</h3>
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7">
+                        Welcome to Voltamarket. These terms govern your use of our platform to sell goods and services in Ghana. By registering as a seller, you agree to comply with all applicable laws and regulations in Ghana, including but not limited to the Electronic Transactions Act. Please read these terms carefully before proceeding.
+                    </p>
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7">
+                        Voltamarket acts as a marketplace connecting sellers with buyers. We are not a party to the contracts for sale between third-party sellers and buyers.
+                    </p>
+</section>
+<!-- Registration Section -->
+<section class="flex flex-col gap-3 pt-4" id="registration">
+<h3 class="text-xl font-bold text-[#1b0d0d] dark:text-white">2. Account Registration</h3>
+<div class="flex flex-col gap-4">
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7">
+                            To sell on Voltamarket, you must provide accurate, current, and complete information during the registration process. This includes your business name, contact information, and valid payment details.
+                        </p>
+<!-- Info Alert -->
+<div class="flex gap-3 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-lg border-l-4 border-blue-500">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">info</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-blue-900 dark:text-blue-200">Verification Required</span>
+<span class="text-sm text-blue-800 dark:text-blue-300">Sellers must verify their identity using a Ghana Card or valid Passport within 7 days of registration.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Policies Section -->
+<section class="flex flex-col gap-3 pt-4" id="policies">
+<h3 class="text-xl font-bold text-[#1b0d0d] dark:text-white">3. Selling &amp; Listing Policies</h3>
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7">
+                        All product listings must be clear, accurate, and not misleading. You agree to list products in the appropriate category and include all relevant details such as condition, size, and specifications. Images must accurately represent the product being sold.
+                    </p>
+<ul class="list-disc pl-5 space-y-2 text-[#4a3a3a] dark:text-gray-300">
+<li>Duplicate listings for the same item are prohibited.</li>
+<li>Watermarked images containing contact information are not allowed.</li>
+<li>Prices must be listed in Ghana Cedis (GHS) and include all applicable taxes.</li>
+</ul>
+</section>
+<!-- Fees Section -->
+<section class="flex flex-col gap-3 pt-4" id="fees">
+<h3 class="text-xl font-bold text-[#1b0d0d] dark:text-white">4. Fees &amp; Payouts</h3>
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7">
+                        Voltamarket charges a commission fee on each successful sale. The commission rate varies by category, ranging from 3% to 12%. 
+                    </p>
+<div class="overflow-hidden rounded-lg border border-[#e7cfcf] dark:border-[#3a1d1d] mt-2">
+<table class="w-full text-sm text-left">
+<thead class="bg-[#f3e7e7] dark:bg-[#2f1a1a] text-[#1b0d0d] dark:text-white font-bold">
+<tr>
+<th class="px-4 py-3">Category</th>
+<th class="px-4 py-3">Commission Fee</th>
+<th class="px-4 py-3">Closing Fee</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7cfcf] dark:divide-[#3a1d1d] bg-white dark:bg-[#2a1d1d]">
+<tr>
+<td class="px-4 py-3">Electronics &amp; Gadgets</td>
+<td class="px-4 py-3">5%</td>
+<td class="px-4 py-3">GHS 2.00</td>
+</tr>
+<tr>
+<td class="px-4 py-3">Fashion &amp; Apparel</td>
+<td class="px-4 py-3">10%</td>
+<td class="px-4 py-3">GHS 1.50</td>
+</tr>
+<tr>
+<td class="px-4 py-3">Home &amp; Living</td>
+<td class="px-4 py-3">8%</td>
+<td class="px-4 py-3">GHS 3.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Prohibited Items Section with Warning -->
+<section class="flex flex-col gap-3 pt-4" id="prohibited">
+<h3 class="text-xl font-bold text-[#1b0d0d] dark:text-white">6. Prohibited Items</h3>
+<!-- Warning Card -->
+<div class="flex gap-4 p-5 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg border-l-4 border-yellow-500">
+<div class="shrink-0">
+<span class="material-symbols-outlined text-yellow-600 text-3xl">warning</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-base font-bold text-yellow-900 dark:text-yellow-100">Strict Policy on Counterfeit Goods</span>
+<p class="text-sm text-yellow-800 dark:text-yellow-200 leading-relaxed">
+                                Selling counterfeit, replica, or pirated goods is strictly prohibited on Voltamarket. Accounts found listing such items will be <strong>permanently suspended</strong> and funds may be withheld.
+                            </p>
+</div>
+</div>
+<p class="text-[#4a3a3a] dark:text-gray-300 text-base leading-7 mt-2">
+                        Additionally, the following items are not permitted:
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex items-center gap-2 p-3 rounded bg-white dark:bg-[#2a1d1d] border border-[#e7cfcf] dark:border-[#3a1d1d]">
+<span class="material-symbols-outlined text-primary text-sm">block</span>
+<span class="text-sm font-medium">Firearms &amp; Ammunition</span>
+</div>
+<div class="flex items-center gap-2 p-3 rounded bg-white dark:bg-[#2a1d1d] border border-[#e7cfcf] dark:border-[#3a1d1d]">
+<span class="material-symbols-outlined text-primary text-sm">block</span>
+<span class="text-sm font-medium">Illegal Drugs</span>
+</div>
+<div class="flex items-center gap-2 p-3 rounded bg-white dark:bg-[#2a1d1d] border border-[#e7cfcf] dark:border-[#3a1d1d]">
+<span class="material-symbols-outlined text-primary text-sm">block</span>
+<span class="text-sm font-medium">Hazardous Materials</span>
+</div>
+<div class="flex items-center gap-2 p-3 rounded bg-white dark:bg-[#2a1d1d] border border-[#e7cfcf] dark:border-[#3a1d1d]">
+<span class="material-symbols-outlined text-primary text-sm">block</span>
+<span class="text-sm font-medium">Adult Content</span>
+</div>
+</div>
+</section>
+<hr class="border-[#f3e7e7] dark:border-[#3a1d1d] my-4"/>
+<!-- Acceptance Sticky Footer Area -->
+<div class="sticky bottom-4 z-40">
+<div class="bg-white dark:bg-[#2a1d1d] p-6 rounded-xl border border-[#e7cfcf] dark:border-[#3a1d1d] shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="relative flex items-center">
+<input class="peer h-6 w-6 cursor-pointer appearance-none rounded border-2 border-gray-300 checked:border-primary checked:bg-primary transition-all hover:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:bg-gray-700" id="agree_terms" type="checkbox"/>
+<span class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100">
+<svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</div>
+<div class="flex flex-col">
+<label class="text-sm md:text-base font-bold text-[#1b0d0d] dark:text-white cursor-pointer select-none" for="agree_terms">I agree to the Seller Terms &amp; Conditions</label>
+<span class="text-xs md:text-sm text-[#6b5a5a] dark:text-gray-400">By clicking accept, you confirm you have read and understood the agreement.</span>
+</div>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none h-12 px-6 rounded-lg font-bold text-[#1b0d0d] dark:text-white bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors">
+                                Decline
+                            </button>
+<button class="flex-1 md:flex-none h-12 px-8 rounded-lg font-bold text-white bg-primary hover:bg-red-700 shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2">
+<span>Accept &amp; Continue</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer spacing -->
+<div class="h-8"></div>
+</main>
+</div>
+</div>
+</body></html>

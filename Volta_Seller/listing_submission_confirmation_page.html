@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Listing Submission Confirmation - Voltamarket</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c40f0f",
+                        "secondary-yellow": "#FCD116",
+                        "secondary-green": "#006B3F",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#6b5e5e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to avoid default blue interaction colors */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d4; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased transition-colors duration-200">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex w-72 flex-col border-r border-red-100 dark:border-red-900/30 bg-surface-light dark:bg-surface-dark transition-colors duration-200">
+<div class="flex h-full flex-col justify-between p-6">
+<div class="flex flex-col gap-8">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-primary text-white shadow-lg shadow-red-200 dark:shadow-none">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main dark:text-white text-xl font-bold leading-none tracking-tight">Voltamarket</h1>
+<span class="text-primary text-xs font-semibold tracking-wide uppercase mt-1">Seller Hub</span>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-50 dark:bg-red-900/20 text-primary dark:text-red-400 shadow-sm border border-red-100 dark:border-transparent min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined fill">inventory_2</span>
+<span class="text-sm font-bold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="text-sm font-semibold">Orders</span>
+<span class="ml-auto bg-secondary-green/10 text-secondary-green text-xs font-bold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">chat</span>
+<span class="text-sm font-semibold">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">account_balance_wallet</span>
+<span class="text-sm font-semibold">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">campaign</span>
+<span class="text-sm font-semibold">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-red-100 dark:border-red-900/30">
+<p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-sm font-semibold">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">room_service</span>
+<span class="text-sm font-semibold">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-red-100 dark:border-red-900/30">
+<p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">diamond</span>
+<span class="text-sm font-semibold">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-red-100 dark:border-red-900/30">
+<p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-semibold">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors group min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">help</span>
+<span class="text-sm font-semibold">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- User Profile Snippet in Sidebar -->
+<div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-background-light dark:bg-background-dark border border-red-50 dark:border-red-900/20">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-gray-700" data-alt="Portrait of the seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqBSsHqRMl9mZl6Q_TRGGZTUW6osgXuAcKlgys2l5S7SehbJ8hcTgo_Je-7d3ySqZW4DSPrDZ0hEGHq4fnpo994fUaMu6rb08xJcrvHELes-aZ891YIPtweZxK1G6yZNCMmCkOR1mjQjWdYdqm0jLMtg0yBvcdkkem8cOMxohH_3jlRLVLYjtIfVV31rvtoRZ3KQUXNLXtkFBM6TBm8bCmP4ZwD8iaGsg3iwTihBDBOUKUA_f83FpcK9C3qzEoA87JJxpHd1DTrCM");'></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-text-main dark:text-white text-sm font-bold truncate">Ama Osei</p>
+<p class="text-text-muted dark:text-gray-400 text-xs truncate">Accra Electronics</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-20 flex items-center justify-between border-b border-red-100 dark:border-red-900/30 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="lg:hidden text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Breadcrumb / Page Title -->
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-xs font-medium text-text-muted dark:text-gray-400">
+<span>My Listings</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>New Submission</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">Confirmation</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 text-text-muted dark:text-gray-300 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full ring-2 ring-white dark:ring-surface-dark"></span>
+</button>
+<div class="hidden md:block bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-red-100 dark:ring-red-900/30" data-alt="Portrait of the seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQAlq2Poj-rfwsscH490XHcXqIgBDhtygxtwkAMU5jtW2Pp6yEmi_rNOHEzfIUCQxwDLR8w6AhR8wmRfy8Ckc0YSmmQ9N9vJwIidnpaOB4AVU4Uj0xsyNvDhAEpeo_gu_XKl73i2Q-12dloQEyt-fudLi7OJBVFF086h4VgI-HBD5pFhLCi8B11_jCYPgX1W8sWQ8yRy9vosO9fjzSrhWI3LZ_oOBE5DZN_DaK1oD12OzgqgOL6owchCK69DHKo7-p0MmgzSufBvI");'></div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 flex items-center justify-center p-6">
+<div class="w-full max-w-[600px] flex flex-col gap-6">
+<!-- Confirmation Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl shadow-red-900/5 dark:shadow-none border border-red-50 dark:border-red-900/20 overflow-hidden">
+<!-- Success Hero -->
+<div class="flex flex-col items-center pt-10 px-8 pb-2 text-center">
+<div class="size-20 bg-secondary-green/10 dark:bg-secondary-green/20 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary-green text-5xl">check_circle</span>
+</div>
+<!-- HeadlineText -->
+<h1 class="text-text-main dark:text-white text-3xl font-bold leading-tight mb-3">Listing Received!</h1>
+<!-- BodyText -->
+<p class="text-text-muted dark:text-gray-300 text-base font-medium leading-relaxed max-w-md">
+                                Your listing for <span class="text-text-main dark:text-white font-bold">"iPhone 13 Pro (Graphite, 256GB)"</span> has been securely submitted to our moderation team in Accra.
+                            </p>
+</div>
+<!-- Timeline Component (Customized) -->
+<div class="px-8 py-8">
+<div class="bg-background-light dark:bg-background-dark rounded-xl p-6 border border-red-50 dark:border-red-900/10">
+<h3 class="text-text-main dark:text-white text-sm font-bold uppercase tracking-wider mb-6 ml-2">Next Steps</h3>
+<div class="grid grid-cols-[32px_1fr] gap-x-4">
+<!-- Step 1: Completed -->
+<div class="flex flex-col items-center">
+<div class="size-8 rounded-full bg-secondary-green text-white flex items-center justify-center z-10 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="w-0.5 bg-secondary-green h-full min-h-[40px]"></div>
+</div>
+<div class="pb-8 pt-1">
+<p class="text-text-main dark:text-white text-base font-bold">Listing Submitted</p>
+<p class="text-xs text-text-muted dark:text-gray-400 mt-1">Successfully received on Oct 24, 2:30 PM</p>
+</div>
+<!-- Step 2: Active -->
+<div class="flex flex-col items-center">
+<div class="size-8 rounded-full bg-secondary-yellow text-text-main flex items-center justify-center z-10 ring-4 ring-background-light dark:ring-background-dark animate-pulse">
+<span class="material-symbols-outlined text-lg">hourglass_top</span>
+</div>
+<div class="w-0.5 bg-gray-200 dark:bg-gray-700 h-full min-h-[40px]"></div>
+</div>
+<div class="pb-8 pt-1">
+<p class="text-text-main dark:text-white text-base font-bold">Under Review</p>
+<p class="text-sm text-text-muted dark:text-gray-400 mt-1">We usually review listings within 24 hours to ensure quality.</p>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex flex-col items-center">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 flex items-center justify-center z-10 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-lg">storefront</span>
+</div>
+</div>
+<div class="pt-1">
+<p class="text-gray-400 dark:text-gray-500 text-base font-medium">Live on Voltamarket</p>
+<p class="text-xs text-gray-400 dark:text-gray-600 mt-1">Visible to buyers across Ghana</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 px-8 pb-10 pt-2">
+<button class="flex-1 bg-primary hover:bg-primary-hover text-white h-12 rounded-lg font-bold text-sm tracking-wide transition-all shadow-md shadow-red-500/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span>
+                                View My Listings
+                            </button>
+<button class="flex-1 bg-transparent border border-primary text-primary hover:bg-red-50 dark:hover:bg-red-900/10 h-12 rounded-lg font-bold text-sm tracking-wide transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+                                Submit Another Listing
+                            </button>
+</div>
+</div>
+<!-- Footer Help Link -->
+<p class="text-center text-sm text-text-muted dark:text-gray-500">
+                        Made a mistake? <a class="text-primary font-bold hover:underline" href="#">Edit submission</a> or <a class="text-primary font-bold hover:underline" href="#">Contact Support</a>
+</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

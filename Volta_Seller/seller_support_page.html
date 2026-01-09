@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller Support</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "border-color": "#f3e7e7",
+                        "input-border": "#e7cfcf",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar to avoid blue default in some browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ec1313; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b90e0e; 
+        }
+        
+        /* Remove default blue focus outline */
+        *:focus-visible {
+            outline: 2px solid #ec1313;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased selection:bg-primary/20 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-surface-light dark:bg-surface-dark px-4 py-3 shadow-sm lg:px-10">
+<div class="flex items-center gap-4 lg:gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined text-2xl">storefront</span>
+</div>
+<h2 class="hidden text-lg font-bold leading-tight tracking-[-0.015em] lg:block text-text-main dark:text-white">Voltamarket Seller Center</h2>
+</div>
+<nav class="hidden items-center gap-6 lg:flex xl:gap-9">
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-white dark:hover:text-primary" href="seller_dashboard_overview_page.html">Dashboard</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-white dark:hover:text-primary" href="my_listings_page.html">Products</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-white dark:hover:text-primary" href="orders_from_buyers_page.html">Orders</a>
+<a class="text-sm font-medium leading-normal text-text-main hover:text-primary dark:text-white dark:hover:text-primary" href="earnings_overview_page.html">Earnings</a>
+<a class="text-sm font-bold leading-normal text-primary" href="seller_support_page.html">Support</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8">
+<label class="hidden flex-col min-w-40 !h-10 max-w-64 lg:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-input-border bg-background-light dark:bg-surface-dark overflow-hidden">
+<div class="flex items-center justify-center pl-4 pr-2 text-text-muted">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-main dark:text-white focus:outline-0 border-none h-full placeholder:text-text-muted px-2 text-sm font-normal leading-normal" placeholder="Search resources..." value=""/>
+</div>
+</label>
+<div class="flex items-center gap-3">
+<a href="seller_notifications_page.html" class="flex items-center justify-center rounded-full p-2 text-text-muted hover:bg-primary/10 hover:text-primary min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+<a href="seller_profile_page.html" class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-border-color cursor-pointer min-w-[44px] min-h-[44px]" data-alt="Seller profile picture showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBDUzlPVGSCIUaWBxlNNMHQ6cM1xdjvoQszecYNPAIeK_yl657bNFd9EiQJANmVT0wK8lFP7NqfjdMcwrnE_nKDQClcZ1m546P1gyxRmfD9jwW2zbSnT0ut3dmpMSok4Vv3JP95j3UoMhCAiq7oNiZLH8DJAUquMxy9_6XpSI6hGHnnxKLobyj0Iz3oFIBSzAeWeme2odu1gHxDuUddHRM60mtxWLHPr2TbF8OBF0UeNndS7gIg2TNspte65gWRxTJu218F6Isw9E");'></a>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="layout-container flex h-full grow flex-col py-4 sm:py-6 md:py-8 px-4 sm:px-6 lg:px-10 xl:px-40">
+<div class="mx-auto flex w-full max-w-[1200px] flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="text-text-muted text-sm font-medium">Home</span>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="text-primary text-sm font-medium">Support</span>
+</div>
+<div class="flex flex-wrap justify-between gap-4">
+<div class="flex min-w-72 flex-col gap-1">
+<h1 class="text-text-main dark:text-white text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Seller Support</h1>
+<p class="text-text-muted text-sm sm:text-base font-normal leading-normal">We are here to help you grow your business in Ghana.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-2 rounded-lg bg-yellow-100 px-3 py-2 text-yellow-800 text-sm font-bold border border-yellow-200">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+                                High Volume: Responses may be delayed by 24h
+                            </span>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Ticket Form (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="rounded-xl border border-border-color bg-surface-light dark:bg-surface-dark p-6 md:p-8 shadow-sm">
+<div class="mb-6 border-b border-border-color pb-4">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Submit a Request</h3>
+<p class="text-text-muted text-sm mt-1">Please provide details about your issue so we can help you faster.</p>
+</div>
+<form class="flex flex-col gap-6">
+<!-- Subject Field -->
+<label class="flex flex-col gap-2">
+<span class="text-text-main dark:text-white text-sm font-semibold">Subject <span class="text-primary">*</span></span>
+<input class="w-full rounded-lg border border-input-border bg-background-light dark:bg-background-dark dark:text-white px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-muted" placeholder="Brief summary of the issue" type="text"/>
+</label>
+<!-- Row: Category & Order ID -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-text-main dark:text-white text-sm font-semibold">Issue Category <span class="text-primary">*</span></span>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-input-border bg-background-light dark:bg-background-dark dark:text-white px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary text-text-main">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="orders">Order Management</option>
+<option value="products">Product Listing</option>
+<option value="payments">Finance &amp; Payouts</option>
+<option value="account">Account Settings</option>
+<option value="logistics">Logistics &amp; Shipping</option>
+</select>
+<div class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-text-main dark:text-white text-sm font-semibold">Order ID (Optional)</span>
+<input class="w-full rounded-lg border border-input-border bg-background-light dark:bg-background-dark dark:text-white px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-muted" placeholder="e.g. ORD-12345" type="text"/>
+</label>
+</div>
+<!-- Message Field -->
+<label class="flex flex-col gap-2">
+<span class="text-text-main dark:text-white text-sm font-semibold">Message <span class="text-primary">*</span></span>
+<textarea class="w-full resize-none rounded-lg border border-input-border bg-background-light dark:bg-background-dark dark:text-white px-4 py-3 text-base focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-muted" placeholder="Describe your issue in detail..." rows="6"></textarea>
+</label>
+<!-- Attachments -->
+<div class="flex flex-col gap-2">
+<span class="text-text-main dark:text-white text-sm font-semibold">Attachments</span>
+<label class="flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input-border bg-background-light dark:bg-surface-dark hover:bg-white dark:hover:bg-background-dark transition-colors py-8">
+<div class="flex flex-col items-center justify-center pb-2 pt-1">
+<span class="material-symbols-outlined text-3xl text-text-muted mb-2">cloud_upload</span>
+<p class="mb-2 text-sm text-text-main dark:text-white font-medium">Click to upload or drag and drop</p>
+<p class="text-xs text-text-muted">SVG, PNG, JPG or PDF (MAX. 5MB)</p>
+</div>
+<input class="hidden" type="file"/>
+</label>
+</div>
+<!-- Submit Button -->
+<div class="mt-4 flex justify-end">
+<button class="inline-flex items-center gap-2 justify-center rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-red-700 focus:ring-4 focus:ring-primary/30 active:scale-95" type="button">
+                                        Submit Ticket
+                                        <span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Recent Tickets Table -->
+<div class="rounded-xl border border-border-color bg-surface-light dark:bg-surface-dark overflow-hidden shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 border-b border-border-color bg-background-light dark:bg-background-dark/50">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Recent Tickets</h3>
+<a class="text-sm font-bold text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-text-muted">
+<thead class="bg-background-light dark:bg-surface-dark text-xs uppercase text-text-main dark:text-white">
+<tr>
+<th class="px-6 py-4 font-bold" scope="col">Ticket ID</th>
+<th class="px-6 py-4 font-bold" scope="col">Subject</th>
+<th class="px-6 py-4 font-bold" scope="col">Date</th>
+<th class="px-6 py-4 font-bold" scope="col">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-color">
+<tr class="bg-surface-light dark:bg-surface-dark hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+<td class="px-6 py-4 font-medium text-text-main dark:text-white">#REQ-8902</td>
+<td class="px-6 py-4">Payout missing for Order #4421</td>
+<td class="px-6 py-4">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-bold text-yellow-800 border border-yellow-200">
+                                                    Pending
+                                                </span>
+</td>
+</tr>
+<tr class="bg-surface-light dark:bg-surface-dark hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+<td class="px-6 py-4 font-medium text-text-main dark:text-white">#REQ-8845</td>
+<td class="px-6 py-4">Update product images</td>
+<td class="px-6 py-4">Oct 20, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-bold text-green-800 border border-green-200">
+                                                    Solved
+                                                </span>
+</td>
+</tr>
+<tr class="bg-surface-light dark:bg-surface-dark hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+<td class="px-6 py-4 font-medium text-text-main dark:text-white">#REQ-8100</td>
+<td class="px-6 py-4">Shipping label error</td>
+<td class="px-6 py-4">Oct 15, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary border border-primary/20">
+                                                    Closed
+                                                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar (4 Cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<!-- Contact Card -->
+<div class="rounded-xl bg-primary p-6 text-white shadow-lg relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-white/10 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="rounded-full bg-white/20 p-2 backdrop-blur-sm">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold">Need urgent help?</h3>
+</div>
+<p class="text-white/90 text-sm leading-relaxed">Our support team is available Mon-Fri from 8 AM to 6 PM GMT.</p>
+<div class="mt-2 flex flex-col gap-3">
+<a class="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-primary font-bold transition-colors hover:bg-yellow-50" href="tel:+233200000000">
+<span class="material-symbols-outlined">call</span>
+                                        +233 20 000 0000
+                                    </a>
+<a class="flex items-center gap-3 rounded-lg border border-white/30 bg-primary px-4 py-3 text-white font-medium transition-colors hover:bg-white/10" href="mailto:support@voltamarket.gh">
+<span class="material-symbols-outlined">mail</span>
+                                        support@voltamarket.gh
+                                    </a>
+</div>
+</div>
+</div>
+<!-- FAQ Section -->
+<div class="rounded-xl border border-border-color bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">quiz</span>
+                                Frequently Asked Questions
+                            </h3>
+<div class="flex flex-col gap-3">
+<details class="group rounded-lg bg-background-light dark:bg-background-dark open:bg-white dark:open:bg-surface-dark open:shadow-sm open:ring-1 open:ring-black/5 dark:open:ring-white/10">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-3 font-medium text-text-main dark:text-white marker:content-none hover:text-primary">
+<span>How do I process a refund?</span>
+<span class="material-symbols-outlined text-text-muted transition group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-3 pb-3 pt-0 text-sm text-text-muted">
+                                        Go to the Orders tab, select the specific order ID, and click on "Issue Refund" in the top right corner.
+                                    </div>
+</details>
+<details class="group rounded-lg bg-background-light dark:bg-background-dark open:bg-white dark:open:bg-surface-dark open:shadow-sm open:ring-1 open:ring-black/5 dark:open:ring-white/10">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-3 font-medium text-text-main dark:text-white marker:content-none hover:text-primary">
+<span>When will I get paid?</span>
+<span class="material-symbols-outlined text-text-muted transition group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-3 pb-3 pt-0 text-sm text-text-muted">
+                                        Payouts are processed every Tuesday for orders completed in the previous week. Check the Finance tab for details.
+                                    </div>
+</details>
+<details class="group rounded-lg bg-background-light dark:bg-background-dark open:bg-white dark:open:bg-surface-dark open:shadow-sm open:ring-1 open:ring-black/5 dark:open:ring-white/10">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-3 font-medium text-text-main dark:text-white marker:content-none hover:text-primary">
+<span>Why was my product rejected?</span>
+<span class="material-symbols-outlined text-text-muted transition group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-3 pb-3 pt-0 text-sm text-text-muted">
+                                        Products are usually rejected due to low-quality images or missing descriptions. Please check your email for specific rejection reasons.
+                                    </div>
+</details>
+</div>
+<div class="mt-4 pt-4 border-t border-border-color">
+<a class="flex items-center justify-center gap-2 text-sm font-bold text-primary hover:underline" href="#">
+                                    Visit Knowledge Base
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Quick Tip -->
+<div class="rounded-xl bg-gradient-to-br from-background-light to-[#fdecec] dark:from-surface-dark dark:to-[#2a1010] p-6 border border-primary/10">
+<div class="mb-3 flex items-center gap-2">
+<span class="flex items-center justify-center rounded-full bg-primary/20 p-1 text-primary">
+<span class="material-symbols-outlined text-lg">lightbulb</span>
+</span>
+<span class="text-sm font-bold uppercase tracking-wide text-primary">Seller Tip</span>
+</div>
+<p class="text-sm text-text-main dark:text-white font-medium">Include clear photos of the product condition when disputing a return to speed up the resolution process.</p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-border-color bg-surface-light dark:bg-surface-dark py-8">
+<div class="layout-container px-4 lg:px-40 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-sm text-text-muted">© 2024 Voltamarket Ghana. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-text-muted hover:text-primary" href="#">Terms of Service</a>
+<a class="text-sm text-text-muted hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

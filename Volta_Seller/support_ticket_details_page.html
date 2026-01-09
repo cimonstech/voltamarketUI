@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller - Support Ticket #12345</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-dark": "#c40f0f",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "accent-yellow": "#F59E0B",
+                        "accent-green": "#10B981",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar to avoid default blue aesthetics in some browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #999; 
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-white overflow-x-hidden min-h-screen flex flex-col overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden fixed top-4 left-4 z-50 p-2 bg-[#fcf8f8] dark:bg-[#1a0b0b] rounded-lg border border-[#f3e7e7] dark:border-[#3a1a1a] shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white">menu</span>
+</button>
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 border-r border-[#f3e7e7] dark:border-red-900/20 bg-[#fcf8f8] dark:bg-[#1a0b0b] h-full" id="sidebar">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">bolt</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">Voltamarket</h1>
+<p class="text-xs text-primary font-medium mt-0.5">Seller Central</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-bold">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-9 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Portrait of the seller" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3zxrNM5jTlvcvObrWp7zMM6vDhBIQjfpVj0-IVJDYAXco_yOl80lA2-tQIbgcLSSpensg3BpaXAniK1TGJDoZyW2MMP3Z5vNO5woN5mQYLzYAtBWE-eODxfpp81WZu7I5K8M5uYShLsXp2McObzAGs_RYC6Q5IrcVVF3dt39fYCN7X0L7WvEo6wo078Ra55-wwQ0i9S-A-KFELa1sqGexxVLSskDGQOMwatH0-_I0vhO7bpX4rLZ17uDM1m1x4j3aPY_nENNHyMk');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Kofi Mensah</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">kofi@voltamarket.gh</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 h-9 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</aside>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden">
+<div class="bg-[#fcf8f8] dark:bg-[#1a0b0b] w-80 h-full shadow-xl overflow-y-auto">
+<div class="p-6 border-b border-[#f3e7e7] dark:border-[#3a1a1a]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">Menu</h3>
+<button class="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 dark:text-gray-400" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-bold">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-30 w-full border-b border-[#f3e7e7] bg-[#fcf8f8] dark:bg-[#1a0b0b] dark:border-[#3a1a1a] px-4 sm:px-6 lg:px-20 py-4">
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-4 pl-4 border-l border-[#f3e7e7] dark:border-[#3a1a1a]">
+<a href="seller_notifications_page.html" class="flex items-center justify-center size-10 rounded-full bg-[#f3e7e7] dark:bg-[#3a1a1a] text-[#1b0d0d] dark:text-white hover:bg-gray-200 transition-colors min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</a>
+<a href="seller_profile_page.html" class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-[#f3e7e7] min-w-[44px] min-h-[44px]" data-alt="Seller profile picture showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3zxrNM5jTlvcvObrWp7zMM6vDhBIQjfpVj0-IVJDYAXco_yOl80lA2-tQIbgcLSSpensg3BpaXAniK1TGJDoZyW2MMP3Z5vNO5woN5mQYLzYAtBWE-eODxfpp81WZu7I5K8M5uYShLsXp2McObzAGs_RYC6Q5IrcVVF3dt39fYCN7X0L7WvEo6wo078Ra55-wwQ0i9S-A-KFELa1sqGexxVLSskDGQOMwatH0-_I0vhO7bpX4rLZ17uDM1m1x4j3aPY_nENNHyMk");'></a>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<main class="flex-1 flex flex-col items-center py-8 px-4 sm:px-10 lg:px-40">
+<div class="w-full max-w-[960px] flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center text-sm">
+<a class="text-primary hover:text-primary-dark font-medium" href="seller_dashboard_overview_page.html">Dashboard</a>
+<span class="text-gray-400">/</span>
+<a class="text-primary hover:text-primary-dark font-medium" href="support_ticket_history_page.html">Support Tickets</a>
+<span class="text-gray-400">/</span>
+<span class="text-[#1b0d0d] dark:text-gray-200 font-semibold">Ticket #12345</span>
+</div>
+<!-- Ticket Header Card -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl p-6 shadow-sm border border-[#f3e7e7] dark:border-[#3a1a1a]">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-[#1b0d0d] dark:text-white text-2xl sm:text-3xl font-black tracking-tight leading-tight">Issue with Payout calculation</h1>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Ticket #12345 • Created on Oct 24, 2023</p>
+</div>
+<button class="group flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-all font-bold text-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-xl group-hover:text-white">check_circle</span>
+                        Mark as Resolved
+                    </button>
+</div>
+<!-- Chips / Meta -->
+<div class="flex flex-wrap gap-3 mt-6">
+<!-- Status Chip (Yellow for Warning/Progress) -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/30">
+<span class="material-symbols-outlined text-accent-yellow text-sm font-bold">pending</span>
+<span class="text-yellow-800 dark:text-yellow-500 text-xs font-bold uppercase tracking-wide">Status: In Progress</span>
+</div>
+<!-- Priority Chip (Red for Brand/High Priority) -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30">
+<span class="material-symbols-outlined text-primary text-sm font-bold">priority_high</span>
+<span class="text-primary text-xs font-bold uppercase tracking-wide">Priority: High</span>
+</div>
+<!-- Department Chip -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400 text-sm">payments</span>
+<span class="text-gray-700 dark:text-gray-300 text-xs font-bold uppercase tracking-wide">Category: Finance</span>
+</div>
+</div>
+</div>
+<!-- Conversation Thread -->
+<div class="flex flex-col gap-6 relative before:absolute before:left-9 before:top-4 before:bottom-4 before:w-0.5 before:bg-[#f3e7e7] dark:before:bg-[#3a1a1a] before:-z-10">
+<!-- Message 1: Seller (Initial) -->
+<div class="flex gap-4">
+<div class="shrink-0 z-10">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 border-4 border-[#fcf8f8] dark:border-[#221010]" data-alt="User avatar of the seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-974lyOFjuaXIyTfipEAnIUJkhPoCwJSyZKS2zWR-NrVVEhhc-edf5b669n785Gy45rdRYqeJpmOOprTuw8nU4XJXnqspXQFxmhtFRIwfGNwgbHdDeLNKsaxG-MI7d9umfyEqjg7ppNW6Y6xPBQrQJovNuNiHZE0BrS7GdLIr5Hxk-gTVCnqGXsFTcQN2u5wNcPnFGggSBCEJ2PWNXMiTqReJHpdqf5rHVe8ACZaKwYczlmIMnihq1lnCSyz-tBoWi8z4YZreME0");'></div>
+</div>
+<div class="flex-1 bg-white dark:bg-[#2a1515] rounded-xl p-6 shadow-sm border border-[#f3e7e7] dark:border-[#3a1a1a]">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="text-[#1b0d0d] dark:text-white font-bold text-base">You (Seller)</h3>
+<p class="text-gray-500 text-xs">Oct 24, 2023, 10:00 AM</p>
+</div>
+</div>
+<div class="prose prose-sm max-w-none text-[#1b0d0d] dark:text-gray-200 leading-relaxed">
+<p>Hi Team,</p>
+<p>I noticed a discrepancy in my last payout regarding order <strong>#9988</strong>. The commission fee seems higher than the agreed 5%. It shows as 8% on the dashboard.</p>
+<p>Can you please check and rectify this? I've attached a screenshot of the order details below.</p>
+</div>
+<div class="mt-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg w-full max-w-[300px] aspect-video border border-[#f3e7e7]" data-alt="Screenshot of a financial dashboard table showing discrepancy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDp7siq34aPUx-yU2umC0D1r-BWd4_Bu0S2D6zm2EZ8kt_x3ONtxzJbtJe3xds7zPv7CzC-EzoeJc4EgaqUEiGb0Z9hrH4R9A62vu4B8of7yEFvtobM3LRmxID1GfgDz_IQiZbACO7aLqXXjHy2qVqHrsIrdJbvkzT0kJd5nnhBDoVvw_FeQ50xpM_m_3j8l3uM-RZ3YSX_sdw8TB3Cg9FhH3Xi7c9kE74tj-mY4VFPYrxJlu9BJyHF9DteLwuixLqrSiKLxyIBoXA");'></div>
+</div>
+</div>
+</div>
+<!-- Message 2: Support (Reply) -->
+<div class="flex gap-4">
+<div class="shrink-0 z-10">
+<div class="flex items-center justify-center rounded-full size-12 border-4 border-[#fcf8f8] dark:border-[#221010] bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+</div>
+<div class="flex-1 bg-[#fff5f5] dark:bg-[#3d1212] rounded-xl p-6 shadow-sm border border-red-100 dark:border-red-900/30">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-2">
+<h3 class="text-[#1b0d0d] dark:text-white font-bold text-base">Voltamarket Support</h3>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase">Staff</span>
+</div>
+<p class="text-gray-500 text-xs">Oct 24, 2023, 11:15 AM</p>
+</div>
+<div class="prose prose-sm max-w-none text-[#1b0d0d] dark:text-gray-200 leading-relaxed">
+<p>Hello,</p>
+<p>Thank you for reaching out to Voltamarket Seller Support. I understand your concern regarding the commission fee for order #9988.</p>
+<p>We are currently reviewing the transaction details. This might be due to a category adjustment that happened last week, but I will verify this with the Finance team and get back to you shortly.</p>
+<p>Please allow us 24-48 hours to investigate.</p>
+<p>Best regards,<br/>Sarah</p>
+</div>
+</div>
+</div>
+<!-- Message 3: Seller (Reply) -->
+<div class="flex gap-4">
+<div class="shrink-0 z-10">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 border-4 border-[#fcf8f8] dark:border-[#221010]" data-alt="User avatar of the seller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0GA6fd8WdM4anHiWEw3oEmJraXv9AevWTSrIXlhDFwNcFCz0XgJANHw0ZWEsKerrb3ZkQL0nvIzlPV6i6zxeSeOTmlcDj5dq4-Lx1NTJHGs6J5yjCdS7rndTc9ivHG2Su809lidSOd73a4iDAubx7y50WyEvEAW3Ek4kd9EDyIxFYPdNluG-zm1L4RQXdKLG-OZF5zjTjXXdYflyxrH3iVtPiAMdG1Y6peEoefAy7ySUm1-T_K23Vb43r71mR5YbH8AmzCBauyhU");'></div>
+</div>
+<div class="flex-1 bg-white dark:bg-[#2a1515] rounded-xl p-6 shadow-sm border border-[#f3e7e7] dark:border-[#3a1a1a]">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="text-[#1b0d0d] dark:text-white font-bold text-base">You (Seller)</h3>
+<p class="text-gray-500 text-xs">Oct 24, 2023, 11:30 AM</p>
+</div>
+</div>
+<div class="prose prose-sm max-w-none text-[#1b0d0d] dark:text-gray-200 leading-relaxed">
+<p>Thanks for the quick response, Sarah. I will wait for your update.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Reply Area -->
+<div class="mt-4 bg-white dark:bg-[#2a1515] rounded-xl shadow-lg border border-[#f3e7e7] dark:border-[#3a1a1a] overflow-hidden">
+<div class="bg-gray-50 dark:bg-[#331a1a] px-4 py-2 border-b border-[#f3e7e7] dark:border-[#3a1a1a] flex gap-2">
+<button class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-[#4a2525] text-gray-600 dark:text-gray-400" title="Bold">
+<span class="material-symbols-outlined text-xl">format_bold</span>
+</button>
+<button class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-[#4a2525] text-gray-600 dark:text-gray-400" title="Italic">
+<span class="material-symbols-outlined text-xl">format_italic</span>
+</button>
+<button class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-[#4a2525] text-gray-600 dark:text-gray-400" title="List">
+<span class="material-symbols-outlined text-xl">format_list_bulleted</span>
+</button>
+<div class="w-px h-8 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+<button class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-[#4a2525] text-gray-600 dark:text-gray-400 flex items-center gap-2 text-sm font-medium" title="Attach File">
+<span class="material-symbols-outlined text-xl">attach_file</span>
+<span class="hidden sm:inline">Attach File</span>
+</button>
+</div>
+<div class="p-4">
+<textarea class="w-full min-h-[150px] p-0 border-none bg-transparent focus:ring-0 text-[#1b0d0d] dark:text-white text-base resize-y placeholder-gray-400" placeholder="Type your reply here... details help us resolve your issue faster."></textarea>
+</div>
+<div class="px-4 py-3 border-t border-[#f3e7e7] dark:border-[#3a1a1a] bg-gray-50/50 dark:bg-[#331a1a]/30 flex justify-between items-center">
+<span class="text-xs text-gray-500">Pressing Enter will create a new line</span>
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-2.5 px-6 rounded-lg flex items-center gap-2 transition-colors shadow-md shadow-red-200 dark:shadow-none">
+<span>Send Reply</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu-overlay');
+    menu.classList.toggle('hidden');
+}
+document.getElementById('mobile-menu-toggle')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-close')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-overlay')?.addEventListener('click', function(e) {
+    if (e.target === this) toggleMobileMenu();
+});
+</script>
+</body></html>

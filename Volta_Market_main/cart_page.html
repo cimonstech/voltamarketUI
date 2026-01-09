@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Shopping Cart</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d", // Voltamarket Red
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a1515",
+                        "text-main": "#1c0d0d",
+                        "text-muted": "#9c4949",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-neutral-200 dark:border-neutral-800 px-4 lg:px-10 py-3 shadow-sm">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+<!-- Logo -->
+<a href="voltamarket_home_page.html" class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">Voltamarket</h2>
+</a>
+<!-- Search -->
+<div class="hidden md:flex flex-1 max-w-xl mx-8">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 bg-background-light dark:bg-background-dark/50 border-none rounded-lg text-text-main dark:text-white placeholder-text-muted focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-background-dark transition-all duration-200" placeholder="Search for products, brands and more..." type="text" onkeypress="if(event.key==='Enter') window.location.href='search_results_page.html';"/>
+</div>
+</div>
+<!-- Nav Links & Actions -->
+<div class="flex items-center gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-text-main dark:text-white text-sm font-semibold hover:text-primary transition-colors" href="voltamarket_home_page.html">Marketplace</a>
+<a class="text-text-main dark:text-white text-sm font-semibold hover:text-primary transition-colors" href="all_services_page.html">Services</a>
+<a class="text-text-main dark:text-white text-sm font-semibold hover:text-primary transition-colors" href="_deals_page.html">Deals</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="cart_page.html" class="relative p-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors text-text-main dark:text-white group">
+<span class="material-symbols-outlined filled">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm ring-1 ring-white dark:ring-surface-dark">3</span>
+</a>
+<a href="notifications_page.html" class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+<a href="buyer_dashboard_overview_page.html" class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 sm:py-6 lg:py-8">
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-main dark:text-white tracking-tight mb-2">Your Shopping Cart</h1>
+<p class="text-sm sm:text-base text-text-muted dark:text-neutral-400">You have 3 items in your cart ready for checkout.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Cart Item 1 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl p-3 sm:p-4 md:p-6 shadow-sm border border-neutral-100 dark:border-neutral-800 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<!-- Product Image -->
+<div class="shrink-0">
+<div class="w-full md:w-32 aspect-square rounded-lg bg-cover bg-center border border-neutral-100 dark:border-neutral-700" data-alt="Traditional Kente cloth stole with vibrant geometric patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB20CB0ADb-5VxLYNxgpzLEb1n7jxsFgw1lYMsue47qMTBF1xbGVx1cTw-7ztu6lAKI3_sztMDR_8k461Da2ww_Lk-f_2p9SUVqU2PxAyb4b28EtEk0_2gs7sZjKisgLN44pInYqYlu6n93pIM6rVK0DEkDLEm1pacASPPXKwN1bQNx0yNZmDnTGH-uYji6GIq5bRot3Ok8thb4vjoFe7Kp6lDpxa12cRyDNEX6oIQ_6RM3IQMT_xVGMVlNxeETct0nBpPrK_aaaXI');"></div>
+</div>
+<!-- Product Details -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<a href="product_details_page.html"><h3 class="text-lg font-bold text-text-main dark:text-white line-clamp-2 hover:text-primary transition-colors">Kente Cloth Stole - Premium Weave</h3></a>
+<p class="text-lg font-bold text-text-main dark:text-white whitespace-nowrap">GHS 150.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-neutral-400 mb-4">Sold by: <span class="font-medium text-text-main dark:text-neutral-300">Volta Weavers Association</span></p>
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-800 text-xs font-medium dark:bg-green-900/30 dark:text-green-400">
+                                    In Stock
+                                </span>
+</div>
+<!-- Controls -->
+<div class="flex items-end justify-between mt-4">
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-background-light dark:bg-background-dark rounded-lg p-1 border border-neutral-200 dark:border-neutral-700">
+<button aria-label="Decrease quantity" class="w-11 h-11 sm:w-8 sm:h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0">
+<span class="material-symbols-outlined text-base sm:text-sm">remove</span>
+</button>
+<input class="w-12 sm:w-10 bg-transparent border-none text-center text-text-main dark:text-white font-medium p-0 focus:ring-0 appearance-none [-moz-appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none text-base sm:text-sm" type="number" value="1"/>
+<button aria-label="Increase quantity" class="w-11 h-11 sm:w-8 sm:h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0">
+<span class="material-symbols-outlined text-base sm:text-sm">add</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+<span class="hidden sm:inline">Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl p-3 sm:p-4 md:p-6 shadow-sm border border-neutral-100 dark:border-neutral-800 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="shrink-0">
+<div class="w-full md:w-32 aspect-square rounded-lg bg-cover bg-center border border-neutral-100 dark:border-neutral-700" data-alt="Sack of organic brown rice grains spilling onto a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFSSX49x-bU8Zo0DIg4zNseeDu_77dfK0ytYyFpoyScxvgXzCETwTlplA3lXlvdRcvz6NVchMfU4ktJau66T8kVVMYtOx6DkyfoKdsPtDIEanzX61kIzvtEroVkBcr3_KE2QdIATpk_e4DAUDdyFLvWnVmgbBktrgRcjn-ZSUAjZhyemRAiIMD8Zx1Z6Eo6UzamTjT9IdRNDg4_WRw4f_ZAQsEGKWlBtdPfHcSqPC6UbgnoFp9HLNGxKFIDGE94z9RXR0MAVRxdrk');"></div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<a href="product_details_page.html"><h3 class="text-lg font-bold text-text-main dark:text-white line-clamp-2 hover:text-primary transition-colors">Organic Local Brown Rice (5kg)</h3></a>
+<p class="text-lg font-bold text-text-main dark:text-white whitespace-nowrap">GHS 80.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-neutral-400 mb-4">Sold by: <span class="font-medium text-text-main dark:text-neutral-300">Oti Farmers Union</span></p>
+<span class="inline-flex items-center px-2 py-1 rounded bg-orange-100 text-orange-800 text-xs font-medium dark:bg-orange-900/30 dark:text-orange-400">
+                                    Low Stock - Only 4 left
+                                </span>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-background-light dark:bg-background-dark rounded-lg p-1 border border-neutral-200 dark:border-neutral-700">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-10 bg-transparent border-none text-center text-text-main dark:text-white font-medium p-0 focus:ring-0 appearance-none [-moz-appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none" type="number" value="2"/>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+<span class="hidden sm:inline">Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl p-3 sm:p-4 md:p-6 shadow-sm border border-neutral-100 dark:border-neutral-800 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="shrink-0">
+<div class="w-full md:w-32 aspect-square rounded-lg bg-cover bg-center border border-neutral-100 dark:border-neutral-700" data-alt="Colorful recycled glass beads strands on display" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVieFAWiB2wG_1hfSGnpsq77b6RstbZYxOCVZVu6umUxt5R5Nov7CErnfhq_Novoor54csdUlkWrns7V78GWOMzmGsVMXPuTwDApWeYUI4JFmAlsEvgErke1Cs1bYH2wp6wjm2cjS13Of7q9QnbK9Fermdekjr7qoskBqVg0jdzWzgn7La629_vxoiNbTc_bfja_G-AlVqd1Slm78yc0zLNazCKTb39Cd8aw1uigCZwR4rPfJRxDtM7mpg7zmsFYu9SYrL7mGCCFU');"></div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white line-clamp-2">Handmade Recycled Glass Beads</h3>
+<p class="text-lg font-bold text-text-main dark:text-white whitespace-nowrap">GHS 45.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-neutral-400 mb-4">Sold by: <span class="font-medium text-text-main dark:text-neutral-300">Krobo Beads Works</span></p>
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-800 text-xs font-medium dark:bg-green-900/30 dark:text-green-400">
+                                    In Stock
+                                </span>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-background-light dark:bg-background-dark rounded-lg p-1 border border-neutral-200 dark:border-neutral-700">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-10 bg-transparent border-none text-center text-text-main dark:text-white font-medium p-0 focus:ring-0 appearance-none [-moz-appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none" type="number" value="3"/>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-surface-dark hover:bg-neutral-100 dark:hover:bg-neutral-700 text-text-main dark:text-white shadow-sm transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+<span class="hidden sm:inline">Remove</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- You might also like -->
+<div class="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+<h3 class="text-xl font-bold text-text-main dark:text-white mb-6">You might also like</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Suggestion 1 -->
+<div class="bg-white dark:bg-surface-dark rounded-lg border border-neutral-100 dark:border-neutral-800 p-3 hover:shadow-md transition-all cursor-pointer">
+<div class="w-full aspect-square bg-gray-100 dark:bg-neutral-800 rounded mb-3 bg-cover bg-center" data-alt="Traditional African woven basket on a white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuc_RNFIuQcXu9xM5aXHB_S4tDTb9yURPVcM5oqkVhMoFQ7y5PgW-VjhxhTiCsIGOQo0U2y5jrfrBmnyot96v1whvK8yzNVZkNAIV3ZVGZ2d2cP8Lv0jYSXjOiRU8wahO6iIdSJXXJRX2gR5YwKf1c6CEdr9siJLMv6H57ZTkTLnoA8y7Dwp5gIipKHxahEHJ4j5QuldPb1QnfXky3QPu7IYOS2kXt7S1Pq8Y3_9bAX6CGbsXpa41pT-Mlb0RH26fd2ka8ezaGZ28')"></div>
+<p class="font-semibold text-sm text-text-main dark:text-white truncate">Bolga Basket - Round</p>
+<p class="text-xs text-text-muted mt-1">GHS 120.00</p>
+</div>
+<!-- Suggestion 2 -->
+<div class="bg-white dark:bg-surface-dark rounded-lg border border-neutral-100 dark:border-neutral-800 p-3 hover:shadow-md transition-all cursor-pointer">
+<div class="w-full aspect-square bg-gray-100 dark:bg-neutral-800 rounded mb-3 bg-cover bg-center" data-alt="Dark chocolate bar with cocoa beans" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABcZPzSR9F5XjEViriDctTj1iEWF2f0GzJ8pUuqLhrUebBS2KZzsFjnX8EARxfWwJDvyRkZdTUi50iS2s3VseOWnFKus63Ek72vpoQflN2MvRmh2JP0yhRElYIowIMfIY3kXRWfCMJX7yFciC2baQLtcW6UIG3GZenaiP-MUuD73pYRkUxpdof6UbZgIDdWNOsOm0zUIINU10kIQzTLlPNZNEnFU5pp9oevVamekxZhp1dHYjXLnnEuAMKR2ZqSY_y86iCGS2DlNs')"></div>
+<p class="font-semibold text-sm text-text-main dark:text-white truncate">57 Chocolate - Dark</p>
+<p class="text-xs text-text-muted mt-1">GHS 35.00</p>
+</div>
+<!-- Suggestion 3 -->
+<div class="bg-white dark:bg-surface-dark rounded-lg border border-neutral-100 dark:border-neutral-800 p-3 hover:shadow-md transition-all cursor-pointer">
+<div class="w-full aspect-square bg-gray-100 dark:bg-neutral-800 rounded mb-3 bg-cover bg-center" data-alt="Bottle of natural shea butter lotion" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDikuk7zUOPesbNh2zDlQDRYUs3PDRRul9va8I6kLSNN7jREsiPpsRa2-yU92WAjS2616lUg5OuLVV3Mj8Ift2FmAEG5QRQkYIFTgT5xXzVMJ_kzY26V4lWPLFKdR_-744G6u_sOs9PqPL_d9JWQ5RDIdPyVBs16tKohUCS3W1k14zhkoFX09Mh985A_yzraqNO_Qt1-3B13iTyK_OcvHswu0f9gY5Q2-QqgSMfqyyjVBbOnYGMFxL5XVKhzu2sA9kEqAGDiJCSqW8')"></div>
+<p class="font-semibold text-sm text-text-main dark:text-white truncate">Shea Butter Lotion</p>
+<p class="text-xs text-text-muted mt-1">GHS 25.00</p>
+</div>
+<!-- Suggestion 4 -->
+<div class="bg-white dark:bg-surface-dark rounded-lg border border-neutral-100 dark:border-neutral-800 p-3 hover:shadow-md transition-all cursor-pointer">
+<div class="w-full aspect-square bg-gray-100 dark:bg-neutral-800 rounded mb-3 bg-cover bg-center" data-alt="African print fabric folded neatly" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2CjljWZgJni2-1UZh3QyoNhZAJ3DTfYVREc022qXdT4T579qihAHmcq4ZIQRM294430ZdvHDIntzmFeBuP7ixKkW2VQsMbXuuRy3Zwrsz6okChRNWDK5AQYiUtkggF9JJsA-4a-agx-nSRjzHIvoEaESG8kMER4UKQE9_FW75bbX_-aVFk_e0s19n0dM0vv1dGAAJ9sNmYBZPilmB7_ZTrFIWPMbffrLn-i16ydAZPwg1WVHC3oI5kK5OGG2VhW9KoFIjmWsQK7c')"></div>
+<p class="font-semibold text-sm text-text-main dark:text-white truncate">Wax Print Fabric (2 yds)</p>
+<p class="text-xs text-text-muted mt-1">GHS 90.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary -->
+<div class="lg:col-span-4 sticky top-24">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-lg border border-neutral-100 dark:border-neutral-800">
+<h2 class="text-xl font-bold text-text-main dark:text-white mb-6">Order Summary</h2>
+<div class="space-y-4 mb-6 pb-6 border-b border-neutral-200 dark:border-neutral-700">
+<div class="flex justify-between text-text-main dark:text-neutral-300">
+<span>Subtotal (6 items)</span>
+<span class="font-medium">GHS 445.00</span>
+</div>
+<div class="flex justify-between text-text-main dark:text-neutral-300">
+<span>Shipping estimate</span>
+<span class="text-text-muted text-sm italic">Calculated at next step</span>
+</div>
+<div class="flex justify-between text-green-600 dark:text-green-400">
+<span>Bulk Savings</span>
+<span class="font-medium">- GHS 25.00</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-8">
+<span class="text-lg font-bold text-text-main dark:text-white">Order Total</span>
+<div class="text-right">
+<span class="block text-2xl font-extrabold text-text-main dark:text-white">GHS 420.00</span>
+<span class="text-xs text-text-muted">Includes local taxes</span>
+</div>
+</div>
+<a href="checkout_page.html" class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md flex items-center justify-center gap-2 group">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="mt-6 flex flex-col gap-3">
+<div class="flex items-center justify-center gap-2 text-xs text-text-muted dark:text-neutral-500">
+<span class="material-symbols-outlined text-base">lock</span>
+                            Secure encrypted transaction
+                        </div>
+<div class="flex items-center justify-center gap-4 opacity-60">
+<div class="h-6 w-10 bg-neutral-200 dark:bg-neutral-700 rounded bg-cover bg-center" data-alt="Visa Card Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCp0_vXQ-qscfOmyCObwE7_kCOQ9yDu79lCsqvQSnnXW93VjF2O3Gq5uu83dVIIiAlTy5nojbyx34KJ_-YjwdnFh73KyUGp_UsOMnhNEJiVgjy7zdyFFN6fi4_u0jrpgw9xfdnW3attG34wZFJqTUQEeOVp6w38Ludev8g0Mm7FffXBbmrbxlEaSI-p11gHkPY2Bj_TNXRR3BDTciiC8XDPTN3SXgC1n4iWz4nQ-17LVH0_z1FMQWBOAjExR_CsVonEwQKgPHZp4wk');"></div>
+<div class="h-6 w-10 bg-neutral-200 dark:bg-neutral-700 rounded bg-cover bg-center" data-alt="Mastercard Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvl0bmtw-guH6KbCrkhLcX-VXxnDUcECJ7nDWnT735G-FrHky4VDfCCtniPELO_sVMPG6cvG2rUB924mHi5rUlga57CbfOKnBC9rG02QjSo57R5x8OjUz0XUB9442oYh7v6iO7CIBazvhXSMaP1MP10dBntfunM2QR_ZD8-wh4aZDOBN-L0KkfpRTi0IWFiB2IkVIc-54q-k6EaFsSQKkbtvhr8gVYjq5CTmCVq6VoJLHZiFHgTNxM57MK13qr4YunBd1MKW-zQhg');"></div>
+<div class="h-6 w-10 bg-neutral-200 dark:bg-neutral-700 rounded bg-cover bg-center" data-alt="Mobile Money Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQvotWqMIm_oSh968ICc0R64Wi2Y-OI0PSlQ4uD8TkAgStvluslvUAd6QKNXa3uxPdvnEhpD3pXX38noRe6SSqAcZ5qSfhS2N9eGmsO-ZtIAKgLQm2hL4fQr1voxzbJPM-6CcYU3iUZAeStvQZriDKnO1PsfCYDWRxPeiXpZQgzmv5qCuJAkRvOgHN4Wa8OE1WgccX6dV-eMBq8R4HaFvhKhVr7P98SdpqXY7lFwRs1OxW2pVEiqr00xyjZCA0FzHyY98amtY4Sxs');"></div>
+</div>
+</div>
+</div>
+<!-- Coupon Code -->
+<div class="mt-4 bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-neutral-100 dark:border-neutral-800">
+<label class="block text-sm font-medium text-text-main dark:text-neutral-300 mb-2">Have a promo code?</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-background-light dark:bg-background-dark border-none rounded-lg text-sm text-text-main dark:text-white placeholder-text-muted focus:ring-1 focus:ring-primary" placeholder="Enter code" type="text"/>
+<button class="px-4 py-2 bg-text-main dark:bg-white dark:text-black text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity">Apply</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Admin - Product Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec1313",
+              "primary-hover": "#c90f0f",
+              "secondary-yellow": "#FFD700",
+              "secondary-green": "#28a745",
+              "background-light": "#fcf8f8",
+              "background-dark": "#221010",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2a1515",
+              "border-light": "#f3e7e7",
+              "border-dark": "#3a1f1f",
+              "text-main": "#1b0d0d",
+              "text-muted": "#9a4c4c",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display transition-colors duration-200">
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<!-- Standardized Admin Dashboard Sidebar with Collapsible Menus -->
+<aside class="flex w-64 flex-col bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800 h-full hidden md:flex shrink-0 z-20">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined icon-filled">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-primary text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_dashboard_overview.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Listings (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="listings-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Listings</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="listings-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_products_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">All Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_services_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">All Services</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="pending_approval_listings_page_1.html">
+<span class="material-symbols-outlined text-base">pending</span>
+<span class="text-xs font-normal">Pending Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="approved_listings_page_1.html">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-normal">Approved Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="rejected_listings_page_1.html">
+<span class="material-symbols-outlined text-base">cancel</span>
+<span class="text-xs font-normal">Rejected Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Orders -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_orders_page.html">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+
+<!-- Deliveries (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="deliveries-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-sm font-medium">Deliveries</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="deliveries-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_management_page.html">
+<span class="material-symbols-outlined text-base">local_shipping</span>
+<span class="text-xs font-normal">Delivery Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="delivery_&_logistics_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Delivery Settings</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Users (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="users-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="users-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_buyers_page.html">
+<span class="material-symbols-outlined text-base">person</span>
+<span class="text-xs font-normal">Buyers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="all_sellers_page.html">
+<span class="material-symbols-outlined text-base">store</span>
+<span class="text-xs font-normal">Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="featured_sellers_page.html">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-normal">Featured Sellers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_staff.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">Admin Staff</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Payments (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="payments-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="payments-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payments_overview_page.html">
+<span class="material-symbols-outlined text-base">overview</span>
+<span class="text-xs font-normal">Payment Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="transaction_history_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">All Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="refunds_management_page.html">
+<span class="material-symbols-outlined text-base">undo</span>
+<span class="text-xs font-normal">Refunds Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="payment_gateway_settings_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Payment Gateway Settings</span>
+</a>
+</div>
+</div>
+
+<!-- Seller Payouts -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="seller_payouts_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Seller Payouts</span>
+</a>
+
+<!-- Marketing (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="marketing-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Marketing</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="marketing-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="promotions_dashboard_page.html">
+<span class="material-symbols-outlined text-base">campaign</span>
+<span class="text-xs font-normal">Promotions Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="marketing_performance_reports_page.html">
+<span class="material-symbols-outlined text-base">analytics</span>
+<span class="text-xs font-normal">Marketing Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="premium_listings_management_page.html">
+<span class="material-symbols-outlined text-base">diamond</span>
+<span class="text-xs font-normal">Premium Listings</span>
+</a>
+</div>
+</div>
+
+<!-- Categories (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="categories-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium">Categories</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="categories-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="product_categories_management_page.html">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="text-xs font-normal">Product Categories</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="service_categories_management_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Service Categories</span>
+</a>
+</div>
+</div>
+
+<!-- Analytics (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="reports-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="reports-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="sales_analytics_page.html">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span class="text-xs font-normal">Sales Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="services_analytics_page.html">
+<span class="material-symbols-outlined text-base">room_service</span>
+<span class="text-xs font-normal">Services Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="revenue_reports_page.html">
+<span class="material-symbols-outlined text-base">account_balance</span>
+<span class="text-xs font-normal">Revenue Reports</span>
+</a>
+</div>
+</div>
+
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_notifications_page.html">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Notifications</span>
+</a>
+
+<!-- System (Collapsible) -->
+<div class="flex flex-col">
+<button type="button" class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors sidebar-menu-toggle" data-target="system-menu">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">System</span>
+</div>
+<span class="material-symbols-outlined text-sm sidebar-chevron transition-transform duration-200">expand_more</span>
+</button>
+<div id="system-menu" class="hidden flex flex-col gap-1 pl-11 mt-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="general_platform_settings_page.html">
+<span class="material-symbols-outlined text-base">settings</span>
+<span class="text-xs font-normal">Platform Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="user_roles_&_permissions_page.html">
+<span class="material-symbols-outlined text-base">admin_panel_settings</span>
+<span class="text-xs font-normal">User Roles & Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="homepage_slider_management_page.html">
+<span class="material-symbols-outlined text-base">slideshow</span>
+<span class="text-xs font-normal">Homepage Slider</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="maintenance_mode_page.html">
+<span class="material-symbols-outlined text-base">build</span>
+<span class="text-xs font-normal">Maintenance Mode</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="audit_logs_page.html">
+<span class="material-symbols-outlined text-base">history</span>
+<span class="text-xs font-normal">Audit Logs</span>
+</a>
+</div>
+</div>
+
+<div class="my-2 border-t border-gray-100 dark:border-gray-800"></div>
+
+<!-- Admin Profile -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="admin_details_page.html">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Admin Profile</span>
+</a>
+
+<!-- Static Pages -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-gray-50 dark:hover:bg-white/5 hover:text-text-main transition-colors" href="static_pages_management_page.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Static Pages</span>
+</a>
+</nav>
+
+<!-- User Profile Snippet (Bottom Sidebar) -->
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-9 rounded-full bg-cover bg-center border border-gray-200" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhPOYlVjwG0s3IRquwXxTv_-iwmgq87HCCXTDFl5U-y81ySIqxn2OxtVw1WfQHgUiu6tNIv6VVCanNHxm8VuystM4q645TMI_CTRNfLg5qr-L-d_RAcxOqGgeV5zon_yPXFsq9Z2H_t8QHVCQo6BhJsw0nVgOvjHF1qWbLPVncDDYJaccGy4ds8Cu-NBOBEwj1NTnKhAvr0pS763_73V7igx7whT4aDTtjEXEmgEf04IbZ3HPFE2TO6ZevG4wZcN-RGjbFxx41T88");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-text-main dark:text-white">Kwame D.</p>
+<p class="text-xs text-text-muted">Super Admin</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors" onclick="window.location.href='admin_login_page.html'">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+Log Out
+</button>
+</div>
+</aside>
+
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark px-6 py-3 shadow-sm">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary/10">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-tight">Voltamarket Admin</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6">
+<div class="hidden md:flex w-full max-w-md items-center gap-2">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-text-muted">search</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-border-light dark:bg-background-dark py-2.5 pl-10 pr-4 text-text-main dark:text-white placeholder:text-text-muted focus:ring-2 focus:ring-primary focus:ring-inset sm:text-sm sm:leading-6" placeholder="Search products, orders, vendors..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative rounded-full p-2 text-text-muted hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 rounded-full bg-primary ring-2 ring-background-light dark:ring-surface-dark"></span>
+</button>
+<div class="h-10 w-10 bg-center bg-no-repeat bg-cover rounded-full border-2 border-border-light dark:border-border-dark" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjcIAUV0-WzXfZO3D3EvsOPKjP_1Tw0G02cvJBbWHs-RQxqed5mKVWzYr5_Uq8yB3vXlQ6cj1Oi5mOXkOnpa95qZ9bQm7r3zm8xQZaHdFUrZmCKSdvsPxGnXO0uofPMZtaVfg9mrw2pu3t5OXV0OqDOzqfmJXmgZSahpN0m7oRMpGNf69jjzISl3kJXobSOZU_tqaxyqEK7NKlhNIMwf80LRkYWGs9YTJMVkhnXiF6r2HcEIqqqSrOG8iKjl32AFs2H1wH93nkkwc");'></div>
+</div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col max-w-[1440px] mx-auto w-full">
+<!-- Breadcrumbs -->
+<div class="px-6 py-4">
+<div class="flex flex-wrap items-center gap-2 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors font-medium flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span> Dashboard
+                </a>
+<span class="text-text-muted material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="text-text-muted hover:text-primary transition-colors font-medium" href="#">Products</a>
+<span class="text-text-muted material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Review #5921</span>
+</div>
+</div>
+<div class="px-6 pb-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Header & Title -->
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-4">
+<h1 class="text-3xl md:text-4xl font-black text-text-main dark:text-white leading-tight tracking-tight">Generic 50-inch Smart TV 4K UHD</h1>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-secondary-yellow/20 border border-secondary-yellow/30 px-4">
+<span class="size-2 rounded-full bg-secondary-yellow animate-pulse"></span>
+<p class="text-yellow-800 dark:text-yellow-200 text-sm font-bold">Pending Review</p>
+</div>
+</div>
+<p class="text-text-muted flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">category</span>
+                            Electronics &gt; Televisions &gt; Smart TVs
+                        </p>
+</div>
+<!-- Image Gallery -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-4 shadow-sm">
+<div class="aspect-video w-full rounded-lg bg-gray-100 dark:bg-background-dark mb-4 overflow-hidden relative group">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="Main product image showing a 50 inch smart TV front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_l6PMhThhOud-3SixoCTWT4VPyVZAxx2-_wMW8w9_x3KyKpKTyA_VjGM9t3UIDsFpVfn2FYhkeautAoo9tGCHew2-XNp5gyROVkTxaftqXzt_cLUioSC31jvqDakNtiyV_E3g_1tSjfwIAmWtSDMolNgi2x46RiGWrnQ4EcFD3MM1zovbNWWZr0N3e8uiZTWi5GY-qbx_jwkEmj21kDqAmQKTfelNGXTnUtKocBFE9PoUO6-Pc9qunVHVRZt4t2xLHKekazoF8Hs");'></div>
+<div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-background-dark/80 text-white p-2 rounded-lg backdrop-blur-sm flex items-center gap-2 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span> Enlarge
+                                </button>
+</div>
+</div>
+<div class="grid grid-cols-4 sm:grid-cols-6 gap-3">
+<button class="aspect-square rounded-lg border-2 border-primary overflow-hidden relative">
+<div class="w-full h-full bg-center bg-cover" data-alt="Thumbnail of TV front view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_D5UiwXfOHuzz_AJurRvoIy9Hvj7gVtZ4qVNfd8Yr6h3dFhXvbCikQz6pGtnZcHKwk_Y7g_44rHrXlKAh2Y9YsojN4qUtVWE0pYsGmIALE3gs3J_hjCI02Xd9e30hLzHLIorvX5gZWSDkn9EPMWkuytfHFfCt6Fm5KuB11jqil6LUFG0w8jCgNoowQSNW25nJiYi1okmRCG297bmpKDYH5uGRN9_DTzdFKTMFTeljd07jsEUa8uayxgdcpfl7euTqjOPlEx_XNks");'></div>
+</button>
+<button class="aspect-square rounded-lg border border-border-light dark:border-border-dark overflow-hidden relative hover:border-text-muted transition-colors">
+<div class="w-full h-full bg-center bg-cover" data-alt="Thumbnail of TV side profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDq55xbJ5jFg2lpEdcxhnQo5x8USpKe6pqO1xRR2eNwdrYgrQD1iD0epQgxLsJcnT1CGFqe1stdMFS4dcwUCt5Gpt9OYS07EHOBtbhgAaragTJiNF2Y5Z417ttXnJbiyTArjg7yccIPX_Nx8k3wQplBcFpQp-EVgwQ7l8enY7j4cTThnFRHMcLXdPTswAYxxSP4d-k2SfOEOQ50EYZu-vHkyF9AaKr7P0CvIUj-JsRCpSVvCkKDaIsWUKM220m83eJGb6GlAdBr-BY");'></div>
+</button>
+<button class="aspect-square rounded-lg border border-border-light dark:border-border-dark overflow-hidden relative hover:border-text-muted transition-colors">
+<div class="w-full h-full bg-center bg-cover" data-alt="Thumbnail of TV remote control" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9GbI_CGqAyQGsfcbQjzEa-PGAlD-gvR2gkp5Ih4sBRBqX1fMHBSzABiN0aLXOoThHjWl6YyP9nro39C8SRS9kMQC8BkIvWo7QL-1JO6efK3k5gQRfuVetJO16ipz9A72DqZ_s6RudX13AyXGkVI8WtGCmJ201oK5TWkcNFDcoOHO7mnZVP3VBzv98aOtQ7HzOn3TKv1lGxybup3kHHf81EWLGHg-FYnMZjcE3Hm6txfmSX3EYMyOPRhYLTUAf7HPAoMrketMTlls");'></div>
+</button>
+<button class="aspect-square rounded-lg border border-border-light dark:border-border-dark overflow-hidden relative hover:border-text-muted transition-colors">
+<div class="w-full h-full bg-center bg-cover" data-alt="Thumbnail of TV ports and inputs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBA-w3icDkyRRBFr_VZVz_gicKkbhKAQqs5s-pwOzk3VnzRdG0pEeXnOkESjNeicmpNrGlR-FNdzFJh5IJSwl3zuwuFnQxrHXz9sb8uJBO2LfWdMUkLoeV47lMwaNrfkV2YwXkXg1poqLyuNChY3Lfy_WsbAb_yNJxUb_b6eA4-S8BbVJbtebunp2wiO13bvBCKJtLImWZqA3faK-vm5C2Dh7Y3CLTIKR7HZqpH8KK4oMrpnMChy0UIht5jA_bslBVgnLuCN5I9yZs");'></div>
+</button>
+</div>
+</div>
+<!-- Product Details -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span> Product Details
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="space-y-1">
+<p class="text-sm font-medium text-text-muted uppercase tracking-wider">SKU</p>
+<p class="text-base font-semibold text-text-main dark:text-white">VOL-TV-50-GEN-001</p>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-medium text-text-muted uppercase tracking-wider">Brand</p>
+<p class="text-base font-semibold text-text-main dark:text-white">Generic / OEM</p>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-medium text-text-muted uppercase tracking-wider">Stock Quantity</p>
+<p class="text-base font-semibold text-text-main dark:text-white">45 Units</p>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-medium text-text-muted uppercase tracking-wider">Weight</p>
+<p class="text-base font-semibold text-text-main dark:text-white">12.5 kg</p>
+</div>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-6">
+<p class="text-sm font-medium text-text-muted uppercase tracking-wider mb-2">Description</p>
+<div class="prose prose-sm max-w-none text-text-main dark:text-gray-300">
+<p>Experience breathtaking 4K Ultra HD picture quality with the Generic 50-inch Smart TV. This television features a bezel-less design that immerses you in your favorite content. With built-in Wi-Fi and popular streaming apps pre-installed, you can access Netflix, YouTube, and Amazon Prime Video instantly.</p>
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Resolution: 3840 x 2160 pixels</li>
+<li>Refresh Rate: 60Hz</li>
+<li>Connectivity: 3 HDMI, 2 USB, 1 Optical</li>
+<li>Sound: 20W Dolby Audio</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Pricing & Markup (Editable) -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm ring-1 ring-primary/5">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span> Pricing &amp; Markup
+                            </h3>
+<button class="text-sm font-semibold text-primary hover:text-primary-hover underline decoration-2 underline-offset-4">Reset Defaults</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Vendor Price -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-muted">Vendor Listing Price</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="text-text-muted font-bold">₵</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-background-light dark:bg-background-dark py-3 pl-8 pr-4 text-text-main dark:text-white font-bold opacity-70 cursor-not-allowed ring-1 ring-inset ring-border-light dark:ring-border-dark" disabled="" type="text" value="4,000.00"/>
+</div>
+<p class="text-xs text-text-muted">Set by vendor</p>
+</div>
+<!-- Commission / Markup -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-text-main dark:text-white">Platform Markup (%)</label>
+<div class="relative">
+<input class="block w-full rounded-lg border-0 bg-white dark:bg-surface-dark py-3 px-4 text-text-main dark:text-white font-bold shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark focus:ring-2 focus:ring-inset focus:ring-primary" type="number" value="10"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="text-text-muted font-bold">%</span>
+</div>
+</div>
+<p class="text-xs text-secondary-green font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Healthy Margin
+                                </p>
+</div>
+<!-- Final Price -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-primary font-bold">Final Customer Price</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="text-primary font-black">₵</span>
+</div>
+<input class="block w-full rounded-lg border-primary bg-primary/5 py-3 pl-8 pr-4 text-primary font-black text-lg ring-1 ring-inset ring-primary focus:ring-2 focus:ring-primary" readonly="" type="text" value="4,400.00"/>
+</div>
+<p class="text-xs text-text-muted">Includes all taxes</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Action Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-lg sticky top-24">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-4">Review Decision</h3>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-muted">calendar_today</span>
+</div>
+<div>
+<p class="text-xs text-text-muted">Submitted on</p>
+<p class="text-sm font-bold text-text-main dark:text-white">Oct 24, 2023 at 14:30</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-muted">history</span>
+</div>
+<div>
+<p class="text-xs text-text-muted">Last updated</p>
+<p class="text-sm font-bold text-text-main dark:text-white">2 hours ago</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-center gap-2 w-full rounded-lg bg-primary py-3.5 px-4 text-base font-bold text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all">
+<span class="material-symbols-outlined">check_circle</span>
+                                Approve Product
+                            </button>
+<div class="relative group">
+<button class="flex items-center justify-center gap-2 w-full rounded-lg border-2 border-primary bg-transparent py-3 px-4 text-base font-bold text-primary hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined">cancel</span>
+                                    Reject Product
+                                </button>
+<!-- Tooltip hint -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                                    Will prompt for reason
+                                </div>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-border-light dark:border-border-dark">
+<label class="block text-sm font-medium text-text-main dark:text-white mb-2">Quick Note to Vendor</label>
+<textarea class="block w-full rounded-lg border-0 bg-background-light dark:bg-background-dark py-2 px-3 text-text-main dark:text-white shadow-sm ring-1 ring-inset ring-border-light dark:ring-border-dark placeholder:text-text-muted focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 resize-none" placeholder="Optional: Add feedback about images or description..." rows="3"></textarea>
+</div>
+</div>
+<!-- Vendor Widget -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<div class="size-14 rounded-full bg-cover bg-center border-2 border-border-light dark:border-border-dark" data-alt="Vendor logo for Accra Electronics Hub" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTWsKPCJOHpj-gkqIg6fKnqTBgIIz-IzLEYeY9WFUFuipBjSx5p7zN_VBsM59lvMyqfe_jZsNVHd9L-T92wrolyi2XaaP0nU02y1J0YvWUAb8sgXgPj1aGT9YDN4lJ8jHlNHNK9Hq9i2Gcf_TsxtyBYqPzUzyMyLFJcw8C0xHGuG6Nk50jz8H6tkQ4kLHSLWZ3pW6MeRnJYyyahmhv4dPkX8NdxzeqbAT3FzIXeERA_tIKBQswEHIAIxB2n2fpAeVY4IRPbY72ESc");'></div>
+<div>
+<h4 class="text-base font-bold text-text-main dark:text-white leading-tight">Accra Electronics Hub</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary-yellow text-[16px] fill-current">star</span>
+<span class="text-sm font-medium text-text-main dark:text-white">4.8</span>
+<span class="text-sm text-text-muted">(124 sales)</span>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-text-muted">Vendor Status</span>
+<span class="inline-flex items-center rounded-md bg-secondary-green/10 px-2 py-1 text-xs font-medium text-secondary-green ring-1 ring-inset ring-secondary-green/20">Verified</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-text-muted">Location</span>
+<span class="font-medium text-text-main dark:text-white" data-location="Accra, Ghana">Accra, Ghana</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-text-muted">Phone</span>
+<span class="font-medium text-text-main dark:text-white">+233 20 123 4567</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-text-muted">Email</span>
+<span class="font-medium text-text-main dark:text-white">sales@accrahub.com</span>
+</div>
+</div>
+<div class="mt-5 pt-5 border-t border-border-light dark:border-border-dark">
+<button class="text-sm text-primary font-bold hover:underline flex items-center justify-center w-full gap-2">
+<span class="material-symbols-outlined text-[18px]">mail</span> Contact Vendor
+                             </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Collapsible Menu JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggles = document.querySelectorAll('.sidebar-menu-toggle');
+    const currentPath = window.location.pathname.split('/').pop() || window.location.href.split('/').pop();
+    
+    // Function to toggle menu
+    function toggleMenu(button, menu, chevron) {
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other menus (optional: remove this if you want multiple menus open)
+        document.querySelectorAll('[id$="-menu"]').forEach(m => {
+            if (m.id !== menu.id) {
+                m.classList.add('hidden');
+                const otherButton = document.querySelector(`[data-target="${m.id}"]`);
+                const otherChevron = otherButton?.querySelector('.sidebar-chevron');
+                if (otherChevron) {
+                    otherChevron.style.transform = 'rotate(0deg)';
+                }
+                // Reset other button styles
+                if (otherButton && !otherButton.classList.contains('active-menu-item')) {
+                    otherButton.classList.remove('bg-primary/10', 'text-primary');
+                    otherButton.classList.add('text-text-muted');
+                }
+            }
+        });
+        
+        // Toggle current menu
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            menu.classList.add('hidden');
+            if (chevron) {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+    
+    // Add click handlers
+    menuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const targetId = this.getAttribute('data-target');
+            const menu = document.getElementById(targetId);
+            const chevron = this.querySelector('.sidebar-chevron');
+            
+            if (menu) {
+                toggleMenu(this, menu, chevron);
+            }
+        });
+    });
+    
+    // Auto-expand menu if current page is in a submenu
+    const allSubmenuLinks = document.querySelectorAll('[id$="-menu"] a');
+    let activeSubmenuFound = false;
+    
+    allSubmenuLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+            activeSubmenuFound = true;
+            const menu = link.closest('[id$="-menu"]');
+            const menuId = menu?.id;
+            if (menuId) {
+                // Expand the parent menu
+                menu.classList.remove('hidden');
+                const button = document.querySelector(`[data-target="${menuId}"]`);
+                const chevron = button?.querySelector('.sidebar-chevron');
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+                // Highlight parent button
+                if (button) {
+                    button.classList.add('bg-primary/10', 'text-primary');
+                    button.classList.remove('text-text-muted');
+                    button.classList.add('active-menu-item');
+                }
+                // Highlight active submenu item
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        }
+    });
+    
+    // Highlight active main menu item (if no submenu is active)
+    if (!activeSubmenuFound) {
+        const mainMenuLinks = document.querySelectorAll('nav > a[href]');
+        mainMenuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (currentPath === href || currentPath.includes(href.split('/').pop()))) {
+                link.classList.add('bg-primary/10', 'text-primary');
+                link.classList.remove('text-text-muted');
+            }
+        });
+    }
+});
+</script>
+</body></html>

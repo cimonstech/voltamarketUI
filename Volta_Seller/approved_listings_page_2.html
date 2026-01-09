@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller - Approved Listings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c90f0f",
+                        "secondary-yellow": "#FFD700",
+                        "secondary-green": "#228B22",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "border-color": "#f3e7e7"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white min-h-screen flex flex-col overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden fixed top-4 left-4 z-50 p-2 bg-surface-light dark:bg-surface-dark rounded-lg border border-[#f3e7e7] dark:border-red-900/20 shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-toggle" aria-label="Open menu">
+<span class="material-symbols-outlined text-text-main dark:text-white">menu</span>
+</button>
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 border-r border-[#f3e7e7] dark:border-red-900/20 bg-surface-light dark:bg-surface-dark h-full" id="sidebar">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">bolt</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">Voltamarket</h1>
+<p class="text-xs text-primary font-medium mt-0.5">Seller Central</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-bold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-9 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Portrait of the seller" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBesUoWf2FSsOAIHY_H9OKdlCL-UzBtYAu-P7Do564sZ3eWEFQIlzbqv1-BYydz70pTaVjnqULz8yfef3Qs3zCqfbbQvunT3fYk151uzHSDkiXnHqbCaKk6YijuIArhl4e0er2sg8HggEWtOCqZ_3pNdKCCsUgKw7c-HZG-GyHY8ArATHr9aqEPfbbF_Ys3ReZZaN0YKBc82hA8sbeyzGqF4dc-A9KEEyOMrZqLHgNoT-2aBA8ef6SxtLmElCTkN80BXeXWW-Cq5NA');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Kofi Mensah</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">kofi@voltamarket.gh</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 h-9 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary text-sm font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors min-h-[44px]">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                    Log Out
+                </button>
+</div>
+</aside>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden">
+<div class="bg-surface-light dark:bg-surface-dark w-80 h-full shadow-xl overflow-y-auto">
+<div class="p-6 border-b border-[#f3e7e7] dark:border-red-900/20">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Menu</h3>
+<button class="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 dark:text-gray-400" id="mobile-menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-bold">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-red-900/20">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-30 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-surface-light dark:bg-surface-dark px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="flex gap-3 items-center">
+<a href="seller_notifications_page.html" class="flex items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-surface-light border border-border-color text-text-main dark:bg-surface-dark dark:text-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors relative min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-primary rounded-full border border-white"></span>
+</a>
+<div class="h-8 w-px bg-border-color mx-1"></div>
+<a href="seller_profile_page.html" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary-hover text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm min-h-[44px]">
+<span class="truncate">My Profile</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main dark:text-white text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Approved Listings</h1>
+<p class="text-text-muted dark:text-gray-400 text-sm sm:text-base font-normal">Manage your live product and service inventory currently visible to customers.</p>
+</div>
+<a href="add_new_product_page.html" class="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary hover:bg-primary-hover text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all shadow-md active:scale-95 min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add New Listing</span>
+</a>
+</div>
+<!-- Filters & Search -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 mb-8 border border-border-color dark:border-gray-800 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-4 items-center">
+<!-- Search Input -->
+<div class="relative flex-1 w-full">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted dark:text-gray-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-color dark:border-gray-700 text-text-main dark:text-white placeholder:text-text-muted focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search by product name, ID or SKU..." type="text"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap md:flex-nowrap gap-3 w-full lg:w-auto">
+<div class="relative min-w-[160px] flex-1">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg bg-background-light dark:bg-background-dark border border-border-color dark:border-gray-700 text-text-main dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none cursor-pointer">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+<option>Services</option>
+<option>Home &amp; Garden</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-main dark:text-white">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<div class="relative min-w-[160px] flex-1">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg bg-background-light dark:bg-background-dark border border-border-color dark:border-gray-700 text-text-main dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none cursor-pointer">
+<option>Sort by: Newest</option>
+<option>Sort by: Price High-Low</option>
+<option>Sort by: Price Low-High</option>
+<option>Sort by: Best Selling</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-main dark:text-white">
+<span class="material-symbols-outlined text-[20px]">sort</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Active Filters Chips -->
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-border-color dark:border-gray-800">
+<span class="text-sm text-text-muted dark:text-gray-400 py-1.5 mr-2">Active Filters:</span>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold hover:bg-primary/20 transition-colors">
+                    Electronics
+                    <span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold hover:bg-primary/20 transition-colors">
+                    In Stock
+                    <span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<button class="text-xs font-semibold text-text-muted hover:text-primary transition-colors ml-auto underline">Clear All</button>
+</div>
+</div>
+<!-- Listings Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-color dark:border-gray-800 shadow-sm overflow-hidden mb-8">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[900px]">
+<thead class="bg-background-light dark:bg-background-dark border-b border-border-color dark:border-gray-700">
+<tr>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider w-16">Image</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Product / Service</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Price (GH₵)</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Stock</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Date Approved</th>
+<th class="px-6 py-4 text-right text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider w-48">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-color dark:divide-gray-700">
+<!-- Row 1 -->
+<tr class="hover:bg-background-light dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="h-12 w-12 rounded-lg bg-gray-200 bg-cover bg-center border border-border-color" data-alt="Black sleek smartphone front view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE4DBi82D_vvqDO1x2qtnJGR7HmrBuOe9HMaQkqilQvlaoExxPuUiTZR9LEyXTOLXta3trDGLE_ugcAohJsYAqbNxC4NXdXJFxpLiyv4AA_6RdZjGb32d1Q8Fqd5XeZaa6Ci1OoWBOZ4uDtbeEVKwyXfl6nQqoUXl_VHbD2Eu2NqXIC9v7c-MmSa3wq8U4KKIdqeR92k-vcwVaIrNUAc2u62RksybOLiNOHBS0ibyx2OAt1KNiQ7Y6llb8Q6gDYTT-3diDUfor0pE');">
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Samsung Galaxy S21 - 256GB</span>
+<span class="text-xs text-text-muted">ID: #SKU-99283 • Electronics</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-text-main dark:text-white">4,500.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">15 units</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-green"></span>
+                                    Live
+                                </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted dark:text-gray-400">
+                                Oct 24, 2023
+                            </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary/5 rounded-lg border border-transparent hover:border-primary/20 transition-all tooltip-trigger" title="View Live Page">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg transition-colors">
+                                        Edit
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background-light dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="h-12 w-12 rounded-lg bg-gray-200 bg-cover bg-center border border-border-color" data-alt="Colorful woven kente cloth fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBD7dHJsJRla3n3hNaNLAWR_rk0sXzvw1QYbYS7QTnNaw7-y02NxQ6xrEbP3j3NcVWv8MBE_EJh4vVaJTRAEM04H7QPr_5ShGX_Sg7XnEbh3Lnm22_Cw-pYN-waBeGIOOr7PL8nomKvoLpMjoCrG_neQjquwgiXuvWXicZwdrwvU9FzG1gF8LIz9AuYB-r0l_F5hKdOb0mfNwuQnh9C1-NvKUd9_vsNvPSezaLVZzKfFa9QNhT-rHDm0Jx7UiX6XdYihIg674Q3Ts8');">
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Authentic Handwoven Kente</span>
+<span class="text-xs text-text-muted">ID: #SKU-10294 • Fashion</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-text-main dark:text-white">1,200.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">5 units</span>
+<span class="text-[10px] font-bold text-primary ml-1">(Low)</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-green"></span>
+                                    Live
+                                </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted dark:text-gray-400">
+                                Oct 20, 2023
+                            </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary/5 rounded-lg border border-transparent hover:border-primary/20 transition-all" title="View Live Page">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg transition-colors">
+                                        Edit
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background-light dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="h-12 w-12 rounded-lg bg-gray-200 bg-cover bg-center border border-border-color" data-alt="Tools and wrench for plumbing service" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYvs2rgyIQuruT8kaaPXfzBlse1lB9M5JMk2eiFuq9fLRT_YGsj3RR_9iofMYdQkevESPpXG_37QUgEYjo31EiFRLSkaQnpoLVnJUKVQJErXxLEvtw9SEyI9SzRo9G_jn7WOFvb6tn65v3SLFVOjmVMOfIGzH-54hDv4-OGuclSYlQbW4UaUHRlyqCTqyDXEDy6hVzS5nxkJKQAOwbak21tjqUwYhlae0o8va848JsVAuGkhKjTW83Cn-mUBDN2IaoqMka3kETqvw');">
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Professional Home Plumbing</span>
+<span class="text-xs text-text-muted">ID: #SVC-55102 • Services</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-text-main dark:text-white">150.00 <span class="text-xs font-normal text-text-muted">/hr</span></span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-medium text-text-muted italic">N/A</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                                    Approved
+                                </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted dark:text-gray-400">
+                                Oct 18, 2023
+                            </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary/5 rounded-lg border border-transparent hover:border-primary/20 transition-all" title="View Live Page">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg transition-colors">
+                                        Edit
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background-light dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="h-12 w-12 rounded-lg bg-gray-200 bg-cover bg-center border border-border-color" data-alt="Silver laptop computer open on desk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARB_UXGfNvup0bm83SBpctUCxvQngBRilmdZLLIrN39LvhuB3faqNwI_IBeW8DKLDSTmvE-ssFaItOHIJ4wes8m7BCzK8xYeBvWxewhjCIfSmzUy-ZGQzviJd62eQ9QJad7WONUTHbEpxlXrUvNKxG-FaNHthr51zgz_-pnxm6QHxcBaSqTtFHdJ6jFPPqS-2ejpk3u0L7GD1yOdfB9ltQiyzYMD_ln5FMpv0wmwFY99A_9TRMc89-absm-QAncqc7EBpNf3c4s_A');">
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">HP Pavilion 15-inch Laptop</span>
+<span class="text-xs text-text-muted">ID: #SKU-20221 • Electronics</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-text-main dark:text-white">6,000.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">8 units</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-green"></span>
+                                    Live
+                                </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted dark:text-gray-400">
+                                Oct 15, 2023
+                            </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary/5 rounded-lg border border-transparent hover:border-primary/20 transition-all" title="View Live Page">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg transition-colors">
+                                        Edit
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-background-light dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="h-12 w-12 rounded-lg bg-gray-200 bg-cover bg-center border border-border-color" data-alt="Elegant table setting for wedding event" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLQzbKb3eEUOaQYf1gfD4qtAYbW-ZMC1LovWLQm3BCvOSLORnCkpb78HjSap7EVV4Ah6u3SV6CEgTRtgjagj2sYWOLeIJ0VbFkZbfzYli-ZFSriBNsEnmrUAfdoYzQGK7trzPWGJjog4q8hphvalBzpDM1cayZfwYAWXxxBgPrNZWB6MSxUGICXqvS1ahoXM86_M0hI5p9OYmujjCjFS6aRio1iPJOHoHNg5uCZqNyj3V6ZrvLklben1iNm2WC8gh0Z9pmB2L9Zxg');">
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main dark:text-white">Wedding Catering Package</span>
+<span class="text-xs text-text-muted">ID: #SVC-99211 • Events</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-text-main dark:text-white">10,000.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm font-medium text-text-muted italic">N/A</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                                    Approved
+                                </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted dark:text-gray-400">
+                                Oct 10, 2023
+                            </td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary/5 rounded-lg border border-transparent hover:border-primary/20 transition-all" title="View Live Page">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="px-3 py-1.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold rounded-lg transition-colors">
+                                        Edit
+                                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-border-color dark:border-gray-700 bg-background-light dark:bg-surface-dark flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="text-sm text-text-muted dark:text-gray-400">Showing <span class="font-bold text-text-main dark:text-white">1-5</span> of <span class="font-bold text-text-main dark:text-white">24</span> listings</span>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center h-8 w-8 rounded-lg border border-border-color dark:border-gray-700 text-text-muted hover:text-primary hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg bg-primary text-white text-sm font-bold">1</button>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg border border-border-color dark:border-gray-700 text-text-main dark:text-gray-300 hover:text-primary hover:border-primary transition-colors">2</button>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg border border-border-color dark:border-gray-700 text-text-main dark:text-gray-300 hover:text-primary hover:border-primary transition-colors">3</button>
+<span class="text-text-muted">...</span>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg border border-border-color dark:border-gray-700 text-text-main dark:text-gray-300 hover:text-primary hover:border-primary transition-colors">8</button>
+<button class="flex items-center justify-center h-8 w-8 rounded-lg border border-border-color dark:border-gray-700 text-text-main dark:text-gray-300 hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu-overlay');
+    menu.classList.toggle('hidden');
+}
+document.getElementById('mobile-menu-toggle')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-close')?.addEventListener('click', toggleMobileMenu);
+document.getElementById('mobile-menu-overlay')?.addEventListener('click', function(e) {
+    if (e.target === this) toggleMobileMenu();
+});
+</script>
+</body></html>

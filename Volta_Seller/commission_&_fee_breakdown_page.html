@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller - Commission &amp; Fee Breakdown</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b", // Green accent as requested in theme
+                        "brand-red": "#d92d20", // Brand primary red for CTAs
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar to keep it clean */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Remove default focus blue rings */
+        *:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(19, 236, 91, 0.3); /* Green ring */
+        }
+        button:focus {
+             box-shadow: 0 0 0 2px rgba(217, 45, 32, 0.3); /* Red ring for buttons */
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111827] dark:text-gray-100 font-display overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 border-r border-[#e5e7eb] dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] flex flex-col justify-between transition-all duration-300">
+<div class="flex flex-col h-full">
+<!-- User Profile / Shop Header -->
+<div class="p-6 border-b border-[#f3f4f6] dark:border-[#1f3b28]">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border border-gray-100" data-alt="Abstract gradient logo representing a modern tech shop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDa0PwkLyV5WWSbgvS5OcbyJz0v2lN-cirDrD0uquNEKImcUbCCgakX3goMkZHSfgfgp0GaTW-00cdjBu3-hco4Uo4F5puRuq-iCuIhvV6FIsAu6cwZKrjFUQ7o3iEfYcEt2bLeZlcB3M_JhpjU2xUrs74Nq6Pb8qpBZJ_SU5JKKn9513rTX8VEt9ZsNxBEGtvkSBkdYxAlqW_J9Bzty4oodtMw193qEkxi_jXEIU8vydpdai39tvkaGFZU3blGjdTYiUbkWeJiMeg");'></div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-[#0d1b12] dark:text-white text-base font-bold leading-tight truncate">Volta Gadgets</h1>
+<p class="text-[#6b7280] text-xs font-medium truncate">Seller ID: #GH-8821</p>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 overflow-y-auto py-6 px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3f4f6] dark:border-[#1f3b28]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3f4f6] dark:border-[#1f3b28]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3f4f6] dark:border-[#1f3b28]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#e7f3eb] dark:bg-[#13ec5b]/10 text-[#0d1b12] dark:text-primary transition-colors min-h-[44px]" href="commission_&_fee_breakdown_page.html">
+<span class="material-symbols-outlined text-primary dark:text-primary fill-1">receipt_long</span>
+<span class="text-sm font-bold">Commission &amp; Fees</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4b5563] hover:bg-[#f3f4f6] dark:text-gray-400 dark:hover:bg-[#1f3b28] transition-colors group min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-[#111827] dark:group-hover:text-white">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#4b5563] hover:text-[#d92d20] transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-inherit">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Top Header Area -->
+<header class="h-auto w-full px-4 sm:px-6 py-4 sm:py-6 md:px-10 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200 dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] sticky top-0 z-20">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d1b12] dark:text-white text-xl sm:text-2xl md:text-3xl font-black leading-tight tracking-tight">Commission Breakdown</h2>
+<p class="text-[#6b7280] text-xs sm:text-sm md:text-base font-normal">Transparent details on service fees and your net earnings.</p>
+</div>
+<div class="flex items-center gap-3">
+<!-- Date Picker Dummy -->
+<div class="relative hidden md:block">
+<button class="flex items-center gap-2 h-10 px-4 bg-white dark:bg-[#1a2e22] border border-gray-300 dark:border-[#2d4a35] rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-gray-400">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">calendar_today</span>
+<span>Oct 2023</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Primary Red Action Button -->
+<button class="flex items-center gap-2 h-10 px-5 bg-brand-red hover:bg-[#b9251b] text-white text-sm font-bold rounded-lg shadow-sm transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Download Report</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-10 scroll-smooth">
+<div class="max-w-6xl mx-auto flex flex-col gap-8">
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-[#0d1b12] border border-[#e5e7eb] dark:border-[#1f3b28] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#6b7280] text-sm font-medium uppercase tracking-wider">Total Sales</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 p-1.5 rounded-md text-[20px]">payments</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-[#0d1b12] dark:text-white text-3xl font-bold leading-none">GH₵ 15,000</p>
+<span class="text-primary text-sm font-bold bg-primary/10 px-2 py-0.5 rounded flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span> 12%
+                                </span>
+</div>
+<p class="text-xs text-gray-500 mt-1">Gross sales before deductions</p>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-white dark:bg-[#0d1b12] border border-[#e5e7eb] dark:border-[#1f3b28] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#6b7280] text-sm font-medium uppercase tracking-wider">Fees &amp; Commissions</p>
+<span class="material-symbols-outlined text-brand-red bg-brand-red/10 p-1.5 rounded-md text-[20px]">sell</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-[#0d1b12] dark:text-white text-3xl font-bold leading-none">GH₵ 1,200</p>
+<span class="text-[#6b7280] text-sm font-medium bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">
+                                    8.0% Avg
+                                </span>
+</div>
+<p class="text-xs text-gray-500 mt-1">Includes variable &amp; fixed fees</p>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 rounded-xl p-6 bg-[#f0fdf4] dark:bg-[#1a2e22] border border-primary/30 shadow-sm relative overflow-hidden">
+<!-- Decorative background pattern -->
+<div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between relative z-10">
+<p class="text-[#166534] dark:text-primary text-sm font-bold uppercase tracking-wider">Net Payout</p>
+<span class="material-symbols-outlined text-[#166534] dark:text-primary bg-white/50 dark:bg-black/20 p-1.5 rounded-md text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex items-end gap-3 relative z-10">
+<p class="text-[#14532d] dark:text-white text-3xl font-black leading-none">GH₵ 13,800</p>
+</div>
+<p class="text-xs text-[#15803d] dark:text-primary/80 mt-1 font-medium relative z-10">Available for withdrawal</p>
+</div>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-white dark:bg-[#0d1b12] p-4 rounded-xl border border-[#e5e7eb] dark:border-[#1f3b28] shadow-sm">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-[#1a2e22] border border-gray-200 dark:border-[#2d4a35] rounded-lg text-sm text-gray-800 dark:text-gray-200 focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400" placeholder="Search by Order ID or Product..." type="text"/>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+<div class="relative min-w-[140px]">
+<select class="w-full appearance-none pl-4 pr-10 py-2.5 bg-white dark:bg-[#0d1b12] border border-gray-300 dark:border-[#2d4a35] rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-gray-400 focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer">
+<option>All Statuses</option>
+<option>Paid</option>
+<option>Pending</option>
+<option>Refunded</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-[20px]">expand_more</span>
+</div>
+<div class="relative min-w-[140px]">
+<select class="w-full appearance-none pl-4 pr-10 py-2.5 bg-white dark:bg-[#0d1b12] border border-gray-300 dark:border-[#2d4a35] rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-gray-400 focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Fashion</option>
+<option>Home</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Transactions Table -->
+<div class="rounded-xl border border-[#e5e7eb] dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-[#1a2e22] border-b border-[#e5e7eb] dark:border-[#1f3b28]">
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Date</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Order ID</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Product</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-right">Sale Price</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-right">Fee Breakdown</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-right">Net Payout</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-[#1f3b28]">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-[#132418] transition-colors group">
+<td class="py-4 px-6 text-sm text-gray-900 dark:text-gray-200 whitespace-nowrap">Oct 24, 2023</td>
+<td class="py-4 px-6 text-sm text-gray-600 dark:text-gray-400 font-mono">#ORD-9921</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded bg-gray-100 dark:bg-gray-800 bg-center bg-cover flex-shrink-0" data-alt="Wireless headphones product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqx0TM_aKC2PweoScOPcaR5iU6Hw5k1lZlLBrvUk6CQxeQQoeDa-1Ht0D0eR4k9nifWV2TO2C-UvFpjl8V-KJAzMeZbhd9ZYr75B05OV6hRuEvCvcP-xus7Heghd2BQILA3yxfGoivj7hAXoI__WH9jLE6eUbkQojkZYboFd44eZ_ZSCO9uzDG7aWydnp1iWk7afaLuDKiHxOkAjV05HK_S_7eq_ZM_VUEsQ9ulQH35qpErHzEbQuNnbHYhe53gi4BmltRIt0fqTg");'></div>
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate max-w-[150px]">Wireless Noise Cancelling...</p>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-gray-200 text-right">GH₵ 450.00</td>
+<td class="py-4 px-6 text-right">
+<div class="flex flex-col items-end gap-0.5">
+<span class="text-xs text-brand-red font-medium">- GH₵ 22.50 (5%)</span>
+<span class="text-[10px] text-gray-500">Includes Fixed Fee</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-bold text-[#166534] dark:text-primary text-right">GH₵ 427.50</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#e7f3eb] text-[#166534] dark:bg-primary/20 dark:text-primary">
+                                                Paid
+                                            </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-[#132418] transition-colors group">
+<td class="py-4 px-6 text-sm text-gray-900 dark:text-gray-200 whitespace-nowrap">Oct 23, 2023</td>
+<td class="py-4 px-6 text-sm text-gray-600 dark:text-gray-400 font-mono">#ORD-9920</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded bg-gray-100 dark:bg-gray-800 bg-center bg-cover flex-shrink-0" data-alt="Smart watch product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9So2CMKywW5DbkYhEOKZHNS2P2KDnfx5gdt2GtGJoORHKK22utzS0WCEmXIE0fg60lw1C8bWbPFv5S8Tunw2zDXDltROqR60Gt3nN12lTYkzCCtuk5K5NsirZ9lr4iWrpSUSKUsvogKgIIQ02uornmQTmsBsZw57yb37rv6d2zCmQBaKRsDZ9lwVAj-kFcdAqZCLsino-vNLLCcYtUThlHt-zQblmefBYq79QG-z2aZ9dSLN9tPkLtC-NHdiEPTKw7eCBOAQYmP8");'></div>
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate max-w-[150px]">Smart Watch Series 5</p>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-gray-200 text-right">GH₵ 1,200.00</td>
+<td class="py-4 px-6 text-right">
+<div class="flex flex-col items-end gap-0.5">
+<span class="text-xs text-brand-red font-medium">- GH₵ 60.00 (5%)</span>
+<span class="text-[10px] text-gray-500">Includes Fixed Fee</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-bold text-[#166534] dark:text-primary text-right">GH₵ 1,140.00</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+                                                Pending
+                                            </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-[#132418] transition-colors group">
+<td class="py-4 px-6 text-sm text-gray-900 dark:text-gray-200 whitespace-nowrap">Oct 22, 2023</td>
+<td class="py-4 px-6 text-sm text-gray-600 dark:text-gray-400 font-mono">#ORD-9918</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded bg-gray-100 dark:bg-gray-800 bg-center bg-cover flex-shrink-0" data-alt="Leather bag product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9B2RqHem1oEMf3PILDBCo689ZZL1Uiz9QDuDxU2tEpZFhAXOnpCK8LY85105_esFu-9s6xXbqC1N2lsKNfHEt00bYE8vwRwbMorP7TvX9Ae-aF9hMWnWHMJvRr4_370DFT7g84VEgb7PE9aX77HmF4t8bKLKzmhueVcW8VAU6VgigY5sa3Zn0gusLP_rJoWZDvg_bWQU0Ngt3KZJIvuJocPn6UqLCKzJSUtY6DHTocMfIdVs0SEaaJ3ILVvaYpaWYapk_jR4S2SI");'></div>
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate max-w-[150px]">Leather Crossbody Bag</p>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-gray-200 text-right">GH₵ 350.00</td>
+<td class="py-4 px-6 text-right">
+<div class="flex flex-col items-end gap-0.5">
+<span class="text-xs text-brand-red font-medium">- GH₵ 35.00 (10%)</span>
+<span class="text-[10px] text-gray-500">Fashion Category Rate</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-bold text-[#166534] dark:text-primary text-right">GH₵ 315.00</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#e7f3eb] text-[#166534] dark:bg-primary/20 dark:text-primary">
+                                                Paid
+                                            </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-[#132418] transition-colors group">
+<td class="py-4 px-6 text-sm text-gray-900 dark:text-gray-200 whitespace-nowrap">Oct 21, 2023</td>
+<td class="py-4 px-6 text-sm text-gray-600 dark:text-gray-400 font-mono">#ORD-9915</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded bg-gray-100 dark:bg-gray-800 bg-center bg-cover flex-shrink-0" data-alt="Ceramic vase product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLyKsZ3tNSMAEeEQ-NyDrsN70bkguAkNdE7e2y5eK3m4uZO3Fhf_sQz8veNoJX0Hm_QbCD5B-1DasaUNQPres9Jdo8yLbcf0fBwsN2Dy25gYksqwL44vwFSK0fH4NdSFYQIz-zZP72PuQFAlxiVwTuTOnBZkxFCqAFIO7-DpgGD71j5K_aGSzk8VeZkK5jIwFj5bsYZSxjCSqxdSfvuTJuKn0vDeak_Gk_2pHZhnbivQRJ8UD1FVn2MWN42xeSofiyhWEa85ti-NM");'></div>
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate max-w-[150px]">Handmade Ceramic Vase</p>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-gray-200 text-right">GH₵ 180.00</td>
+<td class="py-4 px-6 text-right">
+<div class="flex flex-col items-end gap-0.5">
+<span class="text-xs text-brand-red font-medium">- GH₵ 14.40 (8%)</span>
+<span class="text-[10px] text-gray-500">Home &amp; Garden Rate</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm font-bold text-[#166534] dark:text-primary text-right">GH₵ 165.60</td>
+<td class="py-4 px-6 text-center">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#e7f3eb] text-[#166534] dark:bg-primary/20 dark:text-primary">
+                                                Paid
+                                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-[#e5e7eb] dark:border-[#1f3b28] flex items-center justify-between bg-gray-50 dark:bg-[#1a2e22]">
+<p class="text-sm text-gray-500 dark:text-gray-400">Showing 1-4 of 24 transactions</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-sm text-gray-600 dark:text-gray-300 bg-white dark:bg-[#0d1b12] border border-gray-300 dark:border-[#2d4a35] rounded hover:bg-gray-50 disabled:opacity-50">Prev</button>
+<button class="px-3 py-1 text-sm text-gray-600 dark:text-gray-300 bg-white dark:bg-[#0d1b12] border border-gray-300 dark:border-[#2d4a35] rounded hover:bg-gray-50">Next</button>
+</div>
+</div>
+</div>
+<!-- Fee Structure Explanation -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight px-1">Fee Structure Explained</h3>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Accordion Column 1 -->
+<div class="flex flex-col gap-3">
+<details class="group flex flex-col rounded-lg border border-[#cfe7d7] dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] px-4 py-2 transition-all" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none outline-none">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-blue-50 dark:bg-gray-800 text-brand-red">
+<span class="material-symbols-outlined text-[20px]">percent</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white text-sm font-bold">Variable Rates by Category</p>
+</div>
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-2 pb-4 pl-[46px]">
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                            Different categories attract different commission rates. Electronics are charged at 5%, Fashion at 10%, and Home &amp; Garden at 8%. These rates are applied to the final sale price excluding shipping.
+                                        </p>
+</div>
+</details>
+<details class="group flex flex-col rounded-lg border border-[#cfe7d7] dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] px-4 py-2 transition-all">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none outline-none">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-blue-50 dark:bg-gray-800 text-brand-red">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white text-sm font-bold">Shipping &amp; Logistics Fees</p>
+</div>
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-2 pb-4 pl-[46px]">
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                            Shipping fees are calculated based on weight and distance. If you use Voltamarket Logistics, the fee is deducted automatically from your payout.
+                                        </p>
+</div>
+</details>
+</div>
+<!-- Accordion Column 2 -->
+<div class="flex flex-col gap-3">
+<details class="group flex flex-col rounded-lg border border-[#cfe7d7] dark:border-[#1f3b28] bg-white dark:bg-[#0d1b12] px-4 py-2 transition-all">
+<summary class="flex cursor-pointer items-center justify-between gap-4 py-2 list-none outline-none">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-blue-50 dark:bg-gray-800 text-brand-red">
+<span class="material-symbols-outlined text-[20px]">money</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white text-sm font-bold">Fixed Transaction Fees</p>
+</div>
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-2 pb-4 pl-[46px]">
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                            A standard processing fee of GH₵ 2.00 applies to every completed order to cover payment gateway charges and platform security.
+                                        </p>
+</div>
+</details>
+<div class="p-4 bg-gray-50 dark:bg-[#1a2e22] rounded-lg border border-dashed border-gray-300 dark:border-[#2d4a35] flex items-start gap-3">
+<span class="material-symbols-outlined text-gray-400 mt-0.5">info</span>
+<div>
+<p class="text-sm font-bold text-gray-800 dark:text-white">Need more clarity?</p>
+<p class="text-sm text-gray-500 mt-1 mb-2">Download our full policy document for legal references.</p>
+<a class="text-sm font-bold text-brand-red hover:underline decoration-brand-red/30 underline-offset-4" href="#">View Policy PDF</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="max-w-6xl mx-auto mt-12 py-6 border-t border-gray-200 dark:border-[#1f3b28] text-center">
+<p class="text-xs text-gray-400">© 2023 Voltamarket Inc. All rights reserved. <a class="hover:text-brand-red transition-colors" href="#">Privacy</a> · <a class="hover:text-brand-red transition-colors" href="#">Terms</a></p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

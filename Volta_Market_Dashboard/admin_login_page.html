@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Admin Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c80d0d",
+                        "secondary-yellow": "#fcd116",
+                        "secondary-green": "#006b3f",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2a1515",
+                        "text-main-light": "#1b0d0d",
+                        "text-main-dark": "#f8f6f6",
+                        "text-sub-light": "#6b4c4c",
+                        "text-sub-dark": "#d4b3b3",
+                        "border-light": "#e7cfcf",
+                        "border-dark": "#4a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-6 py-4 lg:px-10">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-tight">Voltamarket Admin</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="hidden sm:inline">Support</span>
+</button>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex flex-1 flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+<!-- Left Column: Branding / Marketing -->
+<div class="hidden lg:flex flex-col gap-6 pr-10">
+<div class="h-1 w-24 bg-gradient-to-r from-primary via-secondary-yellow to-secondary-green rounded-full"></div>
+<h1 class="text-4xl lg:text-5xl font-extrabold text-text-main-light dark:text-text-main-dark leading-[1.15]">
+                        Manage your marketplace with confidence.
+                    </h1>
+<p class="text-lg text-text-sub-light dark:text-text-sub-dark leading-relaxed">
+                        Securely access the Voltamarket dashboard to oversee orders, manage inventory, and track sales across Ghana.
+                    </p>
+<div class="mt-8 relative overflow-hidden rounded-2xl shadow-xl aspect-video bg-surface-dark group">
+<!-- Abstract decorative gradient representing marketplace activity -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary-yellow/20 mix-blend-overlay"></div>
+<img alt="Abstract red and dark patterns" class="h-full w-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract red and dark textured pattern representing technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMOdN3htCwGv07ENfhSZkuCRzcB0F-18mUyg41BTJxW3MSOtgD7FMWopnm6Tb3D34oeo6BOUjIRKzf6hfoXAT1nHDeuKNtqJAw1ZAvVnvGWk5msypM2VeJ4D-W4EyLDC9PrKp-m6DtXDtJFhHRMIMa_TuFRiv6X4DXPaQ_9kic1GCXva4TQUUL9DqFBwI1F2nabnNop5bRJdZHU50YseN6Q7wSo0X1FzNjuZuC2SgAm3J6XGeLzVm7dHJSWfcFOHeLBL5zCaRI6Y"/>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm rounded-xl border border-white/10">
+<div class="flex items-center gap-3">
+<div class="bg-secondary-green/10 text-secondary-green p-2 rounded-full">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main-light dark:text-text-main-dark">Enterprise Security</p>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark">End-to-end encrypted session</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Login Form -->
+<div class="w-full max-w-md mx-auto">
+<div class="bg-surface-light dark:bg-surface-dark shadow-2xl shadow-primary/5 rounded-2xl border border-border-light dark:border-border-dark overflow-hidden">
+<!-- Color Bar Strip -->
+<div class="h-1.5 w-full flex">
+<div class="h-full w-1/3 bg-primary"></div>
+<div class="h-full w-1/3 bg-secondary-yellow"></div>
+<div class="h-full w-1/3 bg-secondary-green"></div>
+</div>
+<div class="p-8 sm:p-10 flex flex-col gap-6">
+<!-- Form Header -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary-green">lock</span>
+<span class="text-xs font-bold uppercase tracking-wider text-secondary-green">Secure Login</span>
+</div>
+<h3 class="text-2xl font-black text-text-main-light dark:text-text-main-dark">Admin Portal</h3>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">Welcome back. Please enter your details.</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-5" onsubmit="event.preventDefault();">
+<!-- Username Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-text-main-light dark:text-text-main-dark text-sm font-semibold" for="username">Username or Email</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors text-[20px]">person</span>
+</div>
+<input class="form-input block w-full pl-10 pr-3 py-3 rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder:text-text-sub-light/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-sm" id="username" name="username" placeholder="admin@voltamarket.com" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="text-text-main-light dark:text-text-main-dark text-sm font-semibold" for="password">Password</label>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-focus-within:text-primary transition-colors text-[20px]">key</span>
+</div>
+<input class="form-input block w-full pl-10 pr-3 py-3 rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark placeholder:text-text-sub-light/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all shadow-sm" id="password" name="password" placeholder="••••••••••••" type="password"/>
+</div>
+</div>
+<!-- Forgot Password & Remember Me -->
+<div class="flex items-center justify-between mt-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-border-light text-primary focus:ring-primary/20 h-4 w-4 bg-background-light" type="checkbox"/>
+<span class="text-sm text-text-sub-light dark:text-text-sub-dark">Remember me</span>
+</label>
+<a class="text-sm font-medium text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors underline decoration-transparent hover:decoration-primary" href="admin_forgot_password_page.html">
+                                        Forgot Password?
+                                    </a>
+</div>
+<!-- Submit Button -->
+<a href="admin_dashboard_overview.html" class="mt-2 w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-bold py-3.5 px-4 rounded-lg shadow-lg shadow-primary/25 transition-all active:scale-[0.98]">
+<span>Log In</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<!-- 2FA Setup Link -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="flex-shrink-0 mx-4 text-xs text-text-sub-light dark:text-text-sub-dark uppercase tracking-wider">Security Options</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<a href="admin_two_factor_verification_page.html" class="w-full flex items-center justify-center gap-2 bg-transparent border border-border-light dark:border-border-dark hover:border-primary/50 text-text-main-light dark:text-text-main-dark hover:text-primary font-semibold py-3 px-4 rounded-lg transition-all group">
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-hover:text-primary transition-colors text-[20px]">phonelink_setup</span>
+<span>Setup Two-Factor Auth</span>
+</a>
+</form>
+</div>
+<!-- Card Footer -->
+<div class="bg-background-light dark:bg-[#1f0f0f] p-4 text-center border-t border-border-light dark:border-border-dark">
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark">
+                                By logging in, you agree to Voltamarket's <a class="hover:text-primary underline" href="#">Terms</a> &amp; <a class="hover:text-primary underline" href="#">Privacy Policy</a>.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-6 text-center">
+<p class="text-sm text-text-sub-light dark:text-text-sub-dark">
+                © 2024 Voltamarket. All rights reserved.
+            </p>
+</footer>
+</div>
+</body></html>

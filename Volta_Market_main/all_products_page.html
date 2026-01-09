@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All Products - Voltamarket</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c1818",
+                        "border-light": "#f4e7e7",
+                        "border-dark": "#3d2424",
+                        "text-main": "#1c0d0d",
+                        "text-muted": "#9c4949",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8;
+        }
+        
+        /* Material Symbols overrides */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 transition-colors duration-300">
+<div class="min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-4 lg:px-10 py-3 shadow-sm">
+<div class="max-w-[1440px] mx-auto w-full flex items-center justify-between gap-4 lg:gap-8">
+<!-- Logo -->
+<a href="voltamarket_home_page.html" class="flex items-center gap-4 text-text-main dark:text-white shrink-0">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] hidden sm:block">Voltamarket</h2>
+</a>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl px-4 lg:px-8">
+<label class="flex flex-col w-full h-11">
+<div class="flex w-full flex-1 items-stretch rounded-lg bg-background-light dark:bg-[#3d2424] overflow-hidden border border-transparent focus-within:border-primary transition-colors">
+<div class="text-text-muted flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full flex-1 bg-transparent text-text-main dark:text-white placeholder:text-text-muted/70 px-2 text-base focus:outline-0 border-none h-full" placeholder="Search products, brands, and categories..." value="" onkeypress="if(event.key==='Enter') window.location.href='search_results_page.html';"/>
+</div>
+</label>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-3 lg:gap-6 shrink-0">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="voltamarket_home_page.html">Home</a>
+<a class="text-primary text-sm font-bold" href="all_products_page.html">Shop</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a>
+</nav>
+<div class="flex gap-2 lg:gap-3">
+<a href="sign_up_page.html" class="hidden lg:flex items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-red-700 transition-colors">
+                            Sign Up
+                        </a>
+<a href="login_page.html" class="hidden lg:flex items-center justify-center rounded-lg h-10 px-5 bg-background-light dark:bg-[#3d2424] text-text-main dark:text-white text-sm font-bold hover:bg-gray-200 dark:hover:bg-[#4a2e2e] transition-colors">
+                            Log In
+                        </a>
+<a href="cart_page.html" class="flex items-center justify-center rounded-lg size-10 bg-background-light dark:bg-[#3d2424] text-text-main dark:text-white hover:bg-gray-200 dark:hover:bg-[#4a2e2e] transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-primary rounded-full"></span>
+</a>
+<a href="notifications_page.html" class="flex items-center justify-center rounded-lg size-10 bg-background-light dark:bg-[#3d2424] text-text-main dark:text-white hover:bg-gray-200 dark:hover:bg-[#4a2e2e] transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 lg:px-10 py-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 mb-4 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="voltamarket_home_page.html">Home</a>
+<span class="text-gray-400">/</span>
+<span class="text-text-main dark:text-white font-medium">All Products</span>
+</div>
+<!-- Header -->
+<div class="mb-8">
+<h1 class="text-3xl lg:text-4xl font-bold text-text-main dark:text-white tracking-tight">Shop All Products</h1>
+<p class="text-text-muted mt-2">Discover the best products from Volta and Oti regions.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 relative">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 shrink-0 space-y-8">
+<div class="bg-white dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-border-light dark:border-border-dark lg:sticky lg:top-24">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Filters</h2>
+<button class="text-xs font-bold text-primary hover:text-red-700 uppercase">Clear All</button>
+</div>
+<!-- Categories -->
+<div class="space-y-3 mb-8">
+<h3 class="text-sm font-semibold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">grid_view</span>
+                                Categories
+                            </h3>
+<div class="space-y-1 pl-7">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Electronics &amp; Gadgets</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Agriculture &amp; Produce</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Fashion &amp; Textiles</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Home &amp; Furniture</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="space-y-4 mb-8">
+<h3 class="text-sm font-semibold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+                                Price Range (GHS)
+                            </h3>
+<!-- Slider Component Reuse -->
+<div class="pt-6 px-1">
+<div class="relative w-full h-1 bg-gray-200 dark:bg-gray-700 rounded-full">
+<div class="absolute left-[20%] right-[30%] top-0 bottom-0 bg-primary rounded-full"></div>
+<div class="absolute left-[20%] top-1/2 -translate-y-1/2 -translate-x-1/2 size-4 bg-white border-2 border-primary rounded-full shadow cursor-grab"></div>
+<div class="absolute right-[30%] top-1/2 -translate-y-1/2 translate-x-1/2 size-4 bg-white border-2 border-primary rounded-full shadow cursor-grab"></div>
+<!-- Tooltips -->
+<div class="absolute -top-7 left-[20%] -translate-x-1/2 text-xs font-bold text-gray-600 dark:text-gray-300">200</div>
+<div class="absolute -top-7 right-[30%] translate-x-1/2 text-xs font-bold text-gray-600 dark:text-gray-300">1.5k</div>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4">
+<input class="w-full text-sm p-2 rounded border border-gray-200 dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white focus:ring-primary focus:border-primary" placeholder="Min" type="number"/>
+<span class="text-gray-400">-</span>
+<input class="w-full text-sm p-2 rounded border border-gray-200 dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-white focus:ring-primary focus:border-primary" placeholder="Max" type="number"/>
+</div>
+</div>
+<!-- Location -->
+<div class="space-y-3 mb-8">
+<h3 class="text-sm font-semibold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+                                Location
+                            </h3>
+<div class="space-y-1 pl-7">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Ho</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Hohoe</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Kpando</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">Dambai (Oti)</span>
+</label>
+</div>
+</div>
+<!-- Ratings -->
+<div class="space-y-3">
+<h3 class="text-sm font-semibold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">star</span>
+                                Rating
+                            </h3>
+<div class="pl-7 space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" name="rating" type="radio"/>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="ml-2 text-sm text-gray-600 dark:text-gray-300">&amp; Up</span>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-4 h-4 border-gray-300 text-primary focus:ring-primary/20 bg-background-light dark:bg-background-dark dark:border-gray-600" name="rating" type="radio"/>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="ml-2 text-sm text-gray-600 dark:text-gray-300">&amp; Up</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-1 min-w-0">
+<!-- Sorting Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6 bg-white dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<p class="text-sm font-medium text-text-main dark:text-gray-200">
+                            Showing <span class="font-bold text-primary">1–9</span> of <span class="font-bold text-text-main dark:text-white">156</span> results
+                        </p>
+<div class="flex items-center gap-3">
+<span class="text-sm text-gray-500 dark:text-gray-400 hidden sm:inline">Sort by:</span>
+<div class="relative">
+<select class="appearance-none bg-background-light dark:bg-background-dark border border-gray-200 dark:border-border-dark rounded-lg text-sm pl-4 pr-10 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer text-text-main dark:text-white font-medium">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Popularity</option>
+<option>Top Rated</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Samsung Galaxy A14 smartphone on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8KDGl5gs1Tp4aFBB8Nqyk-lTHDXP1D4cpqUYdp0Pa4u4cjHXTN6TfVuF85iXFiulFtfrqRa20RyQbtSmAatJWJ--S_Jwvq7YmD0Q_CgARLFWEJKIUewo0PTmbOe67uybND4SYgjjXHgWjCwMn-BZuAqgoiENzFSHjTergv5xnT1mZ987zCI-qFnUMZopuMZOyQT3Whf_RbWcjCSoLYYBeU_cgD-vZc-hmuXvPyeBkoWPmGgtH7BF2VSwsQyzgExoDdEPiovnJyqU"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div class="absolute top-3 left-3 rounded bg-primary px-2.5 py-1 text-xs font-bold text-white shadow-sm">-10%</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    Volta Tech Hub
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">Samsung Galaxy A14 64GB Black</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(12)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">GHS 2,000.00</span>
+<span class="text-lg font-bold text-primary">GHS 1,800.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+<!-- Product Card 2 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bag of premium Jasmine rice from local farm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqZgZtsDY4tvnQ25SsVsCV773cpCvJsVlvFYYG4uFA_3WtNaOj9i7__QegQNrNQK7uPeZy-UVYWOcw-4ybECSn8A4VPEN49e4g2UkzD5F7SKhxR4j5Rm3cwkRsLXYZae9soptstYshrbcAGrypWJfmEPr0jTrzfldRL1C2QF3xOSVR9nwGSsrhGZg2vGWBQzvlv44omyRTDYWpbbDtteE-g0l_tYc-Bh5uYna8wrt8uevOxL5WPYm6e2ehZmyqortNtNxHvNTbIx0"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div class="absolute top-3 left-3 rounded bg-green-600 px-2.5 py-1 text-xs font-bold text-white shadow-sm">Local</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    Hohoe Rice Farmers
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">Premium Jasmine Rice (5kg)</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(85)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-primary">GHS 120.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+<!-- Product Card 3 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Kente cloth with vibrant patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF3iE8YFDcTTOKQFFFehwlL2HeRoMfd_27RaG9ykXmULeVrSzBSfxvXGQL0de48BQzUv1RFgLhOZDijbxEkfE_C23frGua5KOlDJD5VeQ1IFZzy_NTBct98LxC2_FeWVoTsj3gVtLRog71Gfs__P9tiHqxZF5ygh5ds4x3HjKRLacx4RjGqi8kvl4inlD5tyBrSjxQUQgxonpk697p5-R0YtWogl2htlGhI5Ves9dfPF9VXPF49mHrKJJNZZeNltqR9hCKF9gOALY"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    Agbamevo Kente
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">Authentic Kente Cloth - 6 Yards</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(24)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-primary">GHS 450.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+<!-- Product Card 4 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Handmade wooden armchair with cushion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4XbLjoxBHlbO2W6rxH7C2r2mKEhN_8N6oY8GP6Xo_ud50JTSSHDWR53DvyXSUUjcTQFpCPeX9seQurct36m-2dcENObhiGRRRKPvXTouMWbpdk3KG6bNJDz6i9k-q156m6-JkrZE36BeT5D4kb7CFGdhn7k5SG00H94vwJ7ZTwsMes1hgwEPF9SI8RA7nFNFFc0TaoHqJlhAmcVTDRyW95x11otDeSxjuvtOgKhFuWDPM2wm6Qs62pD4ojThdo_DZde4EFHdjnA"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    Kpando Woodworks
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">Handcrafted Wooden Armchair</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(8)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-primary">GHS 850.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+<!-- Product Card 5 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Natural shea butter soap bars stacked" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnjYOAzPpaM5suPpY77IoxXut3V2AHiWSRw9OlOiE_K9uQlakPOe40rJV0pyrn6GyrfFjI_J4qji1a7mBjCvzSrbHSxJxF17Fgl7its4gXXO0dagK6BfIKt80_tQdPFvPfrgNkRfmw9414X6FC6jELWW2C6a_tOrw4NdMuL_WpyorFn6IsRoaGHwEEzUlqkhKCcTs4kXHSks-oYF8AHgsZrKNFCJySJzYaItF2cGQhq9bfLmetWCQmWuqmxts3d1hz_A3CFqvviCE"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    Oti Naturals
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">Pure Organic Shea Butter Soap</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(42)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-lg font-bold text-primary">GHS 25.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+<!-- Product Card 6 -->
+<a href="product_details_page.html" class="group flex flex-col rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 transition-all duration-300 h-full">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern laptop computer open on desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwSzGbEX2gkNNDDkxrZzkwEeiaZF-ARqnWraSQlsU9ONHI9h0GzHbEVQJrNvrlxRhPLieObN1PWfqZeiVKOccu9jh9B5pxsp-PLTHQiy-TjI-3FRejT2aidnc9TdFeI5tUVVw-o9Ytxn_DkbRo4S-5qx-0kIyTh3-L0dy7rFEJ-E3WruwBdghUG5eI0WEZlTLHiswIyfR719Ob2s3uQsYneay_TbvO7I9qdDQudlASKN2UvTsVsf-uY6FHc3ELO9mVFSETQ0Nv6Vw"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/60 p-2 text-gray-400 hover:text-primary cursor-pointer backdrop-blur-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div class="absolute top-3 left-3 rounded bg-gray-800 px-2.5 py-1 text-xs font-bold text-white shadow-sm">Refurbished</div>
+</div>
+<div class="flex flex-1 flex-col p-4">
+<div class="mb-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                                    PC World Ho
+                                </div>
+<h3 class="text-base font-bold text-text-main dark:text-white line-clamp-2 mb-2 group-hover:text-primary transition-colors">HP EliteBook 840 G3 Core i5</h3>
+<div class="flex items-center gap-1 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 dark:text-gray-400">(15)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">GHS 2,800.00</span>
+<span class="text-lg font-bold text-primary">GHS 2,400.00</span>
+</div>
+<a href="cart_page.html" class="rounded-full bg-background-light dark:bg-background-dark p-2.5 text-text-main dark:text-white hover:bg-primary hover:text-white transition-all shadow-sm flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</a>
+</div>
+</div>
+</a>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12">
+<nav class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold shadow-md shadow-red-200 dark:shadow-none">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">3</button>
+<span class="text-gray-400 px-1">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 font-medium">12</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

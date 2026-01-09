@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - All Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1c0d0d] antialiased">
+<!-- Top Navigation -->
+<div class="relative flex w-full flex-col bg-white dark:bg-[#2a1515] border-b border-[#f4e7e7] dark:border-[#3a2020]">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-4 text-[#1c0d0d] dark:text-white" href="voltamarket_home_page.html">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+</div>
+<h2 class="text-[#1c0d0d] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Voltamarket</h2>
+</a>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64 lg:w-96">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full relative">
+<div class="text-[#9c4949] absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#1c0d0d] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border-none bg-[#f4e7e7] dark:bg-[#3a2020] h-full placeholder:text-[#9c4949] pl-10 pr-4 text-base font-normal leading-normal" placeholder="Search services..." value="" onkeypress="if(event.key==='Enter') window.location.href='search_results_page.html';"/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4 md:gap-8">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#1c0d0d] dark:text-white text-sm font-medium hover:text-primary transition-colors" href="voltamarket_home_page.html">Home</a>
+<a class="text-[#1c0d0d] dark:text-white text-sm font-medium hover:text-primary transition-colors" href="all_products_page.html">Products</a>
+<a class="text-primary text-sm font-bold" href="all_services_page.html">Services</a>
+<a class="text-[#1c0d0d] dark:text-white text-sm font-medium hover:text-primary transition-colors" href="seller_store_page.html">Sellers</a>
+</div>
+<div class="flex gap-3">
+<a href="cart_page.html" class="flex items-center justify-center rounded-lg size-10 bg-[#f4e7e7] dark:bg-[#3a2020] text-[#1c0d0d] dark:text-white hover:bg-[#ebdcdc] dark:hover:bg-[#4a2a2a] transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<a href="notifications_page.html" class="flex items-center justify-center rounded-lg size-10 bg-[#f4e7e7] dark:bg-[#3a2020] text-[#1c0d0d] dark:text-white hover:bg-[#ebdcdc] dark:hover:bg-[#4a2a2a] transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-[#f4e7e7]" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9nm4T6jDvsPUD9a4L4ipTrjMayqDcrJz3Va0fi3NJ5A9-gCg4WuOQo7J4cuhRZVgZg4qBLh_vHa-1SOt2XwEmRs-fC3cBLVyy9M5AhCH_HSzCQyiKXVQkS5w7R-ZBIrCi1csmeXXcUt65TQmqNODYYEzzMYpMpCvV3tKYzh3ouo9ABevR6MVMx0GA62tRhv2gdkX5xg73mNT-5IwmJSAn2t_sXhMCW-8Vz34dR3RbVbPIc5UgO0e7icvXUwkQQu97dCgu11jjxkQ");'></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="max-w-[1440px] mx-auto px-4 md:px-10 py-6 flex flex-col md:flex-row gap-8 w-full min-h-screen">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 shrink-0 flex flex-col gap-6">
+<!-- Breadcrumbs Mobile (Hidden on Desktop usually, but good here for structure) -->
+<div class="md:hidden flex flex-wrap gap-2 items-center text-sm mb-4">
+<a class="text-[#9c4949] font-medium" href="voltamarket_home_page.html">Home</a>
+<span class="text-[#9c4949] material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-[#1c0d0d] dark:text-white font-medium">Services</span>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined">filter_list</span> Filters
+                </h3>
+<!-- Category Filter -->
+<div class="flex flex-col gap-3">
+<details class="group open" open="">
+<summary class="flex cursor-pointer items-center justify-between py-2 list-none">
+<p class="text-[#1c0d0d] dark:text-white text-sm font-bold uppercase tracking-wider">Category</p>
+<span class="material-symbols-outlined text-[#1c0d0d] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 pb-4 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Home Maintenance</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Beauty &amp; Personal Care</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Event Services</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Automotive</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Education &amp; Tutoring</span>
+</label>
+</div>
+</details>
+<div class="h-px bg-[#e8cece] dark:bg-[#3a2020] w-full"></div>
+<!-- Price Filter -->
+<details class="group open" open="">
+<summary class="flex cursor-pointer items-center justify-between py-2 list-none">
+<p class="text-[#1c0d0d] dark:text-white text-sm font-bold uppercase tracking-wider">Price Range (GHS)</p>
+<span class="material-symbols-outlined text-[#1c0d0d] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-3 pt-2 pb-4">
+<div class="flex items-center gap-2">
+<input class="w-full rounded-lg border border-[#e8cece] dark:border-[#3a2020] bg-white dark:bg-[#2a1515] px-3 py-2 text-sm focus:border-primary focus:ring-0 dark:text-white" placeholder="Min" type="number"/>
+<span class="text-gray-400">-</span>
+<input class="w-full rounded-lg border border-[#e8cece] dark:border-[#3a2020] bg-white dark:bg-[#2a1515] px-3 py-2 text-sm focus:border-primary focus:ring-0 dark:text-white" placeholder="Max" type="number"/>
+</div>
+<button class="w-full rounded-lg bg-[#f4e7e7] dark:bg-[#3a2020] text-[#1c0d0d] dark:text-white text-xs font-bold py-2 hover:bg-[#e0d0d0] dark:hover:bg-[#4a2a2a] transition-colors">Apply Price</button>
+</div>
+</details>
+<div class="h-px bg-[#e8cece] dark:bg-[#3a2020] w-full"></div>
+<!-- Location Filter -->
+<details class="group open" open="">
+<summary class="flex cursor-pointer items-center justify-between py-2 list-none">
+<p class="text-[#1c0d0d] dark:text-white text-sm font-bold uppercase tracking-wider">Location</p>
+<span class="material-symbols-outlined text-[#1c0d0d] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 pb-4 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Ho</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Hohoe</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Kpando</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Sogakope</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="rounded border-[#e8cece] text-primary focus:ring-primary/20 size-4" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-primary transition-colors">Dambai</span>
+</label>
+</div>
+</details>
+<div class="h-px bg-[#e8cece] dark:bg-[#3a2020] w-full"></div>
+<!-- Rating Filter -->
+<details class="group open" open="">
+<summary class="flex cursor-pointer items-center justify-between py-2 list-none">
+<p class="text-[#1c0d0d] dark:text-white text-sm font-bold uppercase tracking-wider">Rating</p>
+<span class="material-symbols-outlined text-[#1c0d0d] dark:text-white group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2 pb-4 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="border-[#e8cece] text-primary focus:ring-primary/20 size-4" name="rating" type="radio"/>
+<div class="flex items-center text-yellow-500">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="ml-2 text-sm text-gray-700 dark:text-gray-300">&amp; Up</span>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="border-[#e8cece] text-primary focus:ring-primary/20 size-4" name="rating" type="radio"/>
+<div class="flex items-center text-yellow-500">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="ml-2 text-sm text-gray-700 dark:text-gray-300">&amp; Up</span>
+</div>
+</label>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<main class="flex-1 flex flex-col">
+<!-- Breadcrumbs & Headline -->
+<div class="mb-6">
+<div class="hidden md:flex flex-wrap gap-2 items-center text-sm mb-3">
+<a class="text-[#9c4949] hover:underline font-medium" href="voltamarket_home_page.html">Home</a>
+<span class="material-symbols-outlined text-[#9c4949] text-base">chevron_right</span>
+<span class="text-[#1c0d0d] dark:text-white font-medium">Services</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#e8cece] dark:border-[#3a2020] pb-6">
+<div>
+<h1 class="text-[#1c0d0d] dark:text-white text-3xl font-bold leading-tight">All Services</h1>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Showing 124 professional services in Volta &amp; Oti regions</p>
+</div>
+<div class="flex items-center gap-3 min-w-[200px]">
+<span class="text-sm font-medium text-[#1c0d0d] dark:text-white whitespace-nowrap">Sort by:</span>
+<div class="relative w-full">
+<select class="appearance-none w-full rounded-lg border border-[#e8cece] dark:border-[#3a2020] bg-white dark:bg-[#2a1515] text-[#1c0d0d] dark:text-white py-2.5 pl-4 pr-10 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Recommended</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Highest Rated</option>
+<option>Newest Arrivals</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#1c0d0d] dark:text-white">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Pro
+                        </div>
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technician repairing an air conditioning unit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiLYPk0c05Q2DXA8uSS14tb5rujFmNUkyKhb-WfGIZjhcTFaz6D_-rN7UlTLJvhHmipRh5_d6OnFKYKtw0Zb-vjSPrHUYnhEPCV0h7w6m4NAji23Z_NNOGPjggCFYcBipUg_GFmRMPmB2g3YHbTQrhT6KGge9fSBCorl1xz2NkEg-1URd7Fniz_exGZtNPFvIMR1VFHuJA6hk9GhEGZsX75eYu_l9vkGE7Qg3FhI79qTG682Q5c2HNkH0Ywfo9GAFpcEMg6PjAqBU"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<img class="size-6 rounded-full object-cover" data-alt="Company Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLfByw34Jm0Hse324-oOnHoyGNozNYJgI4Qf-_2Hfd5I3HRuh-7miSQJSFuOXfj5KvwE2jfG-vPVKyZo_caxO9Ktn1_eqD0gTlBrYJtTA-Q6ZJGdeittalwEcJProCdJiYB_24RmnGFdzVX1GLiv9HsGfG3KUpcqN-GXATnGkcCVhY93uoyCRPQ6qDfJKYnnClyyWuCSlyJoKLFGNeTiCewqm3Hji2T07AsJAUteda91qcSswhce6il_aIVpAXwV7k7EsK3Seac2A"/>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Volta Cooling Pros</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">Expert AC Repair &amp; Installation</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">4.8</span>
+<span class="text-sm text-gray-400">(42 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Ho, Volta</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Starting from</span>
+<span class="text-lg font-bold text-primary">GHS 150.00</span>
+</div>
+<a href="service_details_page.html" class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+                                Book Now
+                            </a>
+</div>
+</div>
+</a>
+<!-- Card 2 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Kitchen catering setup with food" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXJ9HPFelM4R_aGJXCMRWFhYCOBJVBqwylkzDd9KXzgUPU1QJC-t1TRJ4dtM787j9yB_FYZfNE_lYDeXuWiCwMHxhMfAqtimH6vFSXOIIMkLMmfxn3_z4HTb3aueAIvpd_RF6cAa3jED3nfTbp6wr77--iNP5qPGELaaqWmM6nQgNXtEi6dkgt3-mj2ZbXtv7DTR3wSNJ9Uj_k5dFUTQwgh__jVIXH3F2xS9gAUr3QBvir482WXm4VmWELLAwoOl_pzP0H0J35qtg"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-6 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-[10px] font-bold">MK</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Mama K's Kitchen</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">Event Catering - Local Dishes</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">4.9</span>
+<span class="text-sm text-gray-400">(128 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Hohoe</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Per plate</span>
+<span class="text-lg font-bold text-primary">GHS 45.00</span>
+</div>
+<a href="service_details_page.html" class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+                                View Menu
+                            </a>
+</div>
+</div>
+</a>
+<!-- Card 3 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Pro
+                        </div>
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Plumber fixing a sink pipe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu8hUza5SsEY9DlP3JvYsAKj9cqwe61XmChkCs_IHm9Q3Z3adpCYXwf_N7ffBNKxZdmBxjaE11wEIRQM5KIz6p4LTO5waqpvYI8hb-NDgCvUEhlY1JcY7RQxUug9_nl5OIEQI1qdBVsIT6Mo1ZVCDSUXkRvjjRXyL5kovvw7S0BbZkfaujIVQa75_q5FzIKkVHmSiDzVUQtfmRal7qyuVnTxyNR-TDIJXYH_oqPwQYbgujoRni4UgboMHiEkqetC-SAA7PNjpVX6w"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<img class="size-6 rounded-full object-cover" data-alt="Provider Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzLi7Z7N1DzXJEsrtKPEwwkcEEWoS7QS6hjg62YWuKXV-7cYa5jj2wN2wnrlU-YADzMt53UoixvgtOvrdnJ54JE7qSiCW-UijgmXrYH3AFOgQNaeuBh6TC4cH1urc3fQ90R1Qxd_VQhZRsy5l_BRTBWaqDSmdU0Q0lFUG35oBZw8_wIN1z2o6iPLyjl69r9W-q52dFzqFJw-jpkYW9US_EdnYJoRL3RE01VaFrUX1uT-wW4tNVdKsqpokJ_oofTHzGRMPBwxFKbg4"/>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Kojo Plumb Works</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">Emergency Plumbing Services</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">4.5</span>
+<span class="text-sm text-gray-400">(15 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Kpando</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Visit Fee</span>
+<span class="text-lg font-bold text-primary">GHS 80.00</span>
+</div>
+<button class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors">
+                                Call Now
+                            </button>
+</div>
+</div>
+</a>
+<!-- Card 4 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Woman getting makeup applied" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBsf6_vI6m2mrOtwKZNLNFy7uzKeUwjHEV_vWUqF-7BkaRI5Bw1mhHSuVCTbFI3an-0OB6KXrAWejq6Mx_X_qoZjXtFowtfKivEFHaQHcLba8d86pllalLgwmqTEVo_XJDu4C2K8CqSl0P1ZU1Gkkv0l3L-cv3rQJOIEJfk9EHrArNzlgnmLXuOBNVxVFdgNBr4AVJuCWi0ludJzdjbdf253x8zeBANw9qghaUl1fJK70cgUsIrB0_8wRWGYrpnsoGMZqylzfTVLU"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<img class="size-6 rounded-full object-cover" data-alt="Provider Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpbJcoldcXaJ0PD3oQVmLsNwUQDH3U-7OY3tLIoMhUiEXDs5RdbvX0-v9Z0f1ctOU0s7HGYz2D5OOaxrvS_5A6bCPJ5sIb0jceHKl_1pBJiRXSPi7F3HwSN9BYcw8EYVzVoYh5-bypOPH_iFa3Jbuu4G8gx1KTaTWqv-aMhhGKHEFZMnEJaADsNDZzEpUNx25OISBUs43gNpJZU8SEYIxf1vJqsJtWhXyncpBRncCxQIsnCojsfx6vGi2ifAgmwxa00OYmSbXyL4w"/>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Glamour by Peace</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">Bridal &amp; Occasion Makeup</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">5.0</span>
+<span class="text-sm text-gray-400">(8 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Ho</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Starting from</span>
+<span class="text-lg font-bold text-primary">GHS 200.00</span>
+</div>
+<a href="service_details_page.html" class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+                                Book Now
+                            </a>
+</div>
+</div>
+</a>
+<!-- Card 5 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Pro
+                        </div>
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Electrician working on a panel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3w2zSJRqYwoaNSKU2wdAx9fE__9aNNW22fDCYsqMfdQhpoHFcnJOOhuZdqrCkKRoEorq1jP_Z9ixYuvmPk44veGIEjAWlugsPU984tSgF3dTuk4cOA10bHKBmrepT6KmbXdOYwKVNYEP0bSfBV7J5GWScWPgAcBgDpbTO27YHng-m_zFiu92b4JW4NxXPW5IfIHvYhRuxlgpsk6bbmv7BwpdgMbs1eWQ1royft14Z_YRkatPF9mzqzAThr19Zl6y9FFxC6WrLkts"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-[10px] font-bold">VE</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Volta Electric</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">House Wiring &amp; Electricals</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">4.7</span>
+<span class="text-sm text-gray-400">(33 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Sogakope</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Consultation</span>
+<span class="text-lg font-bold text-primary">Free</span>
+</div>
+<button class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors">
+                                Contact
+                            </button>
+</div>
+</div>
+</a>
+<!-- Card 6 -->
+<a href="service_details_page.html" class="group flex flex-col bg-white dark:bg-[#2a1515] rounded-lg overflow-hidden border border-[#f4e7e7] dark:border-[#3a2020] hover:shadow-lg transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Laptop with graphic design software" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7KQvQDrN-8ka4WCpqTENeiuaEuJ7CkSKega_P1hnTwI0H3D6odBn_Igl0YGcZ6O42LaGHVhb4n_RDShdh5YRc8IL-2N5R3MygWCib1L_lj1freb0UtY40mzxiHcB2evLodL4IzZDnj6oMqxhXX4O9VGpI-6eKuC5oDTfFV8wPHiobNuw_VA7BCUeQUSHa5PK2iCWTHcrFXHKZ51XLd5TbeVdSYhr-Z0nPzJ8cnm2bxiD57U_QitghnZcscI9Qpo1HZYaN6b_CxYI"/>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-black/60 text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2">
+<img class="size-6 rounded-full object-cover" data-alt="Provider Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzz49VxGEkNGGbFvB6ZYcOdw8n3m5vzC4E_6P7QUYIOzPzUGD9KUQF8n4TcpBPu3NPa6fC2XkLS7Cl_97HUHr89RtSl6G6r7yJumtR6HOCdUZChqIM59xf4P8GzUI764HPwTn2wj7_3y7NJInqCMW6z7STcIl4oK-rHUnbBh2tXHguW1csOBz8sPXmVlDrpcPZI4rBbcv0M4zjGR0jrRJtvx-s8TiZ6M4rpOa0e_9h-NsCOXFKDE4eSivaM-03ufZG5lGd745e5Qk"/>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Creative Hub Dambai</span>
+</div>
+<h3 class="text-lg font-bold text-[#1c0d0d] dark:text-white leading-snug mb-2 group-hover:text-primary transition-colors">Logo Design &amp; Branding</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-current">star</span>
+<span class="text-sm font-bold text-[#1c0d0d] dark:text-white">4.3</span>
+<span class="text-sm text-gray-400">(5 reviews)</span>
+<span class="mx-2 text-gray-300">|</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">location_on</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Dambai</span>
+</div>
+<div class="mt-auto pt-3 border-t border-[#f4e7e7] dark:border-[#3a2020] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400">Starting from</span>
+<span class="text-lg font-bold text-primary">GHS 350.00</span>
+</div>
+<a href="service_details_page.html" class="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-lg text-sm font-bold transition-colors flex items-center justify-center" onclick="event.preventDefault(); event.stopPropagation();">
+                                View Portfolio
+                            </a>
+</div>
+</div>
+</a>
+</div>
+<!-- Pagination -->
+<div class="mt-10 flex items-center justify-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg border border-[#e8cece] dark:border-[#3a2020] text-gray-500 hover:border-primary hover:text-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-primary text-white font-bold transition-colors shadow-lg shadow-primary/30">
+                    1
+                </button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-[#e8cece] dark:border-[#3a2020] text-[#1c0d0d] dark:text-white hover:border-primary hover:text-primary transition-colors">
+                    2
+                </button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-[#e8cece] dark:border-[#3a2020] text-[#1c0d0d] dark:text-white hover:border-primary hover:text-primary transition-colors">
+                    3
+                </button>
+<span class="flex items-center justify-center size-10 text-gray-400">...</span>
+<button class="flex items-center justify-center size-10 rounded-lg border border-[#e8cece] dark:border-[#3a2020] text-[#1c0d0d] dark:text-white hover:border-primary hover:text-primary transition-colors">
+                    8
+                </button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-[#e8cece] dark:border-[#3a2020] text-gray-500 hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

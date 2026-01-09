@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Seller Business Information</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#c91010",
+                        "secondary-green": "#198754",
+                        "secondary-yellow": "#ffc107",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "text-main": "#1b0d0d",
+                        "text-muted": "#9a4c4c",
+                        "border-color": "#e7cfcf",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem", // rounded-md (6px)
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom overrides to ensure no blue appears */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(236, 19, 19, 0.2); /* Red glow */
+            border-color: #ec1313 !important;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec1313; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden w-64 flex-col border-r border-border-color bg-surface-light dark:bg-surface-dark lg:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="aspect-square size-10 rounded-full bg-cover bg-center" data-alt="Voltamarket logo abstract red shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfIeYpI2ZwrIKiqD8pr46VnNA6doHA38ogwsHUUWJB-Be_bP1qXt6VP20Ds5DtkM_SkcOhJEOL4_Lxga8rgGJP6915P58jZZDtw0oIchc4Bdx0wEm25Ff15nVLJNg21cEEbh0YURnTvNjeU_Nw3Ide2N2Q8W6GqiBM5nxvg6e7ohsicHAY_njBPnVHuMjW-a44cvYnnUTudmvm1Ig3psCzuBwJjK1-ay98xf944z1IHFqL3drAL4iSdl23tf-h9NIu7Ptg4_jNo8E");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-lg font-bold leading-tight">Voltamarket</h1>
+<p class="text-text-muted text-xs font-medium">Seller Center</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-color">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<!-- Active Item: Settings -->
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined fill-current">settings</span>
+<span class="text-sm font-bold">Settings</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2 text-text-main hover:bg-primary/5 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Bottom Actions -->
+<div class="flex flex-col gap-1 border-t border-border-color pt-4">
+<a class="group flex items-center gap-3 px-3 py-2 text-text-main hover:bg-primary/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Mobile Header (Visible only on small screens) -->
+<div class="flex items-center justify-between bg-surface-light border-b border-border-color p-4 lg:hidden">
+<div class="flex items-center gap-2">
+<div class="aspect-square size-8 rounded-full bg-cover bg-center" data-alt="Voltamarket logo mobile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1cZYtdgnWhBLTRrCFiSP_4QfWUekuvGYTycL9_VVexbYIgpXew1ebsV-h6mX12LByXAN-fsDftFHjBE3Xz1d5Z5bWM139EyL6-vP3t-AKdgK7I2hfwbHucjRTuEUmgvUYXoLhpqMVe0g69hz0oeiyN4M-ELAdQqW9UYqOGYfabsgeBFW9IFzvlvIFTf2h-oeOci-4Bt-7Y-TEGJQfL3tJKyONkvMfCFRSo3qBil9Cea6xs1qCd2bVfTzQ3p9M9h6Stz6hwrK-wXk");'></div>
+<span class="font-bold text-text-main">Voltamarket</span>
+</div>
+<button class="text-text-main p-1 rounded hover:bg-gray-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Page Container -->
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 md:px-10 px-4">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 py-4">
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="seller_dashboard_overview_page.html">Home</a>
+<span class="text-text-muted text-sm font-medium">/</span>
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="seller_account_settings_page.html">Settings</a>
+<span class="text-text-muted text-sm font-medium">/</span>
+<span class="text-primary text-sm font-bold">Business Info</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 pb-6">
+<h1 class="text-text-main text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight">Business Profile</h1>
+<p class="text-text-muted text-sm sm:text-base font-normal leading-normal max-w-2xl">Manage your public business information and location settings. This information will be visible to customers on Voltamarket.</p>
+</div>
+<!-- Form Card -->
+<form class="flex flex-col gap-8 rounded-xl bg-surface-light border border-border-color shadow-sm p-6 md:p-8 mb-10 dark:bg-surface-dark dark:border-none">
+<!-- Section 1: Basic Info -->
+<div class="flex flex-col gap-6">
+<h2 class="text-text-main text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">storefront</span>
+                                    Basic Information
+                                </h2>
+<div class="grid grid-cols-1 gap-6">
+<!-- Business Name -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="business-name">Business Name <span class="text-primary">*</span></label>
+<input class="form-input w-full rounded-lg border-border-color bg-background-light text-text-main placeholder:text-gray-400 focus:border-primary focus:ring-primary h-12 px-4 text-base font-medium transition-shadow" id="business-name" placeholder="e.g. Volta Textiles &amp; Crafts" type="text" value="Kofi's Kente Enterprise"/>
+</div>
+<!-- Business Description -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="business-desc">About the Business</label>
+<textarea class="form-textarea w-full rounded-lg border-border-color bg-background-light text-text-main placeholder:text-gray-400 focus:border-primary focus:ring-primary min-h-[140px] p-4 text-base font-normal resize-y transition-shadow" id="business-desc" placeholder="Describe what your business offers...">Providing authentic, high-quality Kente cloth weaved directly from the heart of the Volta Region. We specialize in custom designs for traditional weddings and festivals.</textarea>
+<p class="text-xs text-text-muted">Brief description for your shop profile page.</p>
+</div>
+</div>
+</div>
+<hr class="border-border-color/50"/>
+<!-- Section 2: Contact & Location -->
+<div class="flex flex-col gap-6">
+<h2 class="text-text-main text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                    Location &amp; Contact
+                                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Region -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="region">Region <span class="text-primary">*</span></label>
+<div class="relative">
+<select class="form-select w-full rounded-lg border-border-color bg-background-light text-text-main focus:border-primary focus:ring-primary h-12 px-4 text-base font-medium appearance-none cursor-pointer" id="region">
+<option disabled="">Select Region</option>
+<option selected="" value="Volta">Volta Region</option>
+<option value="Oti">Oti Region</option>
+<option disabled="">--- Other Regions ---</option>
+<option value="Greater Accra">Greater Accra</option>
+<option value="Ashanti">Ashanti</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3 text-text-muted pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- City/Town -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="city">City / Town <span class="text-primary">*</span></label>
+<input class="form-input w-full rounded-lg border-border-color bg-background-light text-text-main placeholder:text-gray-400 focus:border-primary focus:ring-primary h-12 px-4 text-base font-medium transition-shadow" id="city" placeholder="e.g. Hohoe" type="text" value="Ho"/>
+</div>
+<!-- Digital Address -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="gps">GhanaPostGPS Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted">pin_drop</span>
+<input class="form-input w-full rounded-lg border-border-color bg-background-light text-text-main placeholder:text-gray-400 focus:border-primary focus:ring-primary h-12 pl-10 pr-4 text-base font-medium transition-shadow" id="gps" placeholder="e.g. VH-0000-0000" type="text"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main text-sm font-bold" for="phone">Business Phone Number</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted">call</span>
+<input class="form-input w-full rounded-lg border-border-color bg-background-light text-text-main placeholder:text-gray-400 focus:border-primary focus:ring-primary h-12 pl-10 pr-4 text-base font-medium transition-shadow" id="phone" placeholder="020 000 0000" type="tel" value="024 123 4567"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="pt-4 flex items-center justify-end gap-4 border-t border-border-color/50 mt-2">
+<button class="px-6 py-3 rounded-lg text-text-main text-sm font-bold hover:bg-gray-100 transition-colors" type="button">Cancel</button>
+<button class="px-8 py-3 rounded-lg bg-primary text-white text-sm font-bold shadow-md shadow-red-200 hover:bg-primary-hover focus:ring-4 focus:ring-primary/20 transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                                    Save &amp; Update
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

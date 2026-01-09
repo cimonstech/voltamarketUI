@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket Seller Dashboard</title>
+<!-- Google Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-dark": "#b90e0e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                        "accent-green": "#16a34a",
+                        "accent-yellow": "#eab308",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e5e5;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4d4d4;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-white font-display overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Side Navigation -->
+<aside class="w-64 flex-shrink-0 flex flex-col justify-between border-r border-[#e7cfcf] bg-white dark:bg-[#2a1515] dark:border-[#3a1f1f] hidden md:flex">
+<div class="flex flex-col gap-4 p-4 h-full overflow-y-auto">
+<!-- User Profile / Shop Brand -->
+<div class="flex gap-3 items-center mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-2 border-primary/20" data-alt="Profile picture of a shop logo with red accents" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsa_foE1vyAM5V1NzQJ-3CPl10P7luV_ae4yJf66y34146l4oO1xnrAVvzWVAFnrS6XX3UncwIdwFmwR60FtOUlyRL36j1ahFrJl4zUpoJgGM3YRy1htPpnjBKAuNuKEo-Q6wH7wRXt3qgCEm9xqawYHda56ovIL21rpvRYUA5AOku-uwIICMtge_KzNYY_n1Q88eiEH2pN9jYXs-6a91JMw6h0rxWVRPetZpIJChgWUl1C9sAScdlZOIRpDDJVdx5YeVyTlIcf9Q");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#1b0d0d] dark:text-white text-base font-bold leading-tight">Voltamarket Seller</h1>
+<p class="text-primary text-xs font-medium">Verified Merchant</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a1f1f]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined filled-icon">bar_chart</span>
+<span class="text-sm font-bold">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a1f1f]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#e7cfcf] dark:border-[#3a1f1f]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Bottom Action -->
+<div class="p-4 border-t border-[#e7cfcf] dark:border-[#3a1f1f]">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium text-[#5c3a3a] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                    Sign Out
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Mobile Header (Visible only on small screens) -->
+<div class="md:hidden flex items-center justify-between p-4 bg-white dark:bg-[#2a1515] border-b border-[#e7cfcf]">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white">menu</span>
+<span class="font-bold text-lg">Voltamarket</span>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD1L1pV5VHA_1CtBo9Gio8EbIgPaKHE0lc86TX0dsGazzCy4im83TMC3r5I8bxgLqxHFkM2Vw73RtWVkfk_mEBqzlwBWnd-ZOklCi00hQghCz2tYtzGWbQJbEIBA4MwvuQWvHwST4vmYhkko8uPlfDh3FI0mWcWKhj0IWIi4ErPaRM63jAVsbWLD-0cspSNehaTByGvUlQYS3P0PVBkYjQTs1KYXX6ud4tB7UqwTcdjfO-PCsb41upHz0Hmx8yQZyrNmOF1dFI8SE");'></div>
+</div>
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col gap-4">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 text-sm">
+<a class="text-[#9a4c4c] hover:text-primary transition-colors font-medium" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px] text-[#9a4c4c]">chevron_right</span>
+<a class="text-[#9a4c4c] hover:text-primary transition-colors font-medium" href="#">Analytics</a>
+<span class="material-symbols-outlined text-[16px] text-[#9a4c4c]">chevron_right</span>
+<span class="text-[#1b0d0d] dark:text-white font-bold">Product Performance</span>
+</div>
+<!-- Title & Description -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h1 class="text-[#1b0d0d] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">Product Performance Analytics</h1>
+<p class="text-[#5c3a3a] dark:text-[#dccbcb] text-base font-normal">Detailed insights into your sales, revenue, and product engagement across Ghana.</p>
+</div>
+<!-- Filter & Action Bar -->
+<div class="flex flex-wrap items-end gap-3 w-full lg:w-auto">
+<!-- Date Range -->
+<div class="flex-1 min-w-[160px]">
+<label class="block text-xs font-semibold text-[#5c3a3a] dark:text-[#dccbcb] mb-1.5 uppercase tracking-wide">Date Range</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-[#e7cfcf] bg-white dark:bg-[#2a1515] dark:border-[#3a1f1f] text-[#1b0d0d] dark:text-white py-2.5 pl-3 pr-10 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Last 30 Days</option>
+<option>This Quarter</option>
+<option>Year to Date</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Category Filter -->
+<div class="flex-1 min-w-[160px]">
+<label class="block text-xs font-semibold text-[#5c3a3a] dark:text-[#dccbcb] mb-1.5 uppercase tracking-wide">Category</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-[#e7cfcf] bg-white dark:bg-[#2a1515] dark:border-[#3a1f1f] text-[#1b0d0d] dark:text-white py-2.5 pl-3 pr-10 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option>All Products</option>
+<option>Electronics</option>
+<option>Fashion</option>
+<option>Home &amp; Garden</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Export Button -->
+<button class="flex h-[42px] items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-dark px-6 text-sm font-bold text-white shadow-sm transition-colors mt-auto">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export</span>
+</button>
+</div>
+</div>
+</div>
+<!-- KPI Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Revenue Card -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl p-5 border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm flex flex-col justify-between h-full hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-[#fff0f0] dark:bg-[#3f1010] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-accent-green border border-green-100">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    12.5%
+                                </span>
+</div>
+<div>
+<p class="text-[#5c3a3a] dark:text-[#dccbcb] text-sm font-medium">Total Revenue</p>
+<h3 class="text-[#1b0d0d] dark:text-white text-2xl font-black mt-1">GH₵ 45,230</h3>
+</div>
+</div>
+<!-- Sales Volume -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl p-5 border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm flex flex-col justify-between h-full hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-[#fff0f0] dark:bg-[#3f1010] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-accent-green border border-green-100">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    8.2%
+                                </span>
+</div>
+<div>
+<p class="text-[#5c3a3a] dark:text-[#dccbcb] text-sm font-medium">Sales Volume</p>
+<h3 class="text-[#1b0d0d] dark:text-white text-2xl font-black mt-1">1,240 <span class="text-sm font-medium text-[#9a4c4c] dark:text-[#a17e7e]">Units</span></h3>
+</div>
+</div>
+<!-- Conversion Rate -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl p-5 border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm flex flex-col justify-between h-full hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-[#fff0f0] dark:bg-[#3f1010] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+<span class="inline-flex items-center gap-1 rounded-full bg-yellow-50 px-2 py-1 text-xs font-bold text-accent-yellow border border-yellow-100">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+                                    0.4%
+                                </span>
+</div>
+<div>
+<p class="text-[#5c3a3a] dark:text-[#dccbcb] text-sm font-medium">Conversion Rate</p>
+<h3 class="text-[#1b0d0d] dark:text-white text-2xl font-black mt-1">3.2%</h3>
+</div>
+</div>
+<!-- Product Views -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl p-5 border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm flex flex-col justify-between h-full hover:border-primary/30 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-[#fff0f0] dark:bg-[#3f1010] p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-bold text-accent-green border border-green-100">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    24.8%
+                                </span>
+</div>
+<div>
+<p class="text-[#5c3a3a] dark:text-[#dccbcb] text-sm font-medium">Total Views</p>
+<h3 class="text-[#1b0d0d] dark:text-white text-2xl font-black mt-1">15.4k</h3>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Revenue Trend Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-[#2a1515] p-6 rounded-xl border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">Revenue Trends</h3>
+<button class="text-primary hover:text-primary-dark text-sm font-semibold flex items-center gap-1">
+                                    Full Report <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Custom CSS Bar Chart Mockup -->
+<div class="h-64 w-full flex items-end justify-between gap-2 px-2 pb-2">
+<!-- Bars generation manually for demo -->
+<div class="w-full bg-primary/10 rounded-t-sm h-[40%] hover:bg-primary/20 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵4k</div>
+</div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[55%] hover:bg-primary/30 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵5.5k</div>
+</div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[35%] hover:bg-primary/40 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵3.5k</div>
+</div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[65%] hover:bg-primary/50 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵6.5k</div>
+</div>
+<div class="w-full bg-primary/50 rounded-t-sm h-[50%] hover:bg-primary/60 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵5k</div>
+</div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[75%] hover:bg-primary/70 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵7.5k</div>
+</div>
+<div class="w-full bg-primary/80 rounded-t-sm h-[60%] hover:bg-primary/90 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵6k</div>
+</div>
+<div class="w-full bg-primary rounded-t-sm h-[90%] hover:brightness-110 transition-all relative group">
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded">₵9k</div>
+</div>
+</div>
+<div class="flex justify-between text-xs text-[#9a4c4c] mt-2 px-1">
+<span>Jan 1</span>
+<span>Jan 5</span>
+<span>Jan 10</span>
+<span>Jan 15</span>
+<span>Jan 20</span>
+<span>Jan 25</span>
+<span>Jan 30</span>
+<span>Feb 1</span>
+</div>
+</div>
+<!-- Top Categories List -->
+<div class="bg-white dark:bg-[#2a1515] p-6 rounded-xl border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm flex flex-col">
+<h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white mb-6">Top Categories</h3>
+<div class="flex flex-col gap-6 flex-1 justify-center">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-[#1b0d0d] dark:text-white">Electronics</span>
+<span class="text-[#5c3a3a] dark:text-[#dccbcb]">45%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-[#1b0d0d] dark:text-white">Fashion</span>
+<span class="text-[#5c3a3a] dark:text-[#dccbcb]">32%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-accent-yellow h-2.5 rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-[#1b0d0d] dark:text-white">Home &amp; Living</span>
+<span class="text-[#5c3a3a] dark:text-[#dccbcb]">18%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-accent-green h-2.5 rounded-full" style="width: 18%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium text-[#1b0d0d] dark:text-white">Others</span>
+<span class="text-[#5c3a3a] dark:text-[#dccbcb]">5%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5">
+<div class="bg-gray-400 h-2.5 rounded-full" style="width: 5%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-white dark:bg-[#2a1515] rounded-xl border border-[#e7cfcf] dark:border-[#3a1f1f] shadow-sm overflow-hidden mb-10">
+<div class="px-6 py-5 border-b border-[#e7cfcf] dark:border-[#3a1f1f] flex flex-wrap justify-between items-center gap-4">
+<h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">Detailed Product Breakdown</h3>
+<div class="relative w-full md:w-64">
+<input class="w-full pl-10 pr-4 py-2 rounded-lg border border-[#e7cfcf] dark:border-[#3a1f1f] bg-[#f8f6f6] dark:bg-[#3a1f1f] text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Search products..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#9a4c4c] text-[18px]">search</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#fcf8f8] dark:bg-[#321a1a] border-b border-[#e7cfcf] dark:border-[#3a1f1f]">
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">Product</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">SKU</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">Price</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">Sold</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">Revenue</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c]">Status</th>
+<th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#9a4c4c] text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7cfcf] dark:divide-[#3a1f1f]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#fffcfc] dark:hover:bg-[#351e1e] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded bg-gray-100 bg-cover bg-center" data-alt="Red headphones product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwWfbFHVrIadCdS2XwnbLsAODeNd0EmuHQYlUleLnyGJN0mqVTm-rZn1T_v4l7v1WGVB32cOzn8139p3hmuaTvrJg-stIt_vE11-TuZhz5Q2VuOuYZ4TmoeqX5W0nqGvfLS-WcydodkU6yJxnOYo4HHv1dYxZvwKBH41c5dirTopcx05vAZh_zUQ7fdJHKAtZu87MSQASswPD2P75ynvjWPDIONOCzq7lNtnn1DHW28w7aj8KzWqaofjM_j3XwjS3S3XabtzbYovU");'></div>
+<span class="font-bold text-[#1b0d0d] dark:text-white text-sm">Wireless Headphones</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">WH-001-RED</td>
+<td class="py-4 px-6 text-sm font-medium text-[#1b0d0d] dark:text-white">GH₵ 450.00</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">124</td>
+<td class="py-4 px-6 text-sm font-bold text-[#1b0d0d] dark:text-white">GH₵ 55,800</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+                                                In Stock
+                                            </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-dark font-medium text-sm">Details</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#fffcfc] dark:hover:bg-[#351e1e] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded bg-gray-100 bg-cover bg-center" data-alt="Smart watch product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBR0IbS18q-_zNCDHtSb0tS-PSmlWADHOXJaBNWMHku-l5r5Fjim5bhWOHXbMga2a1JcwgWsFdzEenrvGIgitSW-JDfanCYw_6wa48W3GvSZE2ubz8KsqUQfxfOR0uoUoGf9n6DvqHRr_cV-9mNkMQVN4oxqJiw8ekxrSEL6stIRuTOwmkc1wHvh8zQFe08ATpxoo6RH2tUd1ngYuowlnX2fgl3-xxt4oB-4FjWATqjzInenLx7WsX0tdDtGGaWVFklfcffMlIi5aQ");'></div>
+<span class="font-bold text-[#1b0d0d] dark:text-white text-sm">Smart Watch Series 5</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">SW-550-BLK</td>
+<td class="py-4 px-6 text-sm font-medium text-[#1b0d0d] dark:text-white">GH₵ 1,200.00</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">89</td>
+<td class="py-4 px-6 text-sm font-bold text-[#1b0d0d] dark:text-white">GH₵ 106,800</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-800">
+                                                Low Stock
+                                            </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-dark font-medium text-sm">Details</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#fffcfc] dark:hover:bg-[#351e1e] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded bg-gray-100 bg-cover bg-center" data-alt="Sneakers product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlIMWkLZmbci8Og_szqDf_fT6qcXvXVQ5Uq9Ki5A1YPLsrZL7K3_v4wMqoUB_RN9MgQU05sv7LOZPaIh8ZeWa31KIPA4MUrr8vOBnZltmqOXUVeZ0r53Z5mXWOtaUwng9xS1SwkF6yGz3Q4AE9NTrCeBtoBxYZOt7KYtRgyCtu-6THemqPCgJFcZGQgOHRks-BBGs8EwPIMMDRwJLdM4SRIp75aUP1L_j5RGNc3_cZzXdHL9FTLUwy_dKhBCANIlECQh6n76s4cgg");'></div>
+<span class="font-bold text-[#1b0d0d] dark:text-white text-sm">Runner Sneakers</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">SN-202-WHT</td>
+<td class="py-4 px-6 text-sm font-medium text-[#1b0d0d] dark:text-white">GH₵ 320.00</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">210</td>
+<td class="py-4 px-6 text-sm font-bold text-[#1b0d0d] dark:text-white">GH₵ 67,200</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+                                                In Stock
+                                            </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-dark font-medium text-sm">Details</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#fffcfc] dark:hover:bg-[#351e1e] transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded bg-gray-100 bg-cover bg-center" data-alt="Camera lens product thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClPqe0_86S49wDGedTivnHHpVz4wC6KnNTDJfv6lfklpOVsbL1P0_G7ND2Et581ED8gGe-UWFHr7ym_DjRPKCDshR1V7v6PriZVj7CxXOpsODbg-pCAbsu8CEMErgYoIkdr1ei_wVHAYCoMWQEsQYTFUVXmyYgNtjRwx7maFF0tCpqWASlktod0gVedAVjqjxX6tEwUCYPTiZKfjoE5Zx4ZsBt3SFddwORGiorq6IzXSp5yJWmUoM1ejlPEAk6ac4Mico95OiNZXw");'></div>
+<span class="font-bold text-[#1b0d0d] dark:text-white text-sm">Pro Camera Lens</span>
+</div>
+</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">CM-LENS-85</td>
+<td class="py-4 px-6 text-sm font-medium text-[#1b0d0d] dark:text-white">GH₵ 3,500.00</td>
+<td class="py-4 px-6 text-sm text-[#5c3a3a] dark:text-[#dccbcb]">12</td>
+<td class="py-4 px-6 text-sm font-bold text-[#1b0d0d] dark:text-white">GH₵ 42,000</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+                                                In Stock
+                                            </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-dark font-medium text-sm">Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 flex items-center justify-between border-t border-[#e7cfcf] dark:border-[#3a1f1f]">
+<p class="text-sm text-[#9a4c4c]">Showing <span class="font-bold text-[#1b0d0d] dark:text-white">1-4</span> of <span class="font-bold text-[#1b0d0d] dark:text-white">24</span> items</p>
+<div class="flex gap-2">
+<button class="p-1 rounded-md text-[#5c3a3a] hover:bg-gray-100 dark:text-[#dccbcb] dark:hover:bg-[#3a1f1f] disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1 rounded-md text-[#5c3a3a] hover:bg-gray-100 dark:text-[#dccbcb] dark:hover:bg-[#3a1f1f]">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

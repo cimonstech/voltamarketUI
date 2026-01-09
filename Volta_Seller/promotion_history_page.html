@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Promotion History</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-dark": "#b90e0e",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "accent-yellow": "#FFD700",
+                        "accent-green": "#008000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="flex w-64 flex-col border-r border-[#f3e7e7] dark:border-[#3a1d1d] bg-background-light dark:bg-background-dark overflow-y-auto hidden md:flex">
+<div class="flex flex-col gap-4 p-4 min-h-full">
+<div class="flex gap-3 items-center mb-6">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0" data-alt="Voltamarket Logo abstract red shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjc0QNIABg6cSDcJv5jkawTloe5ZlV4I5iaSeDFQirbol1KGD65jxGEIUI2PvxiINJBxq_wPUb5Sg2k_LtvjtnSjlaeSwi8FCbae6qSO6EXtgwgqjzHILUDQmsdQHDMGOo7EvXctEtqN22OrXgblkQolhXy0QUdrSvX3uUc9EzC3I-v28_awRP-fmeVBemWofMTLRi6VIXMjozvTMnJBcQiXvB0duex256PhJ1la4Gyz5z2KF1edCJvkxHce0iPoQbBqfqoJ-mSHU");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#1b0d0d] dark:text-white text-base font-bold leading-normal">Voltamarket</h1>
+<p class="text-[#9a4c4c] dark:text-[#e58a8a] text-xs font-normal leading-normal">Seller Center</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">dashboard</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">inventory_2</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Products</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">shopping_cart</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">chat</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Messages</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">account_balance_wallet</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Earnings</p>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 group min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<p class="text-primary text-sm font-bold leading-normal">Promotions</p>
+</a>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a1d1d]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">bar_chart</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Product Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">room_service</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Service Analytics</p>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a1d1d]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">diamond</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Premium Tools</p>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-[#f3e7e7] dark:border-[#3a1d1d]">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">settings</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-[#1b0d0d] dark:text-white group-hover:text-primary">help</span>
+<p class="text-[#1b0d0d] dark:text-white text-sm font-medium leading-normal">Help Center</p>
+</a>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-[#f3e7e7] dark:border-[#3a1d1d]">
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] group transition-colors min-h-[44px] w-full text-left">
+<span class="material-symbols-outlined text-[#9a4c4c] dark:text-[#e58a8a]">logout</span>
+<p class="text-[#9a4c4c] dark:text-[#e58a8a] text-sm font-medium leading-normal">Sign Out</p>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-full overflow-hidden bg-[#fcf8f8] dark:bg-[#221010]">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f3e7e7] dark:border-[#3a1d1d] bg-background-light dark:bg-background-dark px-6 py-3 shrink-0 z-10">
+<div class="flex items-center gap-4 text-[#1b0d0d] dark:text-white md:hidden">
+<button class="p-1 hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] rounded-md">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden md:flex items-center gap-4 text-[#1b0d0d] dark:text-white">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Seller Dashboard</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden sm:flex relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#9a4c4c] text-[20px]">search</span>
+<input class="h-10 pl-10 pr-4 rounded-full bg-[#f3e7e7] dark:bg-[#3a1d1d] border-none text-sm text-[#1b0d0d] dark:text-white focus:ring-1 focus:ring-primary placeholder-[#9a4c4c]" placeholder="Global Search..." type="text"/>
+</div>
+<a href="seller_notifications_page.html" class="flex items-center justify-center rounded-full size-10 hover:bg-[#f3e7e7] dark:hover:bg-[#3a1d1d] text-[#1b0d0d] dark:text-white transition-colors relative min-w-[44px] min-h-[44px]">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-white dark:border-[#221010]"></span>
+</a>
+<a href="seller_profile_page.html" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-[#f3e7e7] dark:ring-[#3a1d1d] min-w-[44px] min-h-[44px]" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFXvGkU5dk2pPyuwb-VUIHxYrqfzbjsa0AlKahFG9IbPYksNHLSt71LorpbCLKbwagYL-3TRpnXgOYcJQdeZZ55LSvWhxdebwmVqTzGxQVdFHGXFgh9iaQ3t5w_-I_YOdkSN-xpLhaDqJ-hWvWrYEuHlJG_WXCtyYbBTDVAu4g1yXiBMbr6z0unWhusabt9eRJz186dT3aONZ4T4WxdpE2L4h05iEp5uuGRsdUMenoxtFZWOIKD4aWhr3RmYPJfq0awOIYBgwCtiA");'></a>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-6">
+<!-- Page Heading & Primary Action -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-[#1b0d0d] dark:text-white text-2xl sm:text-3xl font-black leading-tight tracking-[-0.033em]">Promotion History</h1>
+<p class="text-[#9a4c4c] dark:text-[#e58a8a] text-sm sm:text-base font-normal">Track performance of your marketing campaigns across Ghana.</p>
+</div>
+<a href="promotion_payment_page.html" class="flex items-center justify-center gap-2 rounded-lg h-11 px-6 bg-primary hover:bg-primary-dark text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create New Promotion</span>
+</a>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="bg-white dark:bg-[#2a1414] rounded-xl p-4 shadow-sm border border-[#f3e7e7] dark:border-[#3a1d1d]">
+<div class="flex flex-col md:flex-row gap-4">
+<!-- Search -->
+<div class="flex-1">
+<div class="relative w-full h-11">
+<div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#9a4c4c]">search</span>
+</div>
+<input class="w-full h-full rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a1d1d] text-[#1b0d0d] dark:text-white placeholder-[#9a4c4c] pl-10 pr-4 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all" placeholder="Search by campaign name or ID" value=""/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-4 overflow-x-auto pb-2 md:pb-0">
+<div class="min-w-[160px]">
+<select class="w-full h-11 rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a1d1d] text-[#1b0d0d] dark:text-white px-3 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none cursor-pointer">
+<option disabled="" selected="" value="">Status: All</option>
+<option value="active">Active</option>
+<option value="completed">Completed</option>
+<option value="scheduled">Scheduled</option>
+<option value="draft">Draft</option>
+</select>
+</div>
+<div class="min-w-[160px]">
+<select class="w-full h-11 rounded-lg bg-[#fcf8f8] dark:bg-[#221010] border border-[#f3e7e7] dark:border-[#3a1d1d] text-[#1b0d0d] dark:text-white px-3 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none cursor-pointer">
+<option disabled="" selected="" value="">Type: All</option>
+<option value="featured">Featured Listing</option>
+<option value="banner">Banner Ad</option>
+<option value="email">Email Blast</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-white dark:bg-[#2a1414] rounded-xl shadow-sm border border-[#f3e7e7] dark:border-[#3a1d1d] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[800px] text-left border-collapse">
+<thead>
+<tr class="bg-[#fcf8f8] dark:bg-[#221010] border-b border-[#f3e7e7] dark:border-[#3a1d1d]">
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a]">Campaign Info</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a]">Type</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a]">Duration</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a]">Status</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a]">Performance</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-[#9a4c4c] dark:text-[#e58a8a] text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f3e7e7] dark:divide-[#3a1d1d]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#221010] transition-colors group">
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold text-[#1b0d0d] dark:text-white">Easter Flash Sale</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">ID: #PROM-2024-001</span>
+</div>
+</td>
+<td class="p-4">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                            Featured Listing
+                                        </div>
+</td>
+<td class="p-4 text-sm text-[#1b0d0d] dark:text-gray-300">
+                                        Apr 01 - Apr 07, 2024
+                                    </td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600 dark:bg-green-400"></span>
+                                            Completed
+                                        </div>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#1b0d0d] dark:text-white">1,240</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">Views</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<a href="promotion_payment_page.html" class="text-primary hover:text-primary-dark hover:bg-primary/5 dark:hover:bg-primary/10 px-3 py-1.5 rounded text-sm font-semibold transition-colors inline-block">
+                                            View Details
+                                        </a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#221010] transition-colors group">
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold text-[#1b0d0d] dark:text-white">Mid-Year Clearance</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">ID: #PROM-2024-045</span>
+</div>
+</td>
+<td class="p-4">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                            Banner Ad
+                                        </div>
+</td>
+<td class="p-4 text-sm text-[#1b0d0d] dark:text-gray-300">
+                                        Jun 15 - Jun 30, 2024
+                                    </td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600 dark:bg-green-400 animate-pulse"></span>
+                                            Active
+                                        </div>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#1b0d0d] dark:text-white">345</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">Clicks</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<a href="promotion_payment_page.html" class="text-primary hover:text-primary-dark hover:bg-primary/5 dark:hover:bg-primary/10 px-3 py-1.5 rounded text-sm font-semibold transition-colors inline-block">
+                                            View Details
+                                        </a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#221010] transition-colors group">
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold text-[#1b0d0d] dark:text-white">Independence Day Special</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">ID: #PROM-2024-012</span>
+</div>
+</td>
+<td class="p-4">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                            Email Blast
+                                        </div>
+</td>
+<td class="p-4 text-sm text-[#1b0d0d] dark:text-gray-300">
+                                        Mar 06, 2024
+                                    </td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600 dark:bg-green-400"></span>
+                                            Completed
+                                        </div>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#1b0d0d] dark:text-white">45%</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">Open Rate</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<a href="promotion_payment_page.html" class="text-primary hover:text-primary-dark hover:bg-primary/5 dark:hover:bg-primary/10 px-3 py-1.5 rounded text-sm font-semibold transition-colors inline-block">
+                                            View Details
+                                        </a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#221010] transition-colors group">
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold text-[#1b0d0d] dark:text-white">Summer Launch</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">ID: #PROM-2024-050</span>
+</div>
+</td>
+<td class="p-4">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                            Featured Listing
+                                        </div>
+</td>
+<td class="p-4 text-sm text-[#1b0d0d] dark:text-gray-300">
+                                        Aug 01 - Aug 15, 2024
+                                    </td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-yellow-600 dark:bg-yellow-400"></span>
+                                            Scheduled
+                                        </div>
+</td>
+<td class="p-4">
+<span class="text-sm text-gray-400 italic">--</span>
+</td>
+<td class="p-4 text-right">
+<a href="promotion_payment_page.html" class="text-primary hover:text-primary-dark hover:bg-primary/5 dark:hover:bg-primary/10 px-3 py-1.5 rounded text-sm font-semibold transition-colors inline-block">
+                                            View Details
+                                        </a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#fcf8f8] dark:hover:bg-[#221010] transition-colors group">
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-bold text-[#1b0d0d] dark:text-white">Tech Week Promo</span>
+<span class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">ID: #PROM-2024-055</span>
+</div>
+</td>
+<td class="p-4">
+<div class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                            Banner Ad
+                                        </div>
+</td>
+<td class="p-4 text-sm text-[#1b0d0d] dark:text-gray-300">
+                                        Oct 10 - Oct 17, 2024
+                                    </td>
+<td class="p-4">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+<span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                                            Draft
+                                        </div>
+</td>
+<td class="p-4">
+<span class="text-sm text-gray-400 italic">--</span>
+</td>
+<td class="p-4 text-right">
+<a href="promotion_payment_page.html" class="text-primary hover:text-primary-dark hover:bg-primary/5 dark:hover:bg-primary/10 px-3 py-1.5 rounded text-sm font-semibold transition-colors inline-block">
+                                            Edit Draft
+                                        </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between border-t border-[#f3e7e7] dark:border-[#3a1d1d] bg-white dark:bg-[#2a1414] px-4 py-3 sm:px-6">
+<div class="flex flex-1 justify-between sm:hidden">
+<button class="relative inline-flex items-center rounded-md border border-[#f3e7e7] dark:border-[#3a1d1d] bg-white dark:bg-[#2a1414] px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-[#331818]">Previous</button>
+<button class="relative ml-3 inline-flex items-center rounded-md border border-[#f3e7e7] dark:border-[#3a1d1d] bg-white dark:bg-[#2a1414] px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-[#331818]">Next</button>
+</div>
+<div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-gray-700 dark:text-gray-400">
+                                    Showing
+                                    <span class="font-medium text-[#1b0d0d] dark:text-white">1</span>
+                                    to
+                                    <span class="font-medium text-[#1b0d0d] dark:text-white">5</span>
+                                    of
+                                    <span class="font-medium text-[#1b0d0d] dark:text-white">42</span>
+                                    results
+                                </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<button class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] hover:bg-gray-50 dark:hover:bg-[#331818] focus:z-20 focus:outline-offset-0">
+<span class="sr-only">Previous</span>
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button aria-current="page" class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">1</button>
+<button class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-200 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] hover:bg-gray-50 dark:hover:bg-[#331818] focus:z-20 focus:outline-offset-0">2</button>
+<button class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-200 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] hover:bg-gray-50 dark:hover:bg-[#331818] focus:z-20 focus:outline-offset-0">3</button>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-400 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] focus:outline-offset-0">...</span>
+<button class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 dark:text-gray-200 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] hover:bg-gray-50 dark:hover:bg-[#331818] focus:z-20 focus:outline-offset-0">8</button>
+<button class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-[#f3e7e7] dark:ring-[#3a1d1d] hover:bg-gray-50 dark:hover:bg-[#331818] focus:z-20 focus:outline-offset-0">
+<span class="sr-only">Next</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Suggestion (Hidden by default, shown if no results hypothetically) -->
+<!-- 
+                <div class="flex flex-col items-center justify-center p-12 text-center bg-white dark:bg-[#2a1414] rounded-xl border border-dashed border-[#f3e7e7] dark:border-[#3a1d1d] gap-4">
+                     <div class="bg-gray-50 dark:bg-[#331818] p-4 rounded-full">
+                         <span class="material-symbols-outlined text-4xl text-[#9a4c4c] dark:text-[#e58a8a]">campaign</span>
+                     </div>
+                     <h3 class="text-lg font-bold text-[#1b0d0d] dark:text-white">No promotions found</h3>
+                     <p class="text-[#9a4c4c] dark:text-[#e58a8a]">Get started by creating your first marketing campaign to boost your sales.</p>
+                     <a href="promotion_payment_page.html" class="mt-2 text-primary font-bold hover:underline inline-block">Create Promotion</a>
+                </div>
+                -->
+</div>
+<footer class="mt-12 text-center pb-6">
+<p class="text-xs text-[#9a4c4c] dark:text-[#e58a8a]">© 2024 Voltamarket. Managed in Ghana.</p>
+</footer>
+</main>
+</div>
+</div>
+</body></html>

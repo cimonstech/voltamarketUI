@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Seller Orders</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-hover": "#d41111",
+                        "secondary-yellow": "#FFC107",
+                        "secondary-green": "#078807",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1616",
+                        "border-light": "#e7cfcf",
+                        "border-dark": "#4a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e7cfcf;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4b5b5;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d0d] dark:text-[#f0e6e6] antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="hidden w-64 flex-col border-r border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark lg:flex transition-colors duration-200">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<!-- Brand / User Profile -->
+<div class="flex gap-3 items-center mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-border-light dark:border-border-dark" data-alt="Abstract red and white geometric pattern representing energy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArXnZkevubgQ5E4LDhnkWZUWIDisPwu6uXOkZgrGaxDtOFP-BZosbd1WlKanLm0okG5_O3HI1mCCEtH-HG8sbY8jeGBRQ_4R0X34kaqc7CG6azfqvQ-B7-heyYGUs_8Q3SmF8sfnGyxFFSagPXfZMsrPFRwvZmRzFcfNx6rhqnD-up6YS5es31v-mbZZmu25etE3XJt6dHul6hT9ulj4yMatZdMrzhHrDfnpiBVw37R7wamZiv4i9ahVFPW2unCAH6nPaiWgpRsDs");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal text-gray-900 dark:text-white">Voltamarket</h1>
+<p class="text-primary text-xs font-medium leading-normal">Seller Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined filled">shopping_cart</span>
+<span class="text-sm font-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-light dark:border-border-dark">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-red-900/10 hover:text-gray-900 dark:hover:text-gray-200 transition-colors min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Logout Button -->
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="truncate">Log Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header (Visible only on small screens) -->
+<header class="lg:hidden flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">storefront</span>
+</div>
+<span class="font-bold text-lg dark:text-white">Voltamarket</span>
+</div>
+<button class="text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-10">
+<div class="mx-auto max-w-[1200px] flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#1b0d0d] dark:text-white text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Order History</h1>
+<p class="text-[#9a4c4c] dark:text-gray-400 text-sm sm:text-base font-normal leading-normal max-w-2xl">
+                                View and track all orders placed by buyers. Statuses are managed by Voltamarket admins.
+                            </p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors text-sm font-medium min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Date Range</span>
+</button>
+<a href="sales_history_page.html" class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-primary hover:bg-primary-hover text-white shadow-lg shadow-primary/20 transition-all text-sm font-bold min-h-[44px]">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Report</span>
+</a>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Total Revenue</p>
+<span class="material-symbols-outlined text-primary bg-red-50 dark:bg-primary/10 p-2 rounded-full">payments</span>
+</div>
+<div class="flex items-end gap-2 mt-2">
+<p class="text-[#1b0d0d] dark:text-white text-2xl font-bold leading-tight">GHS 14,500.00</p>
+<span class="text-secondary-green text-sm font-medium mb-1 flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 12%
+                                </span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Pending Orders</p>
+<span class="material-symbols-outlined text-secondary-yellow bg-yellow-50 dark:bg-yellow-900/20 p-2 rounded-full">hourglass_empty</span>
+</div>
+<div class="flex items-end gap-2 mt-2">
+<p class="text-[#1b0d0d] dark:text-white text-2xl font-bold leading-tight">12</p>
+<span class="text-secondary-green text-sm font-medium mb-1 flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 2%
+                                </span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wider">Completed Orders</p>
+<span class="material-symbols-outlined text-secondary-green bg-green-50 dark:bg-green-900/20 p-2 rounded-full">check_circle</span>
+</div>
+<div class="flex items-end gap-2 mt-2">
+<p class="text-[#1b0d0d] dark:text-white text-2xl font-bold leading-tight">45</p>
+<span class="text-secondary-green text-sm font-medium mb-1 flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> 5%
+                                </span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="flex flex-col lg:flex-row gap-4 justify-between items-center bg-white dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<!-- Search -->
+<div class="w-full lg:w-96">
+<label class="flex items-center w-full h-10 rounded-lg bg-background-light dark:bg-background-dark border border-transparent focus-within:border-primary/50 transition-colors px-3 gap-2">
+<span class="material-symbols-outlined text-gray-400">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-sm text-[#1b0d0d] dark:text-white placeholder:text-gray-400" placeholder="Search by Order ID or Buyer Name"/>
+</label>
+</div>
+<!-- Status Chips -->
+<div class="flex gap-2 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-[#1b0d0d] text-white text-sm font-medium transition-colors">
+                                All Orders
+                            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 border border-border-light dark:border-border-dark text-sm font-medium transition-colors">
+                                Pending
+                            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 border border-border-light dark:border-border-dark text-sm font-medium transition-colors">
+                                Processing
+                            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 border border-border-light dark:border-border-dark text-sm font-medium transition-colors">
+                                Delivered
+                            </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-lg bg-background-light dark:bg-background-dark hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 border border-border-light dark:border-border-dark text-sm font-medium transition-colors">
+                                Cancelled
+                            </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark shadow-sm overflow-hidden">
+<div class="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-gray-50 dark:bg-[#361b1b] border-b border-border-light dark:border-border-dark">
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Order ID</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Date Placed</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Buyer</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Items</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-right">Total (GHS)</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Status</th>
+<th class="p-2 md:p-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Row 1 -->
+<tr class="group hover:bg-red-50/30 dark:hover:bg-primary/5 transition-colors cursor-pointer" onclick="window.location.href='order_details_page_(seller_view).html'">
+<td class="p-2 md:p-4">
+<a class="text-primary font-bold hover:underline" href="order_details_page_(seller_view).html">#ORD-2930</a>
+</td>
+<td class="p-4 text-sm text-gray-700 dark:text-gray-300">Oct 24, 2023</td>
+<td class="p-2 md:p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">KM</div>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Kwame Mensah</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">2x Solar Panels</td>
+<td class="p-4 text-sm font-bold text-[#1b0d0d] dark:text-white text-right">4,000.00</td>
+<td class="p-2 md:p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-800">
+<span class="size-1.5 rounded-full bg-current"></span>
+                                                Delivered
+                                            </span>
+</td>
+<td class="p-4 text-center">
+<a href="order_details_page_(seller_view).html" class="text-gray-400 hover:text-primary transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" title="View Order">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-red-50/30 dark:hover:bg-primary/5 transition-colors cursor-pointer" onclick="window.location.href='order_details_page_(seller_view).html'">
+<td class="p-2 md:p-4">
+<a class="text-primary font-bold hover:underline" href="#">#ORD-2929</a>
+</td>
+<td class="p-4 text-sm text-gray-700 dark:text-gray-300">Oct 23, 2023</td>
+<td class="p-2 md:p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">AB</div>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Adwoa Boateng</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">1x Inverter Battery</td>
+<td class="p-4 text-sm font-bold text-[#1b0d0d] dark:text-white text-right">1,200.00</td>
+<td class="p-2 md:p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800">
+<span class="size-1.5 rounded-full bg-current"></span>
+                                                Processing
+                                            </span>
+</td>
+<td class="p-4 text-center">
+<a href="order_details_page_(seller_view).html" class="text-gray-400 hover:text-primary transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" title="View Order">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-red-50/30 dark:hover:bg-primary/5 transition-colors cursor-pointer" onclick="window.location.href='order_details_page_(seller_view).html'">
+<td class="p-2 md:p-4">
+<a class="text-primary font-bold hover:underline" href="#">#ORD-2928</a>
+</td>
+<td class="p-4 text-sm text-gray-700 dark:text-gray-300">Oct 22, 2023</td>
+<td class="p-2 md:p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">KT</div>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Kojo Tetteh</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">5x LED Bulbs</td>
+<td class="p-4 text-sm font-bold text-[#1b0d0d] dark:text-white text-right">250.00</td>
+<td class="p-2 md:p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                                                Cancelled
+                                            </span>
+</td>
+<td class="p-4 text-center">
+<a href="order_details_page_(seller_view).html" class="text-gray-400 hover:text-primary transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" title="View Order">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-red-50/30 dark:hover:bg-primary/5 transition-colors cursor-pointer" onclick="window.location.href='order_details_page_(seller_view).html'">
+<td class="p-2 md:p-4">
+<a class="text-primary font-bold hover:underline" href="#">#ORD-2927</a>
+</td>
+<td class="p-4 text-sm text-gray-700 dark:text-gray-300">Oct 21, 2023</td>
+<td class="p-2 md:p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">EA</div>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Esi Antwi</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">1x Gas Cooker</td>
+<td class="p-4 text-sm font-bold text-[#1b0d0d] dark:text-white text-right">850.00</td>
+<td class="p-2 md:p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-800">
+<span class="size-1.5 rounded-full bg-current"></span>
+                                                Delivered
+                                            </span>
+</td>
+<td class="p-4 text-center">
+<a href="order_details_page_(seller_view).html" class="text-gray-400 hover:text-primary transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" title="View Order">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-red-50/30 dark:hover:bg-primary/5 transition-colors cursor-pointer" onclick="window.location.href='order_details_page_(seller_view).html'">
+<td class="p-2 md:p-4">
+<a class="text-primary font-bold hover:underline" href="#">#ORD-2926</a>
+</td>
+<td class="p-4 text-sm text-gray-700 dark:text-gray-300">Oct 20, 2023</td>
+<td class="p-2 md:p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">YA</div>
+<span class="text-sm font-medium text-[#1b0d0d] dark:text-white">Yaw Asante</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-600 dark:text-gray-400">3x Extension Boards</td>
+<td class="p-4 text-sm font-bold text-[#1b0d0d] dark:text-white text-right">180.00</td>
+<td class="p-2 md:p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800">
+<span class="size-1.5 rounded-full bg-current"></span>
+                                                Pending
+                                            </span>
+</td>
+<td class="p-4 text-center">
+<a href="order_details_page_(seller_view).html" class="text-gray-400 hover:text-primary transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" title="View Order">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between p-4 border-t border-border-light dark:border-border-dark bg-gray-50 dark:bg-[#361b1b]">
+<p class="text-sm text-gray-500 dark:text-gray-400">Showing 1-5 of 45 results</p>
+<div class="flex items-center gap-2">
+<button class="size-8 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-500 hover:bg-gray-100 disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-medium">1</button>
+<button class="size-8 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-500 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors text-sm font-medium">2</button>
+<button class="size-8 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-500 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors text-sm font-medium">3</button>
+<span class="text-gray-400">...</span>
+<button class="size-8 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-500 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors text-sm font-medium">9</button>
+<button class="size-8 flex items-center justify-center rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-gray-500 hover:bg-gray-100 disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer / Helper -->
+<div class="flex justify-center pb-8">
+<p class="text-xs text-gray-400 dark:text-gray-500 text-center">
+                            Need help with an order? Contact <a class="text-primary hover:underline" href="#">Voltamarket Support</a>.
+                        </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

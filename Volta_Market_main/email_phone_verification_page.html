@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Verification</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles to hide number input spinners */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1c0d0d] antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+<!-- Header: Minimal -->
+<header class="flex items-center justify-between border-b border-solid border-[#e6e0e0] dark:border-[#3a2828] bg-white dark:bg-[#2a1a1a] px-10 py-4">
+<a href="voltamarket_home_page.html" class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-[#1c0d0d] dark:text-white">Voltamarket</h2>
+</a>
+<!-- Minimal help link -->
+<a class="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 transition-colors" href="faq_page.html">Help Center</a>
+</header>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col items-center justify-center p-4 py-10 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8 rounded-2xl bg-white dark:bg-[#2a1a1a] p-8 shadow-xl ring-1 ring-gray-900/5 dark:ring-white/10 sm:p-10">
+<!-- Icon & Heading -->
+<div class="flex flex-col items-center text-center">
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-4xl">lock_person</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight text-[#1c0d0d] dark:text-white">Verify it's you</h1>
+<div class="mt-3 text-base text-gray-500 dark:text-gray-400">
+<p>We've sent a 6-digit verification code to</p>
+<p class="mt-1 font-semibold text-[#1c0d0d] dark:text-white flex items-center justify-center gap-2">
+                            +233 54 *** **** 89 
+                            <button class="text-primary hover:text-primary/80 transition-colors" title="Edit phone number">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</p>
+</div>
+</div>
+<!-- OTP Input Form -->
+<form class="mt-8 space-y-6" onsubmit="event.preventDefault()">
+<div class="flex flex-col gap-4">
+<label class="sr-only" for="otp-1">Verification Code</label>
+<div class="flex justify-center gap-2 sm:gap-3">
+<input autocomplete="one-time-code" autofocus="" class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="otp-1" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="h-12 w-10 sm:h-14 sm:w-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-center text-xl sm:text-2xl font-bold leading-none text-[#1c0d0d] dark:text-white placeholder-gray-400 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+</div>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400">Code expires in <span class="font-medium text-primary">04:59</span></p>
+</div>
+<!-- Verify Button -->
+<a href="buyer_dashboard_overview_page.html" class="flex w-full items-center justify-center rounded-lg bg-primary px-4 py-3 text-base font-bold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors">
+                        Verify Account
+                    </a>
+</form>
+<!-- Resend Section -->
+<div class="mt-6 border-t border-gray-100 dark:border-gray-700 pt-6 text-center">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+                        Didn't receive the code?
+                        <a class="font-semibold text-primary hover:text-red-700 ml-1 transition-colors" href="#">
+                            Resend Code
+                        </a>
+</p>
+<div class="mt-4">
+<a class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-[#1c0d0d] dark:hover:text-white transition-colors" href="login_page.html">
+<span class="material-symbols-outlined mr-1 text-[18px]">arrow_back</span>
+                            Back to Log in
+                        </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Decoration background -->
+<div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute left-[calc(50%-40rem)] top-[calc(50%-30rem)] h-[60rem] w-[80rem] -translate-y-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f20d0d]/5 to-[#f20d0d]/10 opacity-30 sm:left-[calc(50%-30rem)]" data-alt="Abstract red gradient background pattern"></div>
+</div>
+</div>
+<!-- Script to handle auto-focus movement for OTP inputs -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input[type="text"][pattern="\\d*"]');
+            
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', (e) => {
+                    if (e.key >= '0' && e.key <= '9') {
+                        input.value = ''; // Clear current value before new input
+                        setTimeout(() => {
+                            if (index < inputs.length - 1) inputs[index + 1].focus();
+                        }, 10);
+                    } else if (e.key === 'Backspace') {
+                        setTimeout(() => {
+                            if (input.value === '' && index > 0) {
+                                inputs[index - 1].focus();
+                            }
+                        }, 10);
+                    } else if (e.key === 'ArrowLeft' && index > 0) {
+                        inputs[index - 1].focus();
+                    } else if (e.key === 'ArrowRight' && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                // Handle paste event
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text').slice(0, inputs.length);
+                    if (!/^\d+$/.test(pastedData)) return; // Only allow digits
+
+                    pastedData.split('').forEach((char, i) => {
+                        if (inputs[i]) inputs[i].value = char;
+                    });
+                    
+                    // Focus last filled input or the next empty one
+                    const lastIndex = Math.min(pastedData.length, inputs.length) - 1;
+                    if (lastIndex >= 0) inputs[lastIndex].focus();
+                });
+            });
+        });
+    </script>
+</body></html>

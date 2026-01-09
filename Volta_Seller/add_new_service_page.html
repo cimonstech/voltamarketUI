@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voltamarket - Add New Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "primary-dark": "#c40f0f",
+                        "accent-yellow": "#FFD700",
+                        "accent-green": "#009E60",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1a1a",
+                        "text-main": "#1b0d0d",
+                        "text-secondary": "#6b5d5d",
+                        "border-color": "#e7cfcf",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar to match theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d1d1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0b0b0; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary/20 selection:text-primary">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="hidden w-64 flex-col border-r border-border-color bg-surface-light dark:bg-surface-dark lg:flex">
+<div class="flex h-20 items-center gap-3 px-6 py-4">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight text-text-main dark:text-white">Voltamarket</h1>
+<p class="text-xs font-medium text-text-secondary dark:text-gray-400">Seller Portal</p>
+</div>
+</div>
+<nav class="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-4">
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="seller_dashboard_overview_page.html">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="my_listings_page.html">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<!-- Active Item -->
+<a class="group flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-primary transition-colors min-h-[44px]" href="add_new_service_page.html">
+<span class="material-symbols-outlined fill-1 text-[24px]">work</span>
+<span class="text-sm font-bold">Services</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="orders_from_buyers_page.html">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="seller_notifications_page.html">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="text-sm font-medium">Messages</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="earnings_overview_page.html">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+<span class="text-sm font-medium">Earnings</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="promotion_history_page.html">
+<span class="material-symbols-outlined text-[24px]">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-gray-700">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Analytics</p>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="product_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="text-sm font-medium">Product Analytics</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="service_performance_analytics_page.html">
+<span class="material-symbols-outlined text-[24px]">room_service</span>
+<span class="text-sm font-medium">Service Analytics</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-gray-700">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Premium</p>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="premium_listings_overview_page.html">
+<span class="material-symbols-outlined text-[24px]">diamond</span>
+<span class="text-sm font-medium">Premium Tools</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-border-color dark:border-gray-700">
+<p class="px-3 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Account</p>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="seller_account_settings_page.html">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-text-main transition-colors hover:bg-primary/5 dark:text-gray-200 dark:hover:bg-white/5 min-h-[44px]" href="seller_support_page.html">
+<span class="material-symbols-outlined text-[24px]">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4">
+<div class="flex items-center gap-3 rounded-xl bg-background-light p-3 dark:bg-background-dark/50 border border-border-color dark:border-gray-700">
+<div class="h-10 w-10 overflow-hidden rounded-full bg-gray-200 bg-cover bg-center" data-alt="Seller profile picture showing a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoM-Tw7SVb0putQGiAI9ZMlYKOPQAh5zDMaP6enN0xqnv_v_XiQUFEMXdENUCWVJP8teOrzkk1nzQ6_a6dKJO_25zs79iCu0JEqNKxM5gjb5_1iHsB9mPQskgJu5vdbRQPBdM5do2PH216sfEe4O8U_eo16y5TqDuRVzOzjAkv2XE9P3-bNqE1SDTH2qfYLGrhws81_vImIrDtOSsmhYHzH94jrFFVEbTtXKEApQW5zfkAHaFwEpHc9M7DYlgn8EVfG0ZabhX4qZE');"></div>
+<div class="flex flex-1 flex-col overflow-hidden">
+<p class="truncate text-sm font-bold text-text-main dark:text-white">Kwame Mensah</p>
+<p class="truncate text-xs text-text-secondary dark:text-gray-400">Pro Seller</p>
+</div>
+<button class="text-text-secondary hover:text-primary dark:text-gray-400">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Top Header -->
+<header class="flex h-16 items-center justify-between border-b border-border-color bg-surface-light px-6 py-3 dark:bg-surface-dark dark:border-gray-800">
+<div class="flex items-center gap-4 lg:hidden">
+<button class="text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-bold text-text-main dark:text-white">Voltamarket</span>
+</div>
+</div>
+<!-- Breadcrumbs / Title for mobile -->
+<div class="hidden lg:flex items-center text-sm font-medium text-text-secondary dark:text-gray-400">
+<span>Services</span>
+<span class="material-symbols-outlined mx-2 text-xs">chevron_right</span>
+<span class="text-text-main font-bold dark:text-white">Add New Service</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+<input class="h-10 w-64 rounded-lg border-none bg-background-light pl-10 pr-4 text-sm text-text-main placeholder-text-secondary focus:ring-2 focus:ring-primary dark:bg-background-dark dark:text-white" placeholder="Search..." type="text"/>
+</div>
+<button class="relative flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-text-main hover:text-primary dark:bg-background-dark dark:text-white">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-primary ring-2 ring-white dark:ring-background-dark"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10">
+<div class="mx-auto max-w-5xl">
+<!-- Page Header -->
+<div class="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-text-main dark:text-white sm:text-4xl">Add New Service</h1>
+<p class="mt-2 text-base text-text-secondary dark:text-gray-400">Fill in the details below to list your service on Voltamarket.</p>
+</div>
+<div class="flex gap-3">
+<button class="rounded-lg border border-border-color bg-transparent px-4 py-2 text-sm font-bold text-text-secondary hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-white/5">
+                                Save Draft
+                            </button>
+</div>
+</div>
+<!-- Form Content -->
+<form class="flex flex-col gap-8 pb-20">
+<!-- Section 1: Service Details -->
+<div class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:bg-surface-dark dark:border-gray-800">
+<div class="mb-6 flex items-center gap-2 border-b border-border-color pb-4 dark:border-gray-800">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">1</span>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Service Details</h2>
+</div>
+<div class="grid gap-6 md:grid-cols-2">
+<div class="col-span-2 md:col-span-1">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Service Name</label>
+<input class="w-full rounded-lg border-border-color bg-background-light px-4 py-3 text-text-main placeholder-text-secondary focus:border-primary focus:ring-primary dark:bg-background-dark dark:border-gray-700 dark:text-white" placeholder="e.g., Professional Home Cleaning" type="text"/>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Category</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border-border-color bg-background-light px-4 py-3 text-text-main focus:border-primary focus:ring-primary dark:bg-background-dark dark:border-gray-700 dark:text-white">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="home">Home Services</option>
+<option value="tech">Tech &amp; Programming</option>
+<option value="creative">Creative &amp; Design</option>
+<option value="consulting">Business Consulting</option>
+<option value="events">Events &amp; Catering</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 pointer-events-none -translate-y-1/2 text-text-secondary">expand_more</span>
+</div>
+</div>
+<div class="col-span-2">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Detailed Description</label>
+<textarea class="w-full resize-y rounded-lg border-border-color bg-background-light px-4 py-3 text-text-main placeholder-text-secondary focus:border-primary focus:ring-primary dark:bg-background-dark dark:border-gray-700 dark:text-white" placeholder="Describe your service in detail..." rows="5"></textarea>
+<p class="mt-1 text-xs text-text-secondary dark:text-gray-500">Provide key features and benefits of your service.</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Visuals -->
+<div class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:bg-surface-dark dark:border-gray-800">
+<div class="mb-6 flex items-center gap-2 border-b border-border-color pb-4 dark:border-gray-800">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">2</span>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Visuals &amp; Portfolio</h2>
+</div>
+<div class="grid gap-6">
+<div class="col-span-2">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Cover Image</label>
+<div class="flex w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-border-color bg-background-light px-6 py-10 transition-colors hover:border-primary/50 dark:bg-background-dark dark:border-gray-700">
+<div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<p class="mb-1 text-sm font-medium text-text-main dark:text-white">Click to upload or drag and drop</p>
+<p class="text-xs text-text-secondary dark:text-gray-500">SVG, PNG, JPG or GIF (max. 800x400px)</p>
+</div>
+</div>
+<div class="col-span-2">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Portfolio Gallery</label>
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+<!-- Placeholder Upload Slot -->
+<div class="aspect-square flex cursor-pointer flex-col items-center justify-center rounded-lg border border-border-color bg-background-light transition-colors hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-3xl text-text-secondary/50">add_photo_alternate</span>
+<span class="mt-2 text-xs font-medium text-text-secondary">Add Photo</span>
+</div>
+<!-- Uploaded Image Example 1 -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+<div class="h-full w-full bg-cover bg-center" data-alt="Plumbing service example" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKpwVhYwACc11g8k60jrPu3D01yFA0IuPaPiyTCZDS6E4uMKw5d8e2N2f0pJDTGNuVG7J4KeP6PPPfTeC94h5m1tx9gcG88XPYe_W4iqwTEOqGryKCktCt92DbBfhUeoYohJPmucZYi9fncBjHHa3EW7R3U4zORL_u5ipWulNczRowGlW_Bd7nwd4ryfwVHqaL86FLBHempIGjXsE0VxH_6KPFYyUD5xN8hBnrzR1kM7xt4f3BhBw03t10-qfm7inuV5wQrNpvKTE');"></div>
+<button class="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-primary opacity-0 shadow-sm transition-opacity group-hover:opacity-100" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Uploaded Image Example 2 -->
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+<div class="h-full w-full bg-cover bg-center" data-alt="Electrician service example" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDv1Tr9Z5qs-c-AfDuDG1rWjMU1KbZ-vtWNJM9iemwrmmJR1vpMaT1PWHD9KzsMq20DqpyaZheaMw6GHgL7u18CzX-Qpre4fL0f1dYRvf4SUMbhuAQVMaMFx5r9xm66BHaHSHA_wCihYdDe63sGFdg41Mb8GRPxtemSB2vEHMVuNhq_EPTzn-ZZUJaYLoKECIqteuoX4f6NH83BdmJFof8XbymMBt2kgqj4isnOUsPHKoUVe6ABHlRjapYXCBk4741gIZBztT-hO5k');"></div>
+<button class="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-primary opacity-0 shadow-sm transition-opacity group-hover:opacity-100" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Pricing & Availability -->
+<div class="rounded-xl border border-border-color bg-surface-light p-6 shadow-sm dark:bg-surface-dark dark:border-gray-800">
+<div class="mb-6 flex items-center gap-2 border-b border-border-color pb-4 dark:border-gray-800">
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">3</span>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Pricing &amp; Availability</h2>
+</div>
+<div class="grid gap-6 md:grid-cols-2">
+<div class="col-span-2 md:col-span-1">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Price</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+<span class="font-bold text-text-secondary">GHS</span>
+</div>
+<input class="w-full rounded-lg border-border-color bg-background-light pl-14 pr-4 py-3 text-text-main placeholder-text-secondary focus:border-primary focus:ring-primary dark:bg-background-dark dark:border-gray-700 dark:text-white" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="mb-2 block text-sm font-semibold text-text-main dark:text-gray-200">Pricing Model</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border-border-color bg-background-light px-4 py-3 text-text-main focus:border-primary focus:ring-primary dark:bg-background-dark dark:border-gray-700 dark:text-white">
+<option>Per Hour</option>
+<option>Fixed Price</option>
+<option>Per Day</option>
+<option>Negotiable</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 pointer-events-none -translate-y-1/2 text-text-secondary">expand_more</span>
+</div>
+</div>
+<div class="col-span-2">
+<label class="mb-3 block text-sm font-semibold text-text-main dark:text-gray-200">Available Days</label>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Mon</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Tue</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Wed</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Thu</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Fri</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Sat</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="rounded-lg border border-border-color bg-background-light px-4 py-2 text-sm font-medium text-text-secondary transition-all peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary hover:bg-gray-50 dark:bg-background-dark dark:border-gray-700 dark:peer-checked:border-primary dark:peer-checked:bg-primary/20">Sun</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col-reverse items-center justify-end gap-4 pt-4 sm:flex-row">
+<button class="w-full rounded-lg border border-border-color bg-transparent px-8 py-3.5 text-base font-bold text-text-main transition-colors hover:bg-gray-100 hover:text-text-main sm:w-auto dark:border-gray-600 dark:text-white dark:hover:bg-white/5" type="button">
+                                Cancel
+                            </button>
+<button class="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary-dark hover:shadow-primary/40 sm:w-auto" type="button">
+<span>Submit for Approval</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+</body></html>

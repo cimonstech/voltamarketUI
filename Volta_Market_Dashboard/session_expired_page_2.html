@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Session Expired - Voltamarket Admin</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec1313",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221010",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar to match the theme if needed, though usually not for this simple page */
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-[#1b0d0d] dark:text-[#f3e7e7]">
+<!-- Main Layout Container -->
+<div class="flex-grow flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+<!-- Decorative Background Elements (Abstract shapes for modern feel) -->
+<div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent -z-10 pointer-events-none"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-72 h-72 bg-yellow-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<!-- Central Card Container -->
+<main class="w-full max-w-md bg-white dark:bg-[#2c1818] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] overflow-hidden border-t-4 border-primary animate-fade-in-up">
+<div class="p-8 sm:p-10 flex flex-col items-center text-center">
+<!-- Logo Section -->
+<div class="mb-8 flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">Voltamarket Admin</span>
+</div>
+<!-- Icon/Status Indicator -->
+<div class="mb-6 relative">
+<div class="absolute inset-0 bg-primary/10 rounded-full scale-150 animate-pulse"></div>
+<div class="bg-background-light dark:bg-background-dark p-4 rounded-full relative z-10 border border-gray-100 dark:border-[#3d2424]">
+<span class="material-symbols-outlined text-4xl text-primary">lock_clock</span>
+</div>
+</div>
+<!-- Text Content -->
+<h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">Session Expired</h1>
+<p class="text-gray-500 dark:text-gray-400 text-base leading-relaxed mb-8 max-w-xs mx-auto">
+                    To protect your account, your session has timed out due to inactivity. Please log in again to continue managing the marketplace.
+                </p>
+<!-- Primary Action -->
+<button class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3.5 px-6 rounded-lg transition duration-200 ease-in-out transform active:scale-[0.98] shadow-md hover:shadow-lg flex items-center justify-center gap-2 group">
+<span>Login Again</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">login</span>
+</button>
+<!-- Secondary Link -->
+<div class="mt-6 pt-6 border-t border-gray-100 dark:border-[#3d2424] w-full">
+<p class="text-sm text-gray-400 dark:text-gray-500">
+                        Think this is a mistake? 
+                        <a class="text-gray-700 dark:text-gray-300 font-medium hover:text-primary dark:hover:text-primary transition-colors underline decoration-gray-300 underline-offset-4 decoration-1" href="#">
+                            Contact Support
+                        </a>
+</p>
+</div>
+</div>
+<!-- Security Footer Strip -->
+<div class="bg-gray-50 dark:bg-[#251414] py-3 px-8 flex justify-center items-center gap-2 border-t border-gray-100 dark:border-[#3d2424]">
+<span class="material-symbols-outlined text-green-600 text-[16px]">verified_user</span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Secure Admin Environment</span>
+</div>
+</main>
+<!-- Page Footer Info -->
+<footer class="mt-8 text-center">
+<p class="text-xs text-gray-400 dark:text-gray-600">
+                © 2024 Voltamarket Inc. All rights reserved.
+            </p>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Profile - Voltamarket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#f90909", "background-light": "#f8f5f5", "background-dark": "#230f0f", "surface-light": "#ffffff", "surface-dark": "#1a2230"}, fontFamily: {display: "Plus Jakarta Sans", sans: ["Inter", "sans-serif"]}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+<div class="flex min-h-screen flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur shadow-sm">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 group" href="#">
+<div class="flex items-center justify-center size-8 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-xl">bolt</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors">Voltamarket</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Sell on Voltamarket</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex relative max-w-xs w-64">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-3 text-sm text-slate-900 dark:text-white focus:ring-2 focus:ring-primary placeholder:text-slate-500" placeholder="Search products..." type="text"/>
+</div>
+<button class="relative p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">2</span>
+</button>
+<div class="h-9 w-9 rounded-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover border-2 border-white dark:border-slate-800 shadow-sm cursor-pointer" data-alt="User profile thumbnail showing a smiling person" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoczbXBtDsbHSHJqcTPR7UU3BjVl4Axvy0KZe7czjSeI8yt2iC81HUKohcaNAo_zisS_Mr3Okm_C27jCBMaeudaP2QeDbkCUCi5Geja2Y1vyvapvtcWs0GhP6GqBIpob0igKp3G9hpUyelStUKjMLeDOP08s-as2O8f6Nu8BKXUz686x4xULx97hpNtxd6Wv1DzNNZ72o1XZ5og5dxFY5piLZxxE78flSSwnmoGqtdYcpkA_TEpATFHShZ2wsWNxSeUvCLZVR7-YQ');">
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow py-8 px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-6">
+<ol class="flex items-center space-x-2">
+<li>
+<a class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined text-lg">home</span>
+</a>
+</li>
+<li><span class="text-slate-400 dark:text-slate-600">/</span></li>
+<li><a class="text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200" href="#">Account</a></li>
+<li><span class="text-slate-400 dark:text-slate-600">/</span></li>
+<li><span aria-current="page" class="text-sm font-medium text-primary">Profile</span></li>
+</ol>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Sidebar Navigation -->
+<aside class="lg:col-span-3">
+<div class="sticky top-24 space-y-6">
+<!-- User Mini Profile -->
+<div class="flex items-center gap-4 p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 bg-center bg-cover" data-alt="Small user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUqftOtqJnT7abxNPzIwIEwf_xFDz979x9iTHwlVlNrKjtDWZnZ47qSKN3GtNBaCttnjzG9ZWhw5GGZn0o1xnHthHIwLwl0k4IqYLntxUdiEilF8uG2ACBe0UWE5WLhVUw6WemlU1zrJ9vRQSd-a4q1onGqu1l3N8_1SbOJ4s8ZXO4ckn-2YDfJuYGBNx0fLj8djse1tXzG_T8iPN2TlFsu6CedxRH_7Bn3_1dM17taVeXTLjmxlVbpOHVpkOzk1rlX2g9SCvI0LY');">
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">Kofi Mensah</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Member since 2021</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 rounded-xl bg-surface-light dark:bg-surface-dark p-2 shadow-sm border border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="text-sm">Personal Information</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="text-sm">My Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-sm">Address Book</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="text-sm">Wishlist</span>
+</a>
+<div class="my-1 border-t border-slate-100 dark:border-slate-800"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="text-sm">Change Password</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm">Sign Out</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Form -->
+<div class="lg:col-span-9 space-y-6">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">My Profile</h1>
+<p class="mt-1 text-slate-500 dark:text-slate-400">Manage your personal information and Voltamarket account settings.</p>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<form action="#" method="POST">
+<!-- Profile Photo Section -->
+<div class="p-6 md:p-8 border-b border-slate-100 dark:border-slate-800">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Profile Photo</h2>
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+<div class="relative group">
+<div class="h-32 w-32 rounded-full ring-4 ring-slate-50 dark:ring-slate-800 bg-center bg-cover" data-alt="Current profile photo of the user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7wTrkvu_wnebnx_7s58wjfsMzwpD5Y5WORoJFDilAXINDp30g841Q3G8MFNnbyAe79rG6cLfMAGwNKQ-kDYYQdsnZGIk0QSBxtBs7PEvmaiCxup_yzl1ICICsCJJyxelpQbSHmJ57AyUNR3X38qLhVdbMajwwV7FO6gSjJg4SDdDcbfSBVwmOWn4smNjx9c8UfrinFk0Y1zSVNHKJwNhvIkQnPAqMIM0aZd4wHfxGTFDOrTs474oQp8DwPtBNzF-CmQqengZ448M');">
+</div>
+<button class="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-blue-600 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="flex flex-col justify-center text-center sm:text-left gap-3">
+<div class="space-y-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Upload your photo</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 max-w-xs">Photos help other users recognize you. Accepted formats: JPG, PNG. Max size: 2MB.</p>
+</div>
+<div class="flex gap-3 justify-center sm:justify-start">
+<button class="inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+                                                    Delete
+                                                </button>
+<button class="inline-flex items-center justify-center rounded-lg bg-primary/10 px-4 py-2 text-sm font-medium text-primary shadow-sm hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+                                                    Update
+                                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Personal Details Section -->
+<div class="p-6 md:p-8 space-y-8">
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Personal Details</h2>
+<div class="grid grid-cols-1 gap-y-6 gap-x-6 sm:grid-cols-2">
+<!-- First Name -->
+<div class="col-span-1">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="first-name">First name</label>
+<div class="mt-2 relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">person</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-10 text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="first-name" name="first-name" type="text" value="Kofi"/>
+</div>
+</div>
+<!-- Last Name -->
+<div class="col-span-1">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="last-name">Last name</label>
+<div class="mt-2 relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">person</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-10 text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="last-name" name="last-name" type="text" value="Mensah"/>
+</div>
+</div>
+<!-- Email -->
+<div class="col-span-1 sm:col-span-2">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="email">Email address</label>
+<div class="mt-2 relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-10 text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="email" name="email" type="email" value="kofi.mensah@example.com"/>
+</div>
+</div>
+<!-- Phone Number (Ghanaian Context) -->
+<div class="col-span-1 sm:col-span-2">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="phone-number">Phone number</label>
+<div class="mt-2 relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 flex items-center">
+<label class="sr-only" for="country">Country</label>
+<select class="h-full rounded-md border-0 bg-transparent py-0 pl-3 pr-7 text-slate-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm" id="country" name="country">
+<option>GH</option>
+</select>
+<span class="text-slate-400 select-none mr-2">|</span>
+<span class="text-slate-500 select-none text-sm font-medium">+233</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-[6.5rem] text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="phone-number" name="phone-number" placeholder="24 123 4567" type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-green-500 text-[20px]" title="Verified">check_circle</span>
+</div>
+</div>
+<p class="mt-1 text-xs text-slate-500">We'll send order updates to this number via SMS/WhatsApp.</p>
+</div>
+<!-- Region Selection -->
+<div class="col-span-1">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="region">Region</label>
+<div class="mt-2 relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">map</span>
+</div>
+<select class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-10 pr-10 text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="region" name="region">
+<option selected="">Volta Region</option>
+<option>Oti Region</option>
+</select>
+</div>
+</div>
+<!-- City Selection -->
+<div class="col-span-1">
+<label class="block text-sm font-medium leading-6 text-slate-900 dark:text-slate-200" for="city">City / Town</label>
+<div class="mt-2 relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">location_city</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-slate-50 dark:bg-slate-800/50 py-2.5 pl-10 text-slate-900 dark:text-white ring-1 ring-inset ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="city" list="cities" name="city" type="text" value="Ho"/>
+<datalist id="cities">
+<option value="Ho">
+</option><option value="Hohoe">
+</option><option value="Keta">
+</option><option value="Aflao">
+</option><option value="Kpando">
+</option><option value="Dambai">
+</option><option value="Jasikan">
+</option></datalist>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="flex items-center justify-end gap-x-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/20 px-6 py-4 md:px-8">
+<button class="text-sm font-semibold leading-6 text-slate-900 dark:text-white hover:text-primary transition-colors" type="button">Cancel</button>
+<button class="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all" type="submit">Save Changes</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

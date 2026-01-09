@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Review - Voltamarket</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b1b",
+                        "border-light": "#e8cece",
+                        "border-dark": "#4a2b2b",
+                        "text-main": "#1c0d0d",
+                        "text-muted": "#9c4949",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-4 lg:px-10 py-3 shadow-sm">
+<div class="layout-container flex items-center justify-between max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-4 lg:gap-8">
+<!-- Logo -->
+<a href="voltamarket_home_page.html" class="flex items-center gap-2 cursor-pointer shrink-0">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight hidden sm:block">Voltamarket</h2>
+</a>
+<!-- Search Bar (Desktop) -->
+<div class="hidden md:flex relative min-w-[320px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">search</span>
+<input class="w-full bg-background-light dark:bg-background-dark/50 border-none rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-text-muted/70 dark:text-white" placeholder="Search for products, brands and more"/>
+</div>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300" href="voltamarket_home_page.html">Marketplace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300" href="all_services_page.html">Services</a>
+</nav>
+<div class="flex items-center gap-3">
+<a href="cart_page.html" class="relative p-2 hover:bg-background-light dark:hover:bg-border-dark rounded-full transition-colors group">
+<span class="material-symbols-outlined text-text-main dark:text-white group-hover:text-primary">shopping_cart</span>
+<span class="absolute top-1 right-1 size-2 bg-primary rounded-full"></span>
+</a>
+<button class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary hover:bg-red-700 text-white text-sm font-bold transition-colors shadow-sm shadow-primary/30">
+                        Sign In
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<!-- Progress Stepper -->
+<div class="mb-10 w-full max-w-3xl mx-auto">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-border-light dark:bg-border-dark -z-10 rounded-full"></div>
+<!-- Step 1: Cart -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="size-8 rounded-full bg-green-600 text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<span class="text-xs font-semibold text-green-700 dark:text-green-500">Cart</span>
+</div>
+<!-- Step 2: Delivery -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="size-8 rounded-full bg-green-600 text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<span class="text-xs font-semibold text-green-700 dark:text-green-500">Delivery</span>
+</div>
+<!-- Step 3: Review (Active) -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-primary/20 shadow-md">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<span class="text-sm font-bold text-primary">Review</span>
+</div>
+<!-- Step 4: Payment -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="size-8 rounded-full bg-surface-light dark:bg-surface-dark border-2 border-border-light dark:border-border-dark text-text-muted flex items-center justify-center">
+<span class="text-xs font-bold">4</span>
+</div>
+<span class="text-xs font-medium text-text-muted">Payment</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+<!-- LEFT COLUMN: Content -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 mb-2">
+<h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-text-main dark:text-white">Review Your Order</h1>
+<p class="text-text-muted dark:text-gray-400">Please verify your delivery details and items before proceeding.</p>
+</div>
+<!-- Alert/Notification -->
+<div class="flex items-start gap-3 p-4 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg text-sm text-orange-800 dark:text-orange-200">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400 fill-1">info</span>
+<p>Due to high demand, deliveries to the Volta Region may take an extra 24 hours.</p>
+</div>
+<!-- Info Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Shipping Address Panel -->
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden shadow-sm">
+<div class="px-5 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center bg-gray-50 dark:bg-white/5">
+<div class="flex items-center gap-2 text-text-main dark:text-white font-bold">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<h3>Shipping Address</h3>
+</div>
+<a class="text-sm font-semibold text-primary hover:text-red-700 flex items-center gap-1" href="address_management_page.html">
+                                Change <span class="material-symbols-outlined text-base">edit</span>
+</a>
+</div>
+<div class="p-5 flex flex-col gap-1">
+<p class="font-bold text-text-main dark:text-white">Kofi Mensah</p>
+<p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
+                                12 Independence Ave<br/>
+                                Near Ho Technical University<br/>
+                                Ho, Volta Region, Ghana
+                            </p>
+<p class="text-text-main dark:text-gray-300 text-sm mt-2 font-medium">+233 24 000 0000</p>
+</div>
+</div>
+<!-- Payment Method Panel -->
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden shadow-sm">
+<div class="px-5 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center bg-gray-50 dark:bg-white/5">
+<div class="flex items-center gap-2 text-text-main dark:text-white font-bold">
+<span class="material-symbols-outlined text-primary">payments</span>
+<h3>Payment Method</h3>
+</div>
+<a class="text-sm font-semibold text-primary hover:text-red-700 flex items-center gap-1" href="checkout_page.html">
+                                Change <span class="material-symbols-outlined text-base">edit</span>
+</a>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 bg-yellow-400 rounded flex items-center justify-center font-bold text-[10px] text-black">MTN</div>
+<div class="flex flex-col">
+<p class="font-bold text-text-main dark:text-white text-sm">Mobile Money</p>
+<p class="text-text-muted dark:text-gray-400 text-xs">Ending in •••• 8899</p>
+</div>
+</div>
+<div class="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-xs p-2 rounded border border-green-100 dark:border-green-800 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+                                Securely encrypted
+                            </div>
+</div>
+</div>
+</div>
+<!-- Order Items -->
+<div class="flex flex-col gap-4">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Order Items (3)</h3>
+<!-- Vendor Group 1 -->
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden shadow-sm">
+<div class="bg-gray-50 dark:bg-white/5 px-5 py-3 border-b border-border-light dark:border-border-dark flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-lg">storefront</span>
+<span class="text-sm font-semibold text-text-main dark:text-white">Sold by <span class="text-primary">Ho Central Market Hub</span></span>
+</div>
+<!-- Item 1 -->
+<div class="p-5 flex flex-col sm:flex-row gap-4 border-b border-border-light dark:border-border-dark last:border-0">
+<div class="w-24 h-24 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<img alt="Bottle of red palm oil on a wooden table" class="w-full h-full object-cover" data-alt="Bottle of red palm oil on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbdUI0knm3M700eFtmFvP-nq15Df0y0Oumh6VTR3btnERIEucHiVtzTq8z9Q04m5lvPeByWuLM4kN_Etjzx7XCDGGXjHBQ3tE9s9-k1dpSxk-lLG2x-B5OToZob2zhfvyhY-3iripm4CwcsjN5uxo85bK8AWblpu0laNO4y2gyM4bNbdArsaO6cAfNF7ny0WxTdMoHwdfxZ4Lkk8jhQDRQTzxVDFLD6RzGKGyDpgqb8CbRpKJrXjPwNHhEmmXryVo4N-l_gT14qmE"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-text-main dark:text-white text-lg">Premium Red Palm Oil (Zomi) - 5L</h4>
+<p class="font-bold text-text-main dark:text-white whitespace-nowrap">GHS 120.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-gray-400">Pure, organic, locally sourced.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-sm text-text-main dark:text-gray-300 font-medium">Qty: 1</div>
+<button class="text-xs text-text-muted hover:text-primary underline">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-5 flex flex-col sm:flex-row gap-4">
+<div class="w-24 h-24 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<img alt="Sack of organic rice grains texture" class="w-full h-full object-cover" data-alt="Sack of organic rice grains texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuPsEEjYNqHXcBRC1KEzcw6_hdeXiR3np5RmuMXEmjJ4w2gLd6qcMEaxGu1vGJuwSinDrzl9y0tRK2Lri5C1td_CDNHa_8zqrkA8yz4fdegkanC3gkhiRddqT-vnfdj46tj9uNQxbCEpTq5BGT5yx8QEDw8Ep15_9_FBfrVLMvpEYDeK090ZmoqqpjRllhTt6KsydIUL5kvCnnYcOA0mUBAjB-u20Z7M1w5ngYpPjgL5YSniNsWR-CEX6mvFJzZYx993_wif6-Khs"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-text-main dark:text-white text-lg">Volta Brown Rice - 5kg Bag</h4>
+<p class="font-bold text-text-main dark:text-white whitespace-nowrap">GHS 85.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-gray-400">Aromatic local rice.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-sm text-text-main dark:text-gray-300 font-medium">Qty: 2</div>
+<button class="text-xs text-text-muted hover:text-primary underline">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vendor Group 2 -->
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark overflow-hidden shadow-sm">
+<div class="bg-gray-50 dark:bg-white/5 px-5 py-3 border-b border-border-light dark:border-border-dark flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-lg">storefront</span>
+<span class="text-sm font-semibold text-text-main dark:text-white">Sold by <span class="text-primary">Volta Fabrics Co.</span></span>
+</div>
+<!-- Item 3 -->
+<div class="p-5 flex flex-col sm:flex-row gap-4">
+<div class="w-24 h-24 shrink-0 bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden border border-border-light dark:border-border-dark">
+<img alt="Colorful African Kente cloth pattern" class="w-full h-full object-cover" data-alt="Colorful African Kente cloth pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvLri_KvGGESjMVv7wTZweC_EuOd-lFpH5GOn8uUVq-qExSI3z5l6d8n2XQZVpd2usDdCQZcK7TB4uIGNAQ-IeeuTOCTYOKHmRP-tJA4xU7GO1dfzVy0jkBBOk11eecrCh5yjuL-HBi-WwGmxHHZbHRKPDbn7GNmNdemQyzSIiDhMclYsXTFCji9uakS5eIoSBpVrdE7L7-4A5Rpthk-SLblrpg2th1n5he5krvI-hX_cIk-R3hXY5WLV6ImJKGKSEpEWmaj6MOkM"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-text-main dark:text-white text-lg">Authentic Kente Stole</h4>
+<p class="font-bold text-text-main dark:text-white whitespace-nowrap">GHS 250.00</p>
+</div>
+<p class="text-sm text-text-muted dark:text-gray-400">Handwoven, vibrant colors.</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="text-sm text-text-main dark:text-gray-300 font-medium">Qty: 1</div>
+<button class="text-xs text-text-muted hover:text-primary underline">Remove</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1 mt-4" href="checkout_page.html">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                    Back to Delivery Options
+                </a>
+</div>
+<!-- RIGHT COLUMN: Sticky Summary -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl shadow-lg p-6">
+<h2 class="text-xl font-bold text-text-main dark:text-white mb-6">Order Summary</h2>
+<div class="flex flex-col gap-3 mb-6">
+<div class="flex justify-between text-sm text-text-main/80 dark:text-gray-300">
+<span>Subtotal (4 items)</span>
+<span class="font-medium">GHS 540.00</span>
+</div>
+<div class="flex justify-between text-sm text-text-main/80 dark:text-gray-300">
+<span>Delivery Fee</span>
+<span class="font-medium">GHS 25.00</span>
+</div>
+<div class="flex justify-between text-sm text-text-main/80 dark:text-gray-300">
+<span>Service Fee</span>
+<span class="font-medium">GHS 5.00</span>
+</div>
+<div class="flex justify-between text-sm text-green-600 dark:text-green-400">
+<span>Discount (VOLTA10)</span>
+<span class="font-medium">- GHS 20.00</span>
+</div>
+</div>
+<div class="border-t border-dashed border-border-light dark:border-border-dark my-2"></div>
+<div class="flex justify-between items-end py-4">
+<span class="text-base font-bold text-text-main dark:text-white">Total Amount</span>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black text-primary tracking-tight">GHS 550.00</span>
+<span class="text-xs text-text-muted">Includes all taxes</span>
+</div>
+</div>
+<a href="payment_processing_page.html" class="w-full bg-primary hover:bg-red-700 text-white font-bold text-lg py-4 rounded-lg shadow-lg shadow-primary/30 transition-all transform active:scale-[0.98] mb-4 flex items-center justify-center gap-2">
+                            Place Order
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-lg border border-border-light dark:border-border-dark">
+<label class="block text-xs font-semibold text-text-muted mb-2 uppercase tracking-wider">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Enter code" type="text"/>
+<button class="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-text-main dark:text-white text-sm font-bold px-3 py-2 rounded transition-colors">Apply</button>
+</div>
+</div>
+</div>
+<!-- Trust Signals -->
+<div class="flex items-center justify-center gap-6 text-text-muted dark:text-gray-500 grayscale opacity-70">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+<span class="text-[10px] font-bold uppercase">Secure</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+<span class="text-[10px] font-bold uppercase">Tracked</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+<span class="text-[10px] font-bold uppercase">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-16 pb-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<a href="voltamarket_home_page.html" class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Voltamarket</h2>
+</a>
+</div>
+<p class="text-text-muted dark:text-gray-400 max-w-sm mb-6">
+                        Connecting buyers and sellers across the Volta and Oti regions. Experience the convenience of modern e-commerce with a local touch.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-text-main dark:text-white hover:bg-primary hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06zm1.573 4.295c-1.363 0-2.469 1.106-2.469 2.47 0 1.364 1.106 2.469 2.469 2.469 1.363 0 2.469-1.106 2.469-2.469 0-1.364-1.106-2.469-2.469-2.469zM12 5.567c-3.55 0-6.433 2.883-6.433 6.433 0 3.55 2.883 6.433 6.433 6.433 3.55 0 6.433-2.883 6.433-6.433 0-3.55-2.883-6.433-6.433-6.433z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Shop</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="categories_page.html">Categories</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_products_page.html">All Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="_deals_page.html">Flash Sales</a></li>
+<li><a class="hover:text-primary transition-colors" href="all_services_page.html">Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Support</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="faq_page.html">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="order_tracking_page.html">Track Order</a></li>
+<li><a class="hover:text-primary transition-colors" href="refund_&_return_policy_page.html">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="contact_us_page.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-4 text-text-main dark:text-white">Company</h3>
+<ul class="flex flex-col gap-3 text-text-muted dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="about_voltamarket_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="how_it_works_page.html">How It Works</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms_&_conditions_page.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-primary transition-colors" href="privacy_policy_page.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#f4e7e7] dark:border-[#3d2b2b] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-text-muted dark:text-gray-500">© 2024 Voltamarket. All rights reserved.</p>
+<div class="flex gap-4">
+<img alt="MTN Mobile Money" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJWiRucgvVPDqG1JvciM08Iw-2GZlilW4TPTnXIFY7rXivnwltRRVwP-WZB7et9NRp1olX8U8CdH0mkxeu1fzEZpUQupy-8f3vEKnsxX33x4iN3pQd0b2v7KIqffkttT-pL-FS1RG--gNJbpVcxP5xanE8uTWlxm2xoqRCRf-85_eoCKOhL6SJRZNp2tV4Eo2vcLA_EO8fGd-etV-gpp9pLUk9OMluwFDE4DwWWwN7_aklSetpBMHPDb1JiRL9gLbcHypgVpjOKM"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXd77eFIfU-cl3fIei-vJGCxEW5gpr65eM8KLBShtNjmcTSJl0TeNcLI5jcRoKXpDvJkQSRxkeLESoUf6RzD2w4BuruVKqmCSNNH0Ek0EgyUQDmmrUXdEN4MYzPcnTZ3m4Ta-gTpAqLCm1QNMrDTF2M8SsXEpIK4-w8arR3Bzzgo9R8rkkVf-OorMckxLnu_0PKJgftgZoXo1gQgZuCP1ikHxPGweBECFrgmIAYdOOVt2FNwJUTr59ycD6C1W4FJBybwOSX77GDM"/>
+<img alt="Visa" class="h-6 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssO4Z0XttyqSBrD2kHEkTj2mrQwatK6CIO1q8qnJZVFHCws8i_6vXpN_JyP6N6FNZtopVrlBSxR0r4E7Q3Y2YoUh7zD-hNxu1nTKVRe3pNOx6uIeDWGvBOx4NQ_IuYIBky5z8rp6K-vxGyS7In9FqXQYOcRa4iHq2uCPMxNNpai6JICKun-kG8xDDHsqZQmUXa5sa8yqsy8NcX5T_RJPAVNMVlksoG3aolz2LN3OniCE4grnOKgCaSe5mm9JlO0LQ7g_sq-YkkBk"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
