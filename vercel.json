@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/Volta_Market_Dashboard/(.*)",
+      "dest": "/Volta_Market_Dashboard/$1"
+    },
+    {
+      "src": "/Volta_Market_main/(.*)",
+      "dest": "/Volta_Market_main/$1"
+    },
+    {
+      "src": "/Volta_Seller/(.*)",
+      "dest": "/Volta_Seller/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
